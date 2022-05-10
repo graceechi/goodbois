@@ -6,7 +6,8 @@ block content
   div(id='review-container')
     form(action='/parks/:id/review' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
-      input(type='hidden' name='parkId' value=park.id)
+      input(type='hidden' name='parksId' value=park.id)
+      input(type='hidden' name='userId' value=user.id)
       div
         div= park.name
       div
@@ -24,5 +25,5 @@ block content
         label What Did You Think?
         textarea(name='reviewDescription' required)
       div
-        button(type='submit') Log In
+        button(type='submit') Submit Review
         a(href='/' class='cancel-btn') Cancel

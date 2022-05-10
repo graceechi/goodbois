@@ -4,32 +4,48 @@ const router = express.Router();
 const { csrfProtection, asyncHandler } = require('./utils');
 const db = require('../db/models');
 const { requireAuth } = require('../auth');
-const Review = require('../db/models/review');
-const Park = require('../db/models/park')
+const { Review } = require('../db/models/review');
+const { User } = require('../db/models/user')
 
-router.get('/parks/:id/review', asyncHandler(async(req, res) => {
+router.get('/:id/review', csrfProtection, asyncHandler(async(req, res) => {
     const id = req.params.id
 
-    const park = await db.Park.findByPk(id)
+    const park = await db.Park.findByPk(id, {
+        include: User
+    })
+    // const user = await db.User.findByPk(id)
 
-    res.render('review-form', park)
+    res.render('review-form', { title: 'Review', park, csrfToken: req.csrfToken() })
 }));
 
-router.post('/:id/review', csrfProtection, requireAuth, asyncHandler(async(req, res) => {
-    const { parkId, rating, reviewTitle, reviewDescription } = req.body
+router.post('/:id/review', requireAuth, asyncHandler(async(req, res) => {
+    const { parksId, userId, rating, reviewTitle, reviewDescription } = req.body
 
-    const review = await Review.create({
+    const review = await db.Review.create({
+        parksId: parksId,
+        userId: userId,
         rating: rating,
         title: reviewTitle,
         body: reviewDescription
     })
 
-    res.redirect(`/parks/${parkId}`)
+    res.redirect('/parks')
 }))
+
+router.post('/:id', requireAuth, asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const deletedReview = await Review.findOne({
+       where: {
+          userId: userId,
+          parkId: id
+       }
+    })
+    await deletedReview.destroy()
+    res.redirect('/parks');
+ }));
 
 // router.put
 
-// router.delete
 
 
 
