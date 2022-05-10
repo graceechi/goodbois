@@ -5,7 +5,7 @@ include shannon-utils.pug
 block content
   h2 Create Park
   +validationErrorSummary(errors)
-  form(action='/users/signup' method='post')
+  form(action='/parks/new' method='post')
     input(type='hidden' name='_csrf' value=csrfToken)
     +field('Name', 'name', park.name)
     +field('City', 'city', park.city)
@@ -21,4 +21,4 @@ block content
     +field('Shaded', 'shaded', park.shaded, 'select')
     div(class='py-4')
       button(type='submit' class='create-btn') Submit
-      a(href='/' class='cancel-btn') Cancel
+      a(href='/parks' class='cancel-btn') Cancel

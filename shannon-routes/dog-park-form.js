@@ -46,7 +46,7 @@ const parkValidators = [
         .withMessage('Park Size must not be larger than 999999.99'),
 ]
 
-router.post('/new', csrfProtection, asyncHandler(async(req, res) => {
+router.post('/new', csrfProtection, parkValidators, asyncHandler(async(req, res) => {
     const {
         name,
         city,
