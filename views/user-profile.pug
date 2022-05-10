@@ -2,28 +2,43 @@ extends layout
 
 include utils.pug 
 
+append head
+
+  link(rel="stylesheet" href="/stylesheets/profile.css")
+  
+  script(src="/javascripts/profile.js" type="module" )
+
 block content
-   
-    h1(class='userName' )= user.fullName
+    div(class="splash")
+        h1
+            a(href="/") goodbois
+
+        div(class="navbar")
+            button(type='submit' class='logout') LogOut
+
+
+    div(class='welcome')
+        p Welcome #{user.fullName}! You have logged in successfully. 
+
+
+    h2(class='user_name' style )= user.fullName
     h3(class='email')= user.email
     br
-    br
-    br
-    div(class='parkslist') #{user.fullName}'s Parks list
-    br
-    br
-    br
-    br
-    br
+    div(class='parkslist') Your Parks list
+        +field
+        each park in parks
+        ul
+            li (value=park.id)= park.name
     br
     br
     br
     br
-    br
+    
     footer 
+    div(class='footer')
         p Want to find more parks for your buddy?? 
         span Visit 
-        span: a(href="/parks") Parks
+        a(href="/parks") Parks
 
 
 
