@@ -1,6 +1,32 @@
 extends layout 
 
+include utils.pug 
 
 block content
+   
+    h1(class='userName' )= user.fullName
+    h3(class='email')= user.email
+    br
+    br
+    br
+    div(class='parkslist') #{user.fullName}'s Parks list
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    footer 
+        p Want to find more parks for your buddy?? 
+        span Visit 
+        span: a(href="/parks") Parks
 
-  
+
+
+
+
+        
