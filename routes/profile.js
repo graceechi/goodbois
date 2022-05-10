@@ -6,13 +6,13 @@ const { restoreUser } = require('../auth');
 const db = require('../db/models');
 
 
-router.get('/profile/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => {
+router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => {
   const id = req.params.id;
   const user = await db.User.findByPk(id);
   const parkslist = await db.ParksList.findAll({
     where : { userId : id },
-    include: [Parks],
-    order: {name},
+    // include: [Parks],
+    // order: {name},
   });
     res.render('user-profile', {
       title: 'profile',
