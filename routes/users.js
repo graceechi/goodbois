@@ -66,7 +66,7 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async(req, r
     await user.save();
     // persists the user's login state after successfully logging in
     loginUser(req, res, user);
-    res.redirect('/profile');
+    res.redirect(`/profile/${req.params.id}`);
     } else {
     const errors = validatorErrors.array().map((error) => error.msg);
     res.render('sign-up', {
@@ -110,7 +110,7 @@ router.post('/login', csrfProtection, logInValidators, asyncHandler(async(req, r
         const passwordMatch = await bcrypt.compare(password, user.hashedPassword.toString())
         if (passwordMatch) {
             loginUser(req, res, user);
-            return res.redirect('/profile');
+            return res.redirect(`/profile/${req.params.id}`);
         }
     }
     errors.push('Login failed for the provided email address and password')
