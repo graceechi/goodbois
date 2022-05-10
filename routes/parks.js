@@ -113,13 +113,64 @@ router.post('/new', csrfProtection, parkValidators, asyncHandler(async(req, res)
 }));
 
 router.get('/:id(\\d+)/edit', csrfProtection, asyncHandler(async(req, res) => {
-    const parkId = req.params.id;
-    const park = await db.Park.findByPk(parkId);
+    const parksId = req.params.id;
+    const park = await db.Park.findByPk(parksId);
     res.render('edit-park', {
         title: 'Edit Park',
         park,
         csrfToken: req.csrfToken()
     })
+
+}));
+
+router.post('/:id(\\d+)/edit', csrfProtection, parkValidators, asyncHandler(async(req, res)=> {
+    const parksId = req.params.id;
+    const parkToBeUpdated = await db.Park.findByPk(parksId);
+
+    const {
+        name,
+        city,
+        state,
+        description,
+        smallDogArea,
+        doggieWaterFountain,
+        fullyFenced,
+        parkSize,
+        parkingLot,
+        wasteDisposal,
+        agilityEquipment,
+        shaded
+    } = req.body
+
+    const park = {
+        name,
+        city,
+        state,
+        description,
+        smallDogArea,
+        doggieWaterFountain,
+        fullyFenced,
+        parkSize,
+        parkingLot,
+        wasteDisposal,
+        agilityEquipment,
+        shaded
+    };
+
+    const validatorErrors = validationResult(req);
+    if (validatorErrors.isEmpty()) {
+        await parkToBeUpdated.update(park);
+        res.redirect(`/parks/${parksId}`)
+    } else {
+        const errors = validatorErrors.array().map((error) => error.msg);
+        res.render('edit-park', {
+            title: 'Edit Park',
+            park: {...park, id: parksId},
+            errors,
+            csrfToken: req.csrfToken()
+        });
+    }
+
 
 }))
 
