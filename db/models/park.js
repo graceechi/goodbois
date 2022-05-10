@@ -51,7 +51,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Park.associate = function(models) {
-    // associations can be defined here
+    Park.hasMany(models.Review, {foreignKey: 'parksId'})
+    Park.belongsToMany(models.User, {through: 'ParksList',
+    foreignKey: 'parksId',
+    otherKey: 'userId'})
   };
   return Park;
 };
