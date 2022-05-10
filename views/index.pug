@@ -17,13 +17,13 @@ block content
             nav(id="sign-in-nav")
                 a(href="/users/login") Log In
             nav(id="demo-nav")
-                //- form(class="buttons" action='/profile/demo' method='post')
-                //-     input(type='hidden' name='_csrf' value=csrfToken)
-                //-     input(type='hidden' name='email' value='demo@gmail.com')
-                //-     input(type='hidden' name='password' value='Demo@1')
-                //-     button(type='submit' class='demo-btn') Demo
-                //-         a(href="/profile/demo")
-                a(href="/profile/demo") Demo Login
+                form(class="buttons" action='/users/login' method='post')
+                    input(type='hidden' name='_csrf' value=csrfToken)
+                    input(type='hidden' name='email' value='demo@gmail.com')
+                    input(type='hidden' name='password' value='Demo@1')
+                    button(type='submit' class='demo-btn') Demo
+                        //- a(href="/profile/demo")
+                //- a(href="/profile/demo") Demo Login
             //- only if user is logged in or in demo mode
             //- nav
             //-     a(href="/logout") Log Out
@@ -39,6 +39,10 @@ block content
     br
     div(class="parks_links")
         h3: a(href="/parks") Parks
+    //- div(class="search_bar")
+    //-     form(action="/parks")
+    //-           input(type="search" name="term" placeholder="Search" required)
+    //-           button Find a Park
     footer
         div(class="github_links")
             h2: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk

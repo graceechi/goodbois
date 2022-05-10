@@ -98,6 +98,11 @@ const logInValidators = [
     .withMessage('Please provide a value for Password'),
 ];
 
+router.use((req, res, next) => {
+  console.log(req.body);
+  next();
+})
+
 router.post('/login', csrfProtection, logInValidators, asyncHandler(async(req, res) => {
   const { email, password } = req.body;
 
@@ -132,14 +137,14 @@ router.post('/logout', (req, res) => {
   res.redirect('/')
 })
 
-router.post('/profile/demo', restoreUser, csrfProtection, asyncHandler(async (req, res) => {
+// router.post('/profile/demo', restoreUser, csrfProtection, asyncHandler(async (req, res) => {
 
-  const user = db.User.findOne({
-    where: { id: 2, fullName: 'Demo', email: 'demo@gmail.com', password: 'Demo@1'}
-  });
-  loginUser(req, res, user);
-  return res.redirect(`/profile/demo`);
-}))
+//   const user = db.User.findOne({
+//     where: { id: 2, fullName: 'Demo', email: 'demo@gmail.com', password: 'Demo@1'}
+//   });
+//   loginUser(req, res, user);
+//   return res.redirect(`/profile/demo`);
+// }))
 
 // router.post('/profile/demo', csrfProtection, asyncHandler(async (req, res) => {
 //   const userId = db.User.findByPk({

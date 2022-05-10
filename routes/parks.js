@@ -2,10 +2,31 @@ const express = require('express');
 const { check, validationResult } = require('express-validator');
 
 const db = require('../db/models');
+const { Review } = require('../db/models')
 const { csrfProtection, asyncHandler } = require('./utils');
 
 
 const router = express.Router();
+
+router.get('/', asyncHandler(async(req, res) => {
+
+    const parks = await db.Park.findAll();
+
+    res.render('parks', {title: 'Parks', parks })
+}))
+
+router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
+
+    const parkId = req.params.id;
+
+    const park = await db.Park.findByPk(parkId, {
+        include: Review
+    });
+
+    console.log(park);
+
+    res.render('park-details', {title: `${park.name}`, park})
+}))
 
 router.get('/new', csrfProtection, (req, res) => {
 
