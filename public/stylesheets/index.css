@@ -36,7 +36,7 @@ h2 {
 
 .navbar a {
     text-decoration: none;
-    color: rgb(135, 75, 2)
+    color: rgb(135, 75, 2);
 }
 
 .navbar a:hover {
@@ -53,9 +53,26 @@ h2 {
 
 }
 
+/*  demo link "button" */
 #demo-nav {
+    /* padding: 5px; */
     padding: 10px;
+}
 
+/*  demo button */
+.demo-btn {
+    border-radius: 10px;
+    padding: 5px;
+    color: rgb(135, 75, 2);
+    border: none;
+    font-size: 17px;
+    /* border: 2px solid rgb(135, 75, 2); */
+}
+
+.demo-btn:hover {
+    cursor: pointer;
+    color: rgb(201, 155, 94);
+    /* border: 2px solid rgb(201, 155, 94); */
 }
 
 .splash_img_container {

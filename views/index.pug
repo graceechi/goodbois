@@ -17,7 +17,13 @@ block content
             nav(id="sign-in-nav")
                 a(href="/users/login") Log In
             nav(id="demo-nav")
-                a(href="/demo") Demo Login
+                //- form(class="buttons" action='/profile/demo' method='post')
+                //-     input(type='hidden' name='_csrf' value=csrfToken)
+                //-     input(type='hidden' name='email' value='demo@gmail.com')
+                //-     input(type='hidden' name='password' value='Demo@1')
+                //-     button(type='submit' class='demo-btn') Demo
+                //-         a(href="/profile/demo")
+                a(href="/profile/demo") Demo Login
             //- only if user is logged in or in demo mode
             //- nav
             //-     a(href="/logout") Log Out
