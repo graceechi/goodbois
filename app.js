@@ -8,7 +8,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const parksRouter = require('./routes/dog-park-form')
+const parksRouter = require('./routes/parks')
 
 const { sessionSecret } = require('./config');
 const { restoreUser } = require('./auth');

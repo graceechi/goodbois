@@ -1,5 +1,3 @@
-//This can probably live in a parks.js file
-
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 
