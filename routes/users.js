@@ -65,8 +65,8 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async(req, r
     user.hashedPassword = hashedPassword;
     await user.save();
     // persists the user's login state after successfully logging in
-    // loginUser(req, res, user);
-    res.redirect('/');
+    loginUser(req, res, user);
+    res.redirect('/profile');
     } else {
     const errors = validatorErrors.array().map((error) => error.msg);
     res.render('sign-up', {
