@@ -112,4 +112,15 @@ router.post('/new', csrfProtection, parkValidators, asyncHandler(async(req, res)
     }
 }));
 
+router.get('/:id(\\d+)/edit', csrfProtection, asyncHandler(async(req, res) => {
+    const parkId = req.params.id;
+    const park = await db.Park.findByPk(parkId);
+    res.render('edit-park', {
+        title: 'Edit Park',
+        park,
+        csrfToken: req.csrfToken()
+    })
+
+}))
+
 module.exports =  router;
