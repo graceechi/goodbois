@@ -100,7 +100,7 @@ router.post('/new', csrfProtection, parkValidators, asyncHandler(async(req, res)
 
     if(validatorErrors.isEmpty()){
         await park.save();
-        res.redirect('/');
+        res.redirect('/parks');
     } else {
         const errors = validatorErrors.array().map((error) => error.msg);
         res.render('create-park',{
