@@ -2,9 +2,9 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    
+
       return queryInterface.bulkInsert('Parks', [
-        { 
+        {
           name: 'Newtown Dream Dog Park',
           city: 'Johns Creek',
           state: 'Georgia',
@@ -16,9 +16,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Beau\'s Dream Dog Park at Buchanan Park',
           city: 'Lancaster',
           state: 'Pennsylvania',
@@ -30,10 +32,12 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
-          name: 'Montrose Dog Beach', 
+        {
+          name: 'Montrose Dog Beach',
           city: 'Chicago',
           state: 'Illinois',
           description: 'Chicagoans and their dogs can escape to this dedicated, fenced in dog beach along Lake Michigan.',
@@ -44,9 +48,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Bea Arthur Dog Park',
           city: 'Norfolk',
           state: 'Virginia',
@@ -58,9 +64,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Jackass Acres K-9 Korral',
           city: 'New River',
           state: 'Arizona',
@@ -72,9 +80,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Schuylkill River Park Dog Run',
           city: 'Philadelphia',
           state: 'Pennsylvania',
@@ -84,11 +94,13 @@ module.exports = {
           fullyFenced: true,
           parkSize: 1.5,
           parkingLot: true,
-          wasteDisposal: true, 
+          wasteDisposal: true,
           agilityEquipment: true,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Pilgrim Dog Park',
           city: 'Provincetown',
           state: 'Massachusetts',
@@ -100,9 +112,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Beneful Dream Dog Park',
           city: 'Alabaster',
           state: 'Alabama',
@@ -114,9 +128,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Dog Beach',
           city: 'Fort Myers Beach',
           state: 'Florida',
@@ -129,8 +145,10 @@ module.exports = {
           wasteDisposal: false,
           agilityEquipment: false,
           shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Rosie\'s Dog Beach',
           city: 'Long Beach',
           state: 'California',
@@ -143,8 +161,10 @@ module.exports = {
           wasteDisposal: false,
           agilityEquipment: false,
           shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Warren G. Magnuson Dog Park',
           city: 'Seattle',
           state: 'Washington',
@@ -156,9 +176,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Shaggy Pines Dog Park',
           city: 'Grand Rapids',
           state: 'Michigan',
@@ -170,9 +192,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Thousand Acres Dog Park',
           city: 'Troutdale',
           state: 'Oregon',
@@ -184,9 +208,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: false,
           agilityEquipment: false,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Fiesta Island',
           city: 'San Diego',
           state: 'California',
@@ -198,9 +224,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: false,
           agilityEquipment: false,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Shawnee Mission Off-Leash Dog Area',
           city: 'Shawnee',
           state: 'Kansas',
@@ -213,8 +241,10 @@ module.exports = {
           wasteDisposal: true,
           agilityEquipment: false,
           shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Thornberry Off-Leash Dog Park',
           city: 'Iowa City',
           state: 'Iowa',
@@ -226,9 +256,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Phil Hardberger Park',
           city: 'San Antonio',
           state: 'Texas',
@@ -237,26 +269,30 @@ module.exports = {
           doggieWaterFountain: true,
           fullyFenced: true,
           parkSize: 3.3,
-          parkingLot: true, 
+          parkingLot: true,
           wasteDisposal: true,
-          agilityEquipment: true, 
-          shaded: false
+          agilityEquipment: true,
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Nola City Bark',
           city: 'New Orleans',
           state: 'Louisiana',
           description: 'Described by some as a country club for dogs, Nola City Bark requires a permit and key card, and the yearly fees surely contribute to the park\'s cleanliness and features.',
           smallDogArea: true,
-          doggieWaterFountain: true, 
+          doggieWaterFountain: true,
           fullyFenced: true,
           parkSize: 4.6,
           parkingLot: true,
-          wasteDisposal: true, 
+          wasteDisposal: true,
           agilityEquipment: true,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Dogwood Play Park',
           city: 'Jacksonville',
           state: 'Florida',
@@ -264,13 +300,15 @@ module.exports = {
           smallDogArea: true,
           doggieWaterFountain:  true,
           fullyFenced: true,
-          parkSize: 42, 
+          parkSize: 42,
           parkingLot: true,
-          wasteDisposal: true, 
-          agilityEquipment: true, 
-          shaded: false
+          wasteDisposal: true,
+          agilityEquipment: true,
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Madison Square Park Dog Run',
           city: 'New York City',
           state: 'New York',
@@ -282,9 +320,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Washington Dog Park',
           city: 'Cincinnati',
           state: 'Ohio',
@@ -297,8 +337,10 @@ module.exports = {
           wasteDisposal: true,
           agilityEquipment: true,
           shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Nampa Dog Park',
           city: 'Nampa',
           state: 'Idaho',
@@ -310,9 +352,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Hawaii Kai Dog Park',
           city: 'Honolulu',
           state: 'Hawaii',
@@ -324,9 +368,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Point Isabel Regional Shoreline and Dog Park',
           city: 'Richmond',
           state: 'California',
@@ -338,9 +384,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Zilker Park',
           city: 'Austin',
           state: 'Texas',
@@ -353,13 +401,15 @@ module.exports = {
           wasteDisposal: true,
           agilityEquipment: false,
           shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Freedom Bark Park',
           city: 'Lowell',
           state: 'Indiana',
           description: 'Built thanks to more than 3,000 volunteer hours, this dog park lives up to its name by offering pups freedom to roam, play and explore.',
-          smallDogArea: true, 
+          smallDogArea: true,
           doggieWaterFountain: true,
           fullyFenced: true,
           parkSize: 8.3,
@@ -367,8 +417,10 @@ module.exports = {
           wasteDisposal: true,
           agilityEquipment: true,
           shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Cherry Creek State Park- Off Leash Dog Area',
           city: 'Aurora',
           state: 'Colorado',
@@ -380,9 +432,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: true
-        }, 
-        { 
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
           name: 'Long Meadow and Dog Beach in Prospect Park',
           city: 'Brooklyn',
           state: 'New York',
@@ -394,9 +448,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Quiet Waters Park',
           city: 'Annapolis',
           state: 'Maryland',
@@ -408,9 +464,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Double Bluff Beach',
           city: 'Whidbey Island',
           state: 'Washington',
@@ -422,9 +480,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Willard Beach',
           city: 'South Portland',
           state: 'Maine',
@@ -437,22 +497,26 @@ module.exports = {
           wasteDisposal: true,
           agilityEquipment: false,
           shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Cosmo Dog Park',
           city: 'Gilbert',
           state: 'Arizona',
           description: 'On top of areas for large and small dogs, Cosmo Dog Park outside Phoenix has two more fenced areas for swimming and another for timid dogs.',
           smallDogArea: true,
-          doggieWaterFountain: true, 
+          doggieWaterFountain: true,
           fullyFenced: true,
           parkSize: 17,
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
           shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'James Island County Park',
           city: 'James Island',
           state: 'South Carolina',
@@ -462,11 +526,13 @@ module.exports = {
           fullyFenced: true,
           parkSize: 4,
           parkingLot: true,
-          wasteDisposal: true, 
+          wasteDisposal: true,
           agilityEquipment: true,
           shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Del Mar Dog Beach',
           city: 'Del Mar',
           state: 'California',
@@ -478,9 +544,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Jackson Bark',
           city: 'Chicago',
           state: 'Illinois',
@@ -491,10 +559,12 @@ module.exports = {
           parkSize: 11,
           parkingLot: true,
           wasteDisposal: true,
-          agilityEquipment: true, 
-          shaded: true
+          agilityEquipment: true,
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Twin Lakes Recreational Area',
           city: 'Columbia',
           state: 'Missouri',
@@ -506,9 +576,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Congressman Bill Archer Dog Park',
           city: 'Houston',
           state: 'Texas',
@@ -521,8 +593,10 @@ module.exports = {
           wasteDisposal: true,
           agilityEquipment: true,
           shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Southbury Dog Park',
           city: 'Southbury',
           state: 'Connecticut',
@@ -534,13 +608,15 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Elm Creek Reserve Dog Park',
           city: 'Maple Grove',
           state: 'Minnesota',
-          description: 'This 29-acre park offers fenced and unfenced areas with something different and exciting for dogs and their owners every season.', 
+          description: 'This 29-acre park offers fenced and unfenced areas with something different and exciting for dogs and their owners every season.',
           smallDogArea: true,
           doggieWaterFountain: true,
           fullyFenced: false,
@@ -548,13 +624,15 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Montauk Beaches',
           city: 'Montauk',
           state: 'New York',
-          description: 'The city of Montauk is a popular vacation getaway, and its beaches with accomodate any of your canine companions.', 
+          description: 'The city of Montauk is a popular vacation getaway, and its beaches with accomodate any of your canine companions.',
           smallDogArea: false,
           doggieWaterFountain: false,
           fullyFenced: false,
@@ -563,8 +641,10 @@ module.exports = {
           wasteDisposal: true,
           agilityEquipment: false,
           shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Freedom Barks Dog Park',
           city: 'Medford',
           state: 'New Jersey',
@@ -576,9 +656,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Fort Woof',
           city: 'Fort Worth',
           state: 'Texas',
@@ -590,9 +672,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Fort De Soto Park',
           city: 'Tierra Verde',
           state: 'Florida',
@@ -605,8 +689,10 @@ module.exports = {
           wasteDisposal: true,
           agilityEquipment: false,
           shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'NorthBark Park',
           city: 'Dallas',
           state: 'Texas',
@@ -618,9 +704,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Tommy Schumpert Park',
           city: 'Knoxville',
           state: 'Tennessee',
@@ -632,9 +720,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Bentonville Bark Park',
           city: 'Bentonville',
           state: 'Arkansas',
@@ -646,9 +736,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Hugh Rogers Wag Dog Park',
           city: 'Whitefish',
           state: 'Montana',
@@ -660,9 +752,11 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: true,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Loch Haven Dog Park',
           city: 'Hoover',
           state: 'Alabama',
@@ -675,8 +769,10 @@ module.exports = {
           wasteDisposal: true,
           agilityEquipment: true,
           shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Warren Dunes State Park',
           city: 'Sawyer',
           state: 'Michigan',
@@ -688,9 +784,11 @@ module.exports = {
           parkingLot: false,
           wasteDisposal: false,
           agilityEquipment: false,
-          shaded: false
+          shaded: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
-        { 
+        {
           name: 'Memory Grove Park',
           city: 'Salt Lake City',
           state: 'Utah',
@@ -702,16 +800,18 @@ module.exports = {
           parkingLot: true,
           wasteDisposal: true,
           agilityEquipment: false,
-          shaded: true
+          shaded: true,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
 
       ], {});
-    
+
   },
 
   down: (queryInterface, Sequelize) => {
-   
+
       return queryInterface.bulkDelete('Parks', null, {});
-    
+
   }
 };
