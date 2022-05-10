@@ -1,4 +1,4 @@
-extends layout
+extends layout.pug
 
 append head
   //- add page specific styles by appending to the head
@@ -7,5 +7,19 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1= title
-  p Welcome to your Project Skeleton
+    div(class="splash_nav_container")
+        h1
+            a(href="/") goodbois
+
+        div(class="navbar")
+            nav(id="sign-up-nav")
+                a(href="/users/signup") Sign Up
+            nav(id="sign-in-nav")
+                a(href="/users/signin") Sign In
+            nav(id="demo-nav")
+                a(href="/demo") Demo
+            //- only if user is logged in or in demo mode
+            //- nav
+            //-     a(href="/logout") Log Out
+
+    h2 Find Your Next Favorite Dog Park.

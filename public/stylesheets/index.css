@@ -1,3 +1,59 @@
+* {
+    background-color: antiquewhite;
+}
+
+/* .splash_nav_container {
+    background-color: antiquewhite;
+} */
+
 h1 {
-    color: #555555;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+h1 a {
+    color: rgb(201, 155, 94);
+    font-size: 40px;
+    text-decoration: none;
+}
+
+h2 {
+    margin-left: 15px;
+    font-size: 30px;
+    color: rgb(135, 75, 2);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(135, 75, 2)
+}
+
+.navbar a:hover {
+    color: rgb(201, 155, 94);
+}
+
+#sign-up-nav {
+    padding: 10px;
+
+}
+
+#sign-in-nav {
+    padding: 10px;
+
+}
+
+#demo-nav {
+    padding: 10px;
+
 }
