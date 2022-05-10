@@ -46,4 +46,8 @@ const parkValidators = [
         .withMessage('Park Size must not be larger than 999999.99'),
 ]
 
+router.post('/new', csrfProtection, asyncHandler(async(req, res) => {
+
+}))
+
 module.exports =  router;
