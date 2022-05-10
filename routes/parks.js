@@ -7,6 +7,24 @@ const { csrfProtection, asyncHandler } = require('./utils');
 
 const router = express.Router();
 
+router.get('/', asyncHandler(async(req, res) => {
+
+    const parks = await db.Park.findAll();
+
+    res.render('parks', {title: 'Parks', parks })
+}))
+
+router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
+
+    const parkId = req.params.id;
+
+    const park = await db.Park.findByPk(parkId);
+
+    console.log(park);
+
+    res.render('park-details', {title: `${park.name}`, park})
+}))
+
 router.get('/new', csrfProtection, (req, res) => {
 
     const park = db.Park.build();
