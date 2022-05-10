@@ -1,0 +1,24 @@
+mixin validationErrorSummary(errors)
+  if errors
+    div(class='alert alert-danger' role='alert')
+      p The following error(s) occurred:
+      ul
+        each error in errors
+          li= error
+
+mixin field(labelText, fieldName, fieldValue, fieldType = 'text', placeholder = null)
+  div(class='form-group')
+    label(for=fieldName)= labelText
+    if fieldType === 'textarea'
+      textarea(id=fieldName name=fieldName class='form-control-textarea' rows='5')= fieldValue
+    else if fieldType === 'select'
+      select(id=fieldName name=fieldName class='form-control')
+        option(value='false') No
+        option(value='true') Yes
+    else if fieldType === 'number'
+      input(type=fieldType id=fieldName name=fieldName placeholder=placeholder step='0.01' class='form-control')
+    else
+      input(type=fieldType id=fieldName name=fieldName value=fieldValue placeholder=placeholder class='form-control')
+
+    //-   what is the unit of measure?
+    //-   should there be a max and min?
