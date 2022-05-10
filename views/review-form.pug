@@ -1,0 +1,29 @@
+extends layout.pug
+
+include utils.pug
+
+block content
+  div(id='review-container')
+    form(action='/parks/:id/review' method='post')
+      input(type='hidden' name='_csrf' value=csrfToken)
+      input(type='hidden' name='parksId' value=park.id)
+      input(type='hidden' name='userId' value=user.id)
+      div(id='review-park-name-container')
+        div(id='park-name')= park.name
+      div(id='rating-container')
+        label Rating:
+        select(id='rating-drop-down' name='rating' required)
+          option(value='5') 5
+          option(value='4') 4
+          option(value='3') 3
+          option(value='2') 2
+          option(value='1') 1
+      div(id='review-title-container')
+        label Title:
+        input(type='text' id='review-title-input' name='reviewTitle' required)
+      div(id='review-description-container')
+        label What Did You Think?
+        textarea(name='reviewDescription' id='review-description-input' required)
+      div
+        button(type='submit' class='submit-btn') Submit Review
+        a(href='/' class='cancel-btn') Cancel
