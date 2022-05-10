@@ -11,6 +11,7 @@ const usersRouter = require('./routes/users');
 const parksRouter = require('./shannon-routes/dog-park-form')
 
 const { sessionSecret } = require('./config');
+const { restoreUser } = require('./auth');
 
 const app = express();
 
@@ -39,7 +40,7 @@ app.use(
 // create Session table if it doesn't already exist
 store.sync();
 
-
+app.use(restoreUser);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/parks', parksRouter);
