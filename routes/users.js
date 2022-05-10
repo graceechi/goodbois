@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const { csrfProtection, asyncHandler } = require('./utils');
 
 const db = require('../db/models');
+const { loginUser } = require('../auth');
 
 router.get('/signup', csrfProtection, (req, res) => {
   const user = db.User.build();
@@ -64,8 +65,8 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async(req, r
     user.hashedPassword = hashedPassword;
     await user.save();
     // persists the user's login state after successfully logging in
-    // loginUser(req, res, user);
-    res.redirect('/');
+    loginUser(req, res, user);
+    res.redirect('/profile');
     } else {
     const errors = validatorErrors.array().map((error) => error.msg);
     res.render('sign-up', {
@@ -77,5 +78,55 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async(req, r
   }
 
 }))
+
+router.get('/login', csrfProtection, (req, res) => {
+  const user = db.User.build();
+  res.render('log-in', {
+    title: 'Log-in',
+    csrfToken: req.csrfToken(),
+  })
+})
+
+const logInValidators = [
+  check('email')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Email')
+    .isEmail()
+    .withMessage('Email Address is not a valid email'),
+  check('password')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Password'),
+];
+
+router.post('/login', csrfProtection, logInValidators, asyncHandler(async(req, res) => {
+  const { email, password } = req.body;
+
+  let errors = [];
+  const validatorErrors = validationResult(req);
+
+  if (validatorErrors.isEmpty()) {
+    const user = await db.User.findOne({where: { email }})
+    if (user !== null) {
+        const passwordMatch = await bcrypt.compare(password, user.hashedPassword.toString())
+        if (passwordMatch) {
+            loginUser(req, res, user);
+            return res.redirect('/profile');
+        }
+    }
+    errors.push('Login failed for the provided email address and password')
+    } else {
+      errors = validatorErrors.array().map((error) => error.msg)
+
+      res.render('log-in', {
+        title: 'Log In',
+        email,
+        errors,
+        csrfToken: req.csrfToken()
+    })
+  }
+
+}))
+
+
 
 module.exports = router;
