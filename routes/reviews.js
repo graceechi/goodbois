@@ -32,7 +32,7 @@ router.post('/:id/review', requireAuth, asyncHandler(async(req, res) => {
     res.redirect('/parks')
 }))
 
-router.post('/:id', requireAuth, asyncHandler(async (req, res) => {
+router.delete('/:id', requireAuth, asyncHandler(async (req, res) => {
     const id = req.params.id;
     const deletedReview = await Review.findOne({
        where: {
@@ -42,9 +42,11 @@ router.post('/:id', requireAuth, asyncHandler(async (req, res) => {
     })
     await deletedReview.destroy()
     res.redirect('/parks');
- }));
+}));
 
-// router.put
+// router.put('/:id/review', requireAuth, asyncHandler(async(req, res) => {
+
+// }))
 
 
 
