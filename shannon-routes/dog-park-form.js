@@ -39,6 +39,9 @@ const parkValidators = [
     check('description')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Description'),
+    check('parkSize')
+        .isLength({ max: 9 })
+        .withMessage('Park Size must not be larger than 999999.99')
 ]
 
 module.exports =  router;
