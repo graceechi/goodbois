@@ -47,7 +47,50 @@ const parkValidators = [
 ]
 
 router.post('/new', csrfProtection, asyncHandler(async(req, res) => {
+    const {
+        name,
+        city,
+        state,
+        description,
+        smallDogArea,
+        doggieWaterFountain,
+        fullyFenced,
+        parkSize,
+        parkingLot,
+        wasteDisposal,
+        agilityEquipment,
+        shaded
+    } = req.body
 
-}))
+    const park = db.Park.build({
+        name,
+        city,
+        state,
+        description,
+        smallDogArea,
+        doggieWaterFountain,
+        fullyFenced,
+        parkSize,
+        parkingLot,
+        wasteDisposal,
+        agilityEquipment,
+        shaded
+    });
+
+    const validatorErrors = validationResult(req);
+
+    if(validatorErrors.isEmpty()){
+        await park.save();
+        res.redirect('/');
+    } else {
+        const errors = validatorErrors.array().map((error) => error.msg);
+        res.render('create-park',{
+        title: 'Create Park',
+        park,
+        errors,
+        csrfToken: req.csrfToken()
+    });
+    }
+}));
 
 module.exports =  router;
