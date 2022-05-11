@@ -1,0 +1,111 @@
+* {
+    background-color: antiquewhite;
+}
+
+h1 {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+h1 a {
+    color: rgb(201, 155, 94);
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: rgb(184, 100, 100);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(184, 100, 100);
+}
+
+.navbar a:hover {
+    color: rgb(201, 155, 94);
+}
+
+#new-park-nav {
+    padding-top: 7px;
+    padding-right: 10px;
+}
+
+#sign-up-nav {
+    padding-top: 7px;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+.buttons {
+    color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    margin: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+.park-info {
+    color: rgb(184, 100, 100);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: center;
+}
+
+#park-name {
+    font-weight: 600;
+    font-size: 30px;
+    padding: 10px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+#edit-park-button {
+    margin-top: 12px;
+    margin-left: 40px;
+}
+
+.input-name {
+    color: rgb(184, 100, 100);
+    font-size: 20px;
+    border: 1px solid rgb(184, 100, 100);
+    border-radius: 2px;
+    margin: 3px;
+}
+
+.input-value {
+    font-size: 15px;
+}
+
+.review-container {
+    color: rgb(184, 100, 100);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.review-heading {
+    display: flex;
+    flex-direction: row;
+}
+
+#review-page {
+    text-align: right;
+}
