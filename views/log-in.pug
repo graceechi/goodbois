@@ -1,21 +1,26 @@
 extends layout.pug
 
+append head
+  //- add page specific styles by appending to the head
+  link(rel="stylesheet" href="/stylesheets/login.css")
+  //- add page specific js
+  script(src="" type="module" defer)
+
 include utils.pug
 
 block content
-  h1 Log In
-  +validationErrorSummary(errors)
-  form(action='/users/login' method='post')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    +field('Email', 'email', email)
-    +field('Password', 'password', password, 'password')
-    div
-      button(type='submit' class="login-btn") Log In
-      a(href='/' class='cancel-btn') Cancel
-  form(class="buttons" action='/users/login' method='post')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    input(type='hidden' name='email' value='demo@gmail.com')
-    input(type='hidden' name='password' value='Demo@1')
-    button(type='submit' class='demo-btn') Demo
-  div
-    p: a(href='/users/signup') New to Goodbois? Sign Up!
+  div(class="splash")
+    h1
+      a(href="/") goodbois
+  div(class="container")
+    h1 Log In
+    +validationErrorSummary(errors)
+    form(action='/users/login' method='post')
+      input(type='hidden' name='_csrf' value=csrfToken)
+      +field('Email ', 'email', email)
+      +field('Password ', 'password', password, 'password')
+      div
+        button(type='submit' class="login-btn") Log In
+        a(href='/' class='cancel-btn') Cancel
+      div
+        p: a(href='/users/signup') New to Goodbois? Sign Up!
