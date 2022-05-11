@@ -12,7 +12,7 @@ for (let i = 0; i < deleteBtns.length; i++) {
 
         const data = await res.json()
         if (data.message === 'Success') {
-            const container = document.getElementById(`park-review-container`)
+            const container = document.getElementById(`${review.id}-review-container`)
             container.remove()
         } else {
 
