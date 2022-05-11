@@ -57,7 +57,7 @@ block content
                     div Description
                         div= review.body
                     button(type='submit' id=`edit-review-${review.id}` class='buttons') Edit Review
-                    button(type='submit' id=`delete-review-${review.id}` class='buttons') Delete Review
+                    button(type='button' id=`delete-review-${review.id}-${park.id}` class='buttons' class='delete-review-button') Delete Review
                 br
                 br
         if locals.authenticated
