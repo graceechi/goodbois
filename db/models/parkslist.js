@@ -18,6 +18,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   ParksList.associate = function(models) {
     // associations can be defined here
+    ParksList.belongsTo(models.Park, {foreignKey: 'parksId'})
+    ParksList.belongsTo(models.User, {foreignKey: 'userId'})
   };
   return ParksList;
 };

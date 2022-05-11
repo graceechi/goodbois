@@ -1,0 +1,12 @@
+extends layout 
+
+append head 
+
+    link(rel="stylesheet" href="/stylesheets/search.css")
+    script(src="/javascripts/search.js" type="module" )
+
+block content 
+ 
+    .container 
+        form(action="/search" method='get')
+            input(type='search' id='search-bar' placeholder='Search Parks')
