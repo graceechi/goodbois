@@ -19,12 +19,13 @@ block content
         h2 Reviews
         div(id=`review-display-${park.Reviews.id}`)
             each review in park.Reviews
-                div= review.rating
-                div= review.title
-                div= review.body
-                if loggedInUser === review.userId
-                    button(type='submit' id=`edit-review-${review.id}` class='button') Edit
-                    button(type='submit' id=`delete-review-${review.id}` class='button') Delete
+                div(id=`${}-review-container`)
+                    div= review.rating
+                    div= review.title
+                    div= review.body
+                    if loggedInUser === review.userId
+                        button(type='submit' id='edit-review-button' class='button') Edit
+                        button(type='submit' class='delete-review-button') Delete
                 br
                 br
         if locals.authenticated
