@@ -18,4 +18,6 @@ block content
     div
         a(href=`/parks/${park.id}/edit`) Edit
     div
-        h3 Reviews
+        h2 Reviews
+        if locals.authenticated
+            p: a(href=`/parks/${park.id}/review`) Leave a Review
