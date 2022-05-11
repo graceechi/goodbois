@@ -10,7 +10,6 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const parksRouter = require('./routes/parks');
 const reviewsRouter = require('./routes/reviews')
-
 const { sessionSecret } = require('./config');
 const { restoreUser } = require('./auth');
 

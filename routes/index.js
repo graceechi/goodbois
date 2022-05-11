@@ -9,9 +9,10 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const db = require('../db/models');
 
 /* GET home page. */
-router.get('/', (req, res) => {
+router.get('/', csrfProtection, (req, res) => {
     res.render('index', {
-        title: 'goodbois'
+        title: 'goodbois',
+        csrfToken: req.csrfToken()
     })
 })
 
