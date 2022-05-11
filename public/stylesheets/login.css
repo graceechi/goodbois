@@ -2,6 +2,11 @@
     background-color: antiquewhite;
 }
 
+h1 {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
 h1 a {
     color: rgb(201, 155, 94);
     font-size: 40px;
