@@ -1,5 +1,11 @@
 extends layout.pug
 
+append head
+
+  link(rel="stylesheet" href="/stylesheets/park-details.css")
+
+  script(src="/javascripts/deleteReview.js" type="module" )
+
 block content
     div
         ul
@@ -25,9 +31,8 @@ block content
                     div= review.rating
                     div= review.title
                     div= review.body
-                    if loggedInUser === review.userId
-                        button(type='submit' id='edit-review-button' class='button') Edit
-                        button(type='submit' class='delete-review-button') Delete
+                    button(type='submit' id='edit-review-button' class='button') Edit
+                    button(type='submit' class='delete-review-button') Delete
                 br
                 br
         if locals.authenticated
