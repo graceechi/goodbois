@@ -4,7 +4,7 @@ const router = express.Router();
 const { csrfProtection, asyncHandler } = require('./utils');
 const { restoreUser } = require('../auth');
 const {User, Park, ParksList} = require('../db/models');
-
+const {logoutUser} = require('../auth')
 
 
 
