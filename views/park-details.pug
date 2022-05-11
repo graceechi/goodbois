@@ -42,6 +42,7 @@ block content
                 div(class='input-value')= park.agilityEquipment
             li(class='input-name') Shaded
                 div(class='input-value')= park.shaded
+            button(type='submit' class='buttons') Add to List
     div(class='review-container')
         div(class='review-heading')
             h2 Reviews
@@ -60,5 +61,3 @@ block content
                     button(type='button' id=`delete-review-${review.id}-${park.id}` class='buttons' class='delete-review-button') Delete Review
                 br
                 br
-        if locals.authenticated
-            p: a(href=`/parks/${park.id}/review`) Leave a Review

@@ -94,6 +94,9 @@ ul {
 .review-container {
     color: rgb(184, 100, 100);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* display: grid;
+    grid-template-areas:
+    'h2 . '; */
 }
 
 h2 {
@@ -101,11 +104,11 @@ h2 {
     font-size: 25px;
 }
 
-.review-heading {
+/* .review-heading {
     display: flex;
     flex-direction: row;
 }
 
 #review-page {
     text-align: right;
-}
+} */
