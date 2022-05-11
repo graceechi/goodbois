@@ -14,13 +14,18 @@ block content
       a(href="/") goodbois
   div(class="container")
     h1 Sign Up
+    br
     +validationErrorSummary(errors)
     form(action='/users/signup' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
       +field('Full Name ', 'fullName', user.fullName)
+      br
       +field('Email ', 'email', user.email)
+      br
       +field('Password ', 'password', user.password, 'password')
+      br
       +field('Confirm Password ', 'confirmPassword', '', 'password')
+      br
       div(class='py-4')
         button(type='submit' class='signup-btn') Sign Up
         a(href='/' class='cancel-btn') Cancel
