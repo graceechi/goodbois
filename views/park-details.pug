@@ -17,3 +17,5 @@ block content
         li= park.shaded
     div
         h2 Reviews
+        if locals.authenticated
+            p: a(href=`/parks/${park.id}/review`) Leave a Review

@@ -11,6 +11,8 @@ const usersRouter = require('./routes/users');
 const profileRouter = require('./routes/profile');
 const parksRouter = require('./routes/parks')
 const searchRouter = require('./routes/search');
+const parksRouter = require('./routes/parks');
+const reviewsRouter = require('./routes/reviews')
 
 const { sessionSecret } = require('./config');
 const { restoreUser } = require('./auth');
@@ -48,6 +50,7 @@ app.use('/users', usersRouter);
 app.use ('/profile',profileRouter);
 app.use('/parks', parksRouter);
 app.use(searchRouter)
+app.use('/parks', reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
