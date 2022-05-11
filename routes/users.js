@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const { csrfProtection, asyncHandler } = require('./utils');
 
 const db = require('../db/models');
-const { loginUser, logoutUser } = require('../auth');
+const { loginUser, logoutUser, restoreUser } = require('../auth');
 
 router.get('/signup', csrfProtection, (req, res) => {
   const user = db.User.build();
@@ -98,6 +98,11 @@ const logInValidators = [
     .withMessage('Please provide a value for Password'),
 ];
 
+router.use((req, res, next) => {
+  console.log(req.body);
+  next();
+})
+
 router.post('/login', csrfProtection, logInValidators, asyncHandler(async(req, res) => {
   const { email, password } = req.body;
 
@@ -131,5 +136,22 @@ router.post('/logout', (req, res) => {
   logoutUser(req, res);
   res.redirect('/')
 })
+
+// router.post('/profile/demo', restoreUser, csrfProtection, asyncHandler(async (req, res) => {
+
+//   const user = db.User.findOne({
+//     where: { id: 2, fullName: 'Demo', email: 'demo@gmail.com', password: 'Demo@1'}
+//   });
+//   loginUser(req, res, user);
+//   return res.redirect(`/profile/demo`);
+// }))
+
+// router.post('/profile/demo', csrfProtection, asyncHandler(async (req, res) => {
+//   const userId = db.User.findByPk({
+//     where: { id: 1 }
+//   });
+//   res.render(`/profile/${userId}`);
+//   loginUser(req, res, user);
+// }))
 
 module.exports = router;

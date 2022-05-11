@@ -12,7 +12,6 @@ const profileRouter = require('./routes/profile');
 const parksRouter = require('./routes/parks')
 const searchRouter = require('./routes/search');
 const reviewsRouter = require('./routes/reviews')
-
 const { sessionSecret } = require('./config');
 const { restoreUser } = require('./auth');
 
