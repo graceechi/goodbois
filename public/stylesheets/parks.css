@@ -14,6 +14,23 @@ h1 a {
     text-decoration: none;
 }
 
+img{
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+h2 {
+   color: rgb(135, 75, 2);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 25px;
+   background-color: rgb(250, 235, 215, 0.7);
+   height: 100px;
+}
+
 
 .navbar {
     display: flex;
@@ -39,34 +56,99 @@ h1 a {
 }
 
 #create-container{
+    background-color: antiquewhite;
     color: rgb(184, 100, 100);
     border: 3px solid rgb(184, 100, 100);
     border-radius: 10px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 80px;
+    margin: 40px 200px 80px 200px;
     padding: 15px;
     display: flex;
     justify-content: flex-start;
+    box-shadow: 0px 0px 5px rgb(126, 78, 78);
 
 }
 
 .form-control-text{
     display: flex;
     justify-content: space-between;
+    color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    margin: 5px;
+    width: 300px;
 
 }
 
 .form-control-textarea{
     display: flex;
     justify-content: space-between;
+    color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    margin: 5px;
+    width: 300px;
 }
 
 .form-control-select{
     display: flex;
     justify-content: space-between;
+    color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    margin: 5px;
+    width: 150px;
 }
 
 .form-control-number{
     display: flex;
     justify-content: space-between;
+    color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    margin: 5px;
+    width: 150px;
+}
+
+#form-btns{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    width: 625px;
+}
+
+.create-btn {
+    color: antiquewhite;
+    font-size: medium;
+    background-color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    width: 85px;
+    height: 35px;
+    margin-right: 40px;
+
+}
+
+.cancel-btn{
+    margin-top: 16px;
+}
+
+.github_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: antiquewhite;
+
+    /* position: f; */
+    width: 100%;
+    bottom: 20px;
+}
+
+.github_links a {
+    text-decoration: none;
+}
+
+.github_links a:hover {
+    color: rgb(201, 155, 94);
 }

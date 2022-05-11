@@ -8,25 +8,36 @@ append head
 
 block content
   div(class="splash")
-          h1
-              a(href="/") goodbois
+    h1
+      a(href="/") goodbois
+    div(class="navbar")
+      form(action='/users/logout' method='post')
+        button(type='submit' class='logout') LogOut
+  img(src="/images/dog-1.jpg", alt="An image of dogs and people in a park")
+
   +validationErrorSummary(errors)
+  h2 Create Park
   div(id='create-container')
-    h2 Create Park
-      form(action='/parks/new' method='post')
-        input(type='hidden' name='_csrf' value=csrfToken)
-        +field('Name', 'name', park.name)
-        +field('City', 'city', park.city)
-        +field('State', 'state', park.state)
-        +field('Description', 'description', park.description, 'textarea')
-        +field('Small Dog Area', 'smallDogArea', park.smallDogArea, 'select')
-        +field('Doggie Water Fountain', 'doggieWaterFountain', park.doggieWaterFountain, 'select')
-        +field('Fully Fenced', 'fullyFenced', park.fullyFenced, 'select')
-        +field('Park Size - Acres', 'parkSize', park.parkSize, 'number', '100.00')
-        +field('Parking Lot', 'parkingLot', park.parkingLot, 'select')
-        +field('Waste Disposal', 'wasteDisposal', park.wasteDisposal, 'select')
-        +field('Agility Equipment', 'agilityEquipment', park.agilityEquipment, 'select')
-        +field('Shaded', 'shaded', park.shaded, 'select')
-        div(class='py-4')
-          button(type='submit' class='create-btn') Submit
-          a(href='/parks' class='cancel-btn') Cancel
+    form(action='/parks/new' method='post')
+      input(type='hidden' name='_csrf' value=csrfToken)
+      +field('Name', 'name', park.name)
+      +field('City', 'city', park.city)
+      +field('State', 'state', park.state)
+      +field('Description', 'description', park.description, 'textarea')
+      +field('Park Size - Acres', 'parkSize', park.parkSize, 'number', 'e.g. 5.25')
+      +field('Small Dog Area', 'smallDogArea', park.smallDogArea, 'select')
+      +field('Doggie Water Fountain', 'doggieWaterFountain', park.doggieWaterFountain, 'select')
+      +field('Fully Fenced', 'fullyFenced', park.fullyFenced, 'select')
+      +field('Parking Lot', 'parkingLot', park.parkingLot, 'select')
+      +field('Waste Disposal', 'wasteDisposal', park.wasteDisposal, 'select')
+      +field('Agility Equipment', 'agilityEquipment', park.agilityEquipment, 'select')
+      +field('Shaded', 'shaded', park.shaded, 'select')
+      div(id ='form-btns')
+        button(type='submit' class='create-btn') Submit
+        a(href='/parks' class='cancel-btn') Cancel
+  footer
+    div(class="github_links")
+      h2: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk
+      h2: a(href="https://github.com/oliviabir" target="_blank") Olivia Bir
+      h2: a(href="https://github.com/sonajasani" target="_blank") Sona Jasani
+      h2: a(href="https://github.com/graceechi" target="_blank") Grace Chi
