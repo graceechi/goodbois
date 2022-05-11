@@ -16,6 +16,7 @@ block content
     h1 Sign Up
     br
     +validationErrorSummary(errors)
+    br
     form(action='/users/signup' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
       +field('Full Name ', 'fullName', user.fullName)
