@@ -17,5 +17,15 @@ block content
         li= park.shaded
     div
         h2 Reviews
+        div(id=`review-display-${park.Reviews.id}`)
+            each review in park.Reviews
+                div= review.rating
+                div= review.title
+                div= review.body
+                if loggedInUser === review.userId
+                    button(type='submit' id=`edit-review-${review.id}` class='button') Edit
+                    button(type='submit' id=`delete-review-${review.id}` class='button') Delete
+                br
+                br
         if locals.authenticated
             p: a(href=`/parks/${park.id}/review`) Leave a Review
