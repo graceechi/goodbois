@@ -1,0 +1,98 @@
+* {
+    background-color: antiquewhite;
+}
+
+
+h1 {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+h1 a {
+    color: rgb(201, 155, 94);
+    font-size: 40px;
+    text-decoration: none;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.logout{
+    color: rgb(135, 75, 2);
+    border-radius: 5px;
+    border-color: coral;
+    margin-right: 10px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.logout:hover{
+    box-shadow: 3px 3px 3px rgb(126, 78, 78);
+}
+
+.welcome{
+    margin-top: -40px;
+    margin-left: 15px;
+    color: rgb(184, 100, 100);
+    font-size: 20px;
+    font: bold;
+}
+
+
+h2 {
+    font-size: 30px;
+    font-family: Cambria;
+    font-style: italic;
+    margin-top: 0px;
+    color: rgb(184, 100, 100);
+    margin-left: 15px;
+}
+
+
+.email {
+    font-style: italic;
+    color: rgb(184, 100, 100);
+    margin-left: 15px;
+}
+
+
+.parkslist{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-family: Cambria;
+    font: bold;
+    color: rgb(184, 100, 100);
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+#park{
+    margin-left: 20px;
+}
+
+
+.footer{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    color: rgb(184, 100, 100);
+
+}
+
+.footer a {
+    font:bold;
+    font-size:15px;
+}
+
+.footer a:hover {
+    font-size: 17px;
+    color:rgb(63, 8, 8);
+}

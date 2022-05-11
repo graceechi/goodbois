@@ -5,7 +5,7 @@ include dog-park-form-utils.pug
 block content
   h2 Edit Park
   +validationErrorSummary(errors)
-  form(action=`/parks/${park.id}/edit` method='post')
+  form(action=`/parks/${id}/edit` method='post')
     input(type='hidden' name='_csrf' value=csrfToken)
     +field('Name', 'name', park.name)
     +field('City', 'city', park.city)
@@ -21,4 +21,4 @@ block content
     +field('Shaded', 'shaded', park.shaded, 'select')
     div(class='py-4')
       button(type='submit' class='update-btn') Update Park
-      a(href=`/parks/${park.id}` class='cancel-btn') Cancel
+      a(href=`/parks/${id}` class='cancel-btn') Cancel
