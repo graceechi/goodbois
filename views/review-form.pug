@@ -2,7 +2,19 @@ extends layout.pug
 
 include utils.pug
 
+append head
+
+  link(rel="stylesheet" href="/stylesheets/review-form.css")
+
+  script(src="/javascripts/review-form.js" type="module" )
+
 block content
+  div(class="splash")
+    h1
+      a(href="/") goodbois
+    div(class="navbar")
+      form(action='/users/logout' method='post')
+        button(type='submit' class='logout') LogOut
   div(id='review-container')
     form(action='/parks/:id/review' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
@@ -20,10 +32,11 @@ block content
           option(value='1') 1
       div(id='review-title-container')
         label Title:
-        input(type='text' id='review-title-input' name='reviewTitle' required)
+        input(type='text' id='review-title-input' class='review-input' name='reviewTitle' required)
       div(id='review-description-container')
         label What Did You Think?
-        textarea(name='reviewDescription' id='review-description-input' required)
+        textarea(name='reviewDescription' id='review-description-input' class='review-input' required)
       div
-        button(type='submit' class='submit-btn') Submit Review
-        a(href='/' class='cancel-btn') Cancel
+        form(action='/' method='post')
+          button(type='submit' id='cancel-btn' class='button') Cancel
+        button(type='submit' id='submit-review-btn' class='button') Submit Review

@@ -12,7 +12,12 @@ router.get('/', asyncHandler(async(req, res) => {
 
     const parks = await db.Park.findAll();
 
-    res.render('parks', {title: 'Parks', parks })
+    let loggedInUser
+    if (req.session.auth) {
+        loggedInUser = req.session.auth.userId
+    }
+
+    res.render('parks', {title: 'Parks', parks, loggedInUser })
 }))
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
@@ -22,8 +27,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const park = await db.Park.findByPk(parksId, {
         include: Review
     });
-
-    console.log(park);
 
     res.render('park-details', {title: `${park.name}`, park})
 }))
