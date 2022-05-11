@@ -12,7 +12,12 @@ router.get('/', asyncHandler(async(req, res) => {
 
     const parks = await db.Park.findAll();
 
-    res.render('parks', {title: 'Parks', parks })
+    let loggedInUser
+    if (req.session.auth) {
+        loggedInUser = req.session.auth.userId
+    }
+
+    res.render('parks', {title: 'Parks', parks, loggedInUser })
 }))
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
@@ -22,8 +27,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const park = await db.Park.findByPk(parksId, {
         include: Review
     });
-
-    console.log(park);
 
     res.render('park-details', {title: `${park.name}`, park})
 }))
@@ -95,12 +98,12 @@ router.post('/new', csrfProtection, parkValidators, asyncHandler(async(req, res)
         agilityEquipment,
         shaded
     });
-
+console.log(park.smallDogArea)
     const validatorErrors = validationResult(req);
 
     if(validatorErrors.isEmpty()){
         await park.save();
-        res.redirect('/');
+        res.redirect('/parks');
     } else {
         const errors = validatorErrors.array().map((error) => error.msg);
         res.render('create-park',{
@@ -111,5 +114,70 @@ router.post('/new', csrfProtection, parkValidators, asyncHandler(async(req, res)
     });
     }
 }));
+
+router.get('/:id(\\d+)/edit', csrfProtection, asyncHandler(async(req, res) => {
+    const parksId = req.params.id;
+    const park = await db.Park.findByPk(parksId);
+    res.render('edit-park', {
+        title: 'Edit Park',
+        park,
+        id: parksId,
+        csrfToken: req.csrfToken()
+    })
+
+}));
+
+router.post('/:id(\\d+)/edit', csrfProtection, parkValidators, asyncHandler(async(req, res)=> {
+    const parksId = req.params.id;
+    const parkToBeUpdated = await db.Park.findByPk(parksId);
+
+    const {
+        name,
+        city,
+        state,
+        description,
+        smallDogArea,
+        doggieWaterFountain,
+        fullyFenced,
+        parkSize,
+        parkingLot,
+        wasteDisposal,
+        agilityEquipment,
+        shaded
+    } = req.body
+
+    const park = db.Park.build({
+        name,
+        city,
+        state,
+        description,
+        smallDogArea,
+        doggieWaterFountain,
+        fullyFenced,
+        parkSize,
+        parkingLot,
+        wasteDisposal,
+        agilityEquipment,
+        shaded
+    });
+
+console.log(park.doggieWaterFountain)
+    const validatorErrors = validationResult(req);
+    if (validatorErrors.isEmpty()) {
+        await parkToBeUpdated.update(park);
+        res.redirect(`/parks/${parksId}`)
+    } else {
+        const errors = validatorErrors.array().map((error) => error.msg);
+        res.render('edit-park', {
+            title: 'Edit Park',
+            park,
+            id: parksId,
+            errors,
+            csrfToken: req.csrfToken()
+        });
+    }
+
+
+}))
 
 module.exports =  router;

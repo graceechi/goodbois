@@ -9,13 +9,16 @@ append head
 include utils.pug
 
 block content
+  div(class="splash")
+    h1
+      a(href="/") goodbois
   div(class="container")
     h1 Log In
     +validationErrorSummary(errors)
     form(action='/users/login' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
-      +field('Email', 'email', email)
-      +field('Password', 'password', password, 'password')
+      +field('Email ', 'email', email)
+      +field('Password ', 'password', password, 'password')
       div
         button(type='submit' class="login-btn") Log In
         a(href='/' class='cancel-btn') Cancel

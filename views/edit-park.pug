@@ -1,0 +1,24 @@
+extends layout.pug
+
+include dog-park-form-utils.pug
+
+block content
+  h2 Edit Park
+  +validationErrorSummary(errors)
+  form(action=`/parks/${id}/edit` method='post')
+    input(type='hidden' name='_csrf' value=csrfToken)
+    +field('Name', 'name', park.name)
+    +field('City', 'city', park.city)
+    +field('State', 'state', park.state)
+    +field('Description', 'description', park.description, 'textarea')
+    +field('Small Dog Area', 'smallDogArea', park.smallDogArea, 'select')
+    +field('Doggie Water Fountain', 'doggieWaterFountain', park.doggieWaterFountain, 'select')
+    +field('Fully Fenced', 'fullyFenced', park.fullyFenced, 'select')
+    +field('Park Size - Acres', 'parkSize', park.parkSize, 'number', '100.00')
+    +field('Parking Lot', 'parkingLot', park.parkingLot, 'select')
+    +field('Waste Disposal', 'wasteDisposal', park.wasteDisposal, 'select')
+    +field('Agility Equipment', 'agilityEquipment', park.agilityEquipment, 'select')
+    +field('Shaded', 'shaded', park.shaded, 'select')
+    div(class='py-4')
+      button(type='submit' class='update-btn') Update Park
+      a(href=`/parks/${id}` class='cancel-btn') Cancel
