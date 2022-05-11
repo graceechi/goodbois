@@ -31,27 +31,27 @@ router.post('/:id/review', requireAuth, asyncHandler(async(req, res) => {
     res.redirect(`/parks/${parksId}`)
 }))
 
-// router.delete('/:id/review/:id', requireAuth, asyncHandler(async (req, res) => {
-//     const id = req.params.id;
-//     const deletedReview = await Review.findOne({
-//        where: {
-//           userId: userId,
-//           parkId: id
-//        }
-//     })
-//     await deletedReview.destroy()
-//     res.redirect('/parks');
-// }));
+router.delete('/:id/review/:id', requireAuth, asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const deletedReview = await Review.findOne({
+       where: {
+          userId: userId,
+          parkId: id
+       }
+    })
+    await deletedReview.destroy()
+    res.redirect('/parks');
+}));
 
-router.delete('/:id/review/:id', asyncHandler(async(req, res) => {
-    const post = await Post.findByPk(req.params.id)
-    if (post) {
-        await post.destroy()
-        res.json({message: 'Success'})
-    } else {
-        res.json({message: 'Fail'})
-    }
-}))
+// router.delete('/:id/review/:id', asyncHandler(async(req, res) => {
+//     const post = await Post.findByPk(req.params.id)
+//     if (post) {
+//         await post.destroy()
+//         res.json({message: 'Success'})
+//     } else {
+//         res.json({message: 'Fail'})
+//     }
+// }))
 // router.put('/:id/review', requireAuth, asyncHandler(async(req, res) => {
 
 // }))
