@@ -14,11 +14,15 @@ block content
       a(href="/") goodbois
   div(class="container")
     h1 Log In
+    br
     +validationErrorSummary(errors)
-    form(action='/users/login' method='post')
+    br
+    form(id='login-form' action='/users/login' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
       +field('Email ', 'email', email)
+      br
       +field('Password ', 'password', password, 'password')
+      br
       div
         button(type='submit' class="login-btn") Log In
         a(href='/' class='cancel-btn') Cancel

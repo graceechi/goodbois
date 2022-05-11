@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const { csrfProtection, asyncHandler } = require('./utils');
 
 const db = require('../db/models');
-const { loginUser, logoutUser, restoreUser } = require('../auth');
+const { loginUser, logoutUser, restoreUser, requireAuth } = require('../auth');
 
 router.get('/signup', csrfProtection, (req, res) => {
   const user = db.User.build();
