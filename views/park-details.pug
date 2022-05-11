@@ -1,20 +1,22 @@
 extends layout.pug
 
 block content
-
-    ul
-        li= park.name
-        li= park.city
-        li= park.state
-        li= park.description
-        li= park.smallDogArea
-        li= park.doggieWaterFountain
-        li= park.fullyFenced
-        li= park.parkSize
-        li= park.parkingLot
-        li= park.wasteDisposal
-        li= park.agilityEquipment
-        li= park.shaded
+    div
+        ul
+            li= park.name
+            li= park.city
+            li= park.state
+            li= park.description
+            li= park.smallDogArea
+            li= park.doggieWaterFountain
+            li= park.fullyFenced
+            li= park.parkSize
+            li= park.parkingLot
+            li= park.wasteDisposal
+            li= park.agilityEquipment
+            li= park.shaded
+    div
+        a(href=`/parks/${park.id}/edit`) Edit
     div
         h2 Reviews
         div(id=`review-display-${park.Reviews.id}`)
