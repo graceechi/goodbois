@@ -17,10 +17,11 @@ block content
         li= park.shaded
     div
         h2 Reviews
-        each review in reviews
-            div(id=`review-display-${review.id}`)
+        div(id=`review-display-${park.Reviews.id}`)
+            each review in park.Reviews
                 div= review.rating
                 div= review.title
                 div= review.body
+                button(type='submit' id='delete-btn' class='button') Delete
         if locals.authenticated
             p: a(href=`/parks/${park.id}/review`) Leave a Review

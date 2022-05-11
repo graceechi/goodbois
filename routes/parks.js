@@ -23,8 +23,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
         include: Review
     });
 
-    console.log(park);
-
     res.render('park-details', {title: `${park.name}`, park})
 }))
 
