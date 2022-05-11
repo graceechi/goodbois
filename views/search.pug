@@ -6,7 +6,27 @@ append head
     script(src="/javascripts/search.js" type="module" )
 
 block content 
- 
-    .container 
-        form(action="/search" method='get')
-            input(type='search' id='search-bar' placeholder='Search Parks')
+    div(class="splash_nav")
+        h1
+            a(href="/") goodbois
+
+    div(class='container')
+        //if parks
+        if(parks.length > 0)
+            div(class='title')
+                h2 Parks Search Results
+                br
+            div(class='parks' id='foundParks')
+                ul
+                    each park in parks
+                        li: a(href=`/parks/${park.id}`)= park.name
+            div(class='more_parks')
+                p Want to see more parks?? Visit  
+                  a(href="/parks") Parks!   
+        else if (parks.length === 0)
+            div(class='title')
+                h2 No Parks Results
+            div(class='noParks')
+                p 
+                span Visit  
+                    a(href="/parks") Parks!

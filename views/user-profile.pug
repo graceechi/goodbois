@@ -13,8 +13,10 @@ block content
         h1
             a(href="/") goodbois
         div(class="navbar")
-            form(action='/users/logout' method='post')
-                button(type='submit' class='logout') LogOut
+            if locals.authenticated
+                form(action='/users/logout' method='post')
+
+                    button(type='submit' class='logout') LogOut
     br
     br
     div(class='welcome')
