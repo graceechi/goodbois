@@ -9,7 +9,8 @@ append head
 block content
     div(class="splash_nav_container")
         h1
-            a(href="/") goodbois
+            a(href="/") good
+            span: a(href="/") bois
 
         div(class="navbar")
             nav(id="sign-up-nav")
@@ -33,16 +34,26 @@ block content
     div(id="h2_title")
         h2 Find Your Next Favorite Dog Park.
     br
-    div(class="search_bar")
-        form(action="/search")
-            input(type="search" name="term" placeholder="Search" required)
-            button Find a Park
     br
     div(class="splash_img_container")
         img(src="/images/dog-3.jpg" alt="2 dogs in a park" height="500" width="700")
     br
+    div(class="funText")
+        div(class='text1')
+            p Deciding where to go next?
+            span You're in the right place. Tell us about which U.S. state you live in and we'll give you surprising recommendations.
+        div(class='text2') 
+            p Where are your friends playing?
+            span Chances are you might make new best buddies with goodbois.  
+    br
     div(class="parks_links")
         h3: a(href="/parks") Parks
+    div(class="search_bar")
+        form(action="/search")
+            input(type="search" name="term" placeholder="Search Parks Here..." required)
+            button(class='findBtn') Find a Park
+    br
+    br
     footer
         div(class="github_links")
             h2: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk

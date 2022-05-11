@@ -9,14 +9,14 @@ append head
 block content
   div(class="splash")
     h1
-      a(href="/") goodbois
+      a(href="/") good
+      span: a(href="/") bois
     div(class="navbar")
       form(action='/users/logout' method='post')
         button(type='submit' class='logout') LogOut
   img(src="/images/dog-1.jpg", alt="An image of dogs and people in a park")
-
-  +validationErrorSummary(errors)
   h2 Create Park
+  +validationErrorSummary(errors)
   div(id='create-container')
     form(action='/parks/new' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
@@ -32,7 +32,7 @@ block content
       +field('Waste Disposal', 'wasteDisposal', park.wasteDisposal, 'select')
       +field('Agility Equipment', 'agilityEquipment', park.agilityEquipment, 'select')
       +field('Shaded', 'shaded', park.shaded, 'select')
-      div(id ='form-btns')
+      div(class='form-btns')
         button(type='submit' class='create-btn') Submit
         a(href='/parks' class='cancel-btn') Cancel
   footer

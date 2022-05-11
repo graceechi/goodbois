@@ -60,8 +60,8 @@ h2 {
     box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
 
-#create-container{
-    background-color: antiquewhite;
+#edit-container{
+    background-color: hwb(34 84% 2%);
     color: rgb(184, 100, 100);
     border: 3px solid rgb(184, 100, 100);
     border-radius: 10px;
@@ -122,9 +122,9 @@ h2 {
     width: 625px;
 }
 
-.create-btn {
+.update-btn {
     color: antiquewhite;
-    font-size: medium;
+    font-size: small;
     background-color: rgb(184, 100, 100);
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;

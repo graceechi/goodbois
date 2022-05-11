@@ -2,9 +2,9 @@ const express = require('express')
 const router = express.Router();
 
 const { csrfProtection, asyncHandler } = require('./utils');
-const { restoreUser } = require('../auth');
+const { restoreUser, requireAuth, logoutUser } = require('../auth');
 const {User, Park, ParksList} = require('../db/models');
-const {logoutUser} = require('../auth')
+// const {logoutUser} = require('../auth')
 
 
 
@@ -17,8 +17,8 @@ router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => 
         where: {userId}
       }]
    });
-    
-     
+
+
     res.render('user-profile', {
       title: 'profile',
       fullName: 'user.fullName',
@@ -33,6 +33,6 @@ router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => 
     logoutUser(req, res);
     res.redirect('/')
   })
-  
+
 
   module.exports = router;
