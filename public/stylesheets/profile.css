@@ -14,9 +14,6 @@ h1 a {
     text-decoration: none;
 }
 
-.splash {
-    background-color: rgb(63, 8, 8);
-}
 
 .navbar {
     display: flex;
@@ -42,6 +39,7 @@ h1 a {
 }
 
 .welcome{
+    margin-top: -40px;
     margin-left: 15px;
     color: rgb(184, 100, 100);
     font-size: 20px;
@@ -53,7 +51,7 @@ h2 {
     font-size: 30px;
     font-family: Cambria;
     font-style: italic;
-    margin-top: 30px;
+    margin-top: 0px;
     color: rgb(184, 100, 100);
     margin-left: 15px;
 }
@@ -67,7 +65,7 @@ h2 {
 
 
 .parkslist{
-    margin-top: 40px;
+    margin-top: 15px;
     margin-left: 15px;
     font-family: Cambria;
     font: bold;
@@ -76,8 +74,14 @@ h2 {
     text-decoration: underline;
 }
 
+#park{
+    margin-left: 20px;
+}
+
 
 .footer{
+    margin-top: 50px;
+    margin-bottom: 20px;
     margin-left: 15px;
     color: rgb(184, 100, 100);
 

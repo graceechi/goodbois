@@ -17,9 +17,9 @@ router.get('/', asyncHandler(async(req, res) => {
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 
-    const parkId = req.params.id;
+    const parksId = req.params.id;
 
-    const park = await db.Park.findByPk(parkId, {
+    const park = await db.Park.findByPk(parksId, {
         include: Review
     });
 

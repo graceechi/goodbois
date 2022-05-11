@@ -3,14 +3,22 @@ const router = express.Router();
 
 const { csrfProtection, asyncHandler } = require('./utils');
 const { restoreUser } = require('../auth');
-const {User, Park} = require('../db/models');
+const {User, Park, ParksList} = require('../db/models');
+
+
 
 
 router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => {
-  const id = req.params.id;
-   const user = await User.findByPk(id, {
-    include: Park
-  });
+    const userId = req.params.id;
+    const user = await User.findByPk(userId);
+    const parks = await Park.findAll({
+      include: [{
+        model: ParksList,
+        where: {userId}
+      }]
+   });
+    
+     
     res.render('user-profile', {
       title: 'profile',
       fullName: 'user.fullName',
@@ -21,7 +29,10 @@ router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => 
     });
   }));
 
-
-
+  router.post('/logout', (req, res) => {
+    logoutUser(req, res);
+    res.redirect('/')
+  })
+  
 
   module.exports = router;
