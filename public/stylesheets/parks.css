@@ -45,19 +45,28 @@ h1 a {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 80px;
     padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+
 }
 
-#park-name{
-    font-weight: 600;
-    font-size: 30px;
-    text-align: center;
+.form-control-text{
+    display: flex;
+    justify-content: space-between;
+
 }
 
-#rating-drop-down{
-    color: rgb(184, 100, 100);
-    border: 2px solid rgb(184, 100, 100);
-    border-radius: 3px;
-    margin: 5px;
+.form-control-textarea{
+    display: flex;
+    justify-content: space-between;
 }
 
-.review-input{
+.form-control-select{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-control-number{
+    display: flex;
+    justify-content: space-between;
+}

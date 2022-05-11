@@ -12,7 +12,7 @@ block content
               a(href="/") goodbois
   h2 Create Park
   +validationErrorSummary(errors)
-  div(class='create-container')
+  div(id='create-container')
     form(action='/parks/new' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
       +field('Name', 'name', park.name)
