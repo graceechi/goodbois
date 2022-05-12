@@ -2,6 +2,12 @@
     background-color: antiquewhite;
 }
 
+html {
+    background-image: url(../images/dog-1.jpg);
+    background-size: cover;
+
+}
+
 h1>span>a{
     color: indigo;
     font-size: 40px;
@@ -19,12 +25,12 @@ h1 a {
     text-decoration: none;
 }
 
-img{
+/* img{
     position: absolute;
     max-width: 100%;
     height: auto;
     z-index: -1;
-}
+} */
 
 h2 {
    color: rgb(135, 75, 2);
@@ -149,7 +155,6 @@ h2 {
 footer {
     position: relative;
     width: 100%;
-    top: 408px;
 }
 
 .github_links {

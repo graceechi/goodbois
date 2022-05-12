@@ -2,6 +2,12 @@
     background-color: antiquewhite;
 }
 
+html {
+    background-image: url(../images/dog-6.jpg);
+    background-size: cover;
+
+}
+
 h1>span>a{
     color: indigo;
     font-size: 40px;
