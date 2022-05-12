@@ -4,6 +4,7 @@ const router = express.Router();
 const { csrfProtection, asyncHandler } = require('./utils');
 const db = require('../db/models');
 const { User } = require('../db/models/user')
+const { Park } = require('../db/models/user')
 const { requireAuth } = require('../auth');
 
 router.get('/:id/review', csrfProtection, asyncHandler(async(req, res) => {
@@ -29,12 +30,8 @@ router.post('/:id/review', requireAuth, asyncHandler(async(req, res) => {
 
     res.redirect(`/parks/${parksId}`)
 }))
-router.use((req, res, next) => {
-    console.log('request hits here')
-    next();
-})
+
 router.delete('/:parkid/review/:reviewid', requireAuth, asyncHandler(async (req, res) => {
-    console.log('you are in the delete route')
     const { reviewid } = req.params;
     const deletedReview = await db.Review.findByPk(reviewid)
     await deletedReview.destroy()
@@ -46,9 +43,38 @@ router.delete('/:parkid/review/:reviewid', requireAuth, asyncHandler(async (req,
     }
 }));
 
-// router.put('/:id/review', requireAuth, asyncHandler(async(req, res) => {
+router.get('/:parkid/review/:reviewid', csrfProtection, asyncHandler(async(req, res) => {
+    console.log('THESE ARE THE REQ PARAMS::::::')
+    console.log(req.params)
+    const parkId = req.params[0];
+    const reviewid = req.params[1]
+    const editedReview = await db.Review.findByPk(reviewid, {
+        include: User
+    })
+    res.render('edit-review', {
+        title: 'Edit Review',
+        editedReview,
+        parkId: parkId,
+        csrfToken: req.csrfToken()
+    })
+}))
 
-// }))
+router.post('/:parkid/review/:reviewid', csrfProtection, asyncHandler(async (req, res) => {
+    const reviewId = req.params.id;
+    const reviewToEdit = await db.Review.findByPk(reviewId);
+
+    const { parksId, userId, rating, reviewTitle, reviewDescription } = req.body
+
+    const review = await db.Review.create({
+        parksId: parksId,
+        userId: userId,
+        rating: rating,
+        title: reviewTitle,
+        body: reviewDescription
+    })
+
+    res.redirect(`/parks/${parksId}`)
+}))
 
 
 

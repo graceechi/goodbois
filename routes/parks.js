@@ -12,12 +12,7 @@ router.get('/', asyncHandler(async(req, res) => {
 
     const parks = await db.Park.findAll();
 
-    let loggedInUser
-    if (req.session.auth) {
-        loggedInUser = req.session.auth.userId
-    }
-
-    res.render('parks', {title: 'Parks', parks, loggedInUser })
+    res.render('parks', {title: 'Parks', parks })
 }))
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
@@ -28,7 +23,12 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
         include: Review
     });
 
-    res.render('park-details', {title: `${park.name}`, park})
+    let loggedInUser
+    if (req.session.auth) {
+        loggedInUser = req.session.auth.userId
+    }
+
+    res.render('park-details', {title: `${park.name}`, park, loggedInUser})
 }))
 
 router.get('/new', csrfProtection, (req, res) => {
