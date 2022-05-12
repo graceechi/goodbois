@@ -18,37 +18,37 @@ block content
                     button(type='submit' class='buttons') Log In
                 form(action='/users/logout' method='post')
                     button(type='submit' class='buttons') Log Out
-    div(class='park-info')
-        ul
-            li(id='park-name')= park.name
+    div(class='grid-container')
+        div(class='park-info')
+            h2(id='park-name')= park.name
                 div
-                    form(action=`/parks/${park.id}/edit` method='get')
-                        button(type='submit' id='edit-park-button' class='buttons') Edit Park Info
-            li(class='input-name') Location
+            div(id='location' class='input-name') Location
                 div(class='input-value')= park.city
                 div(class='input-value')= park.state
-            li(class='input-name') Description
+            div(id='description' class='input-name') Description
                 div(class='input-value')= park.description
-            li(class='input-name') Small Dog Area
+            div(id='smallDogArea' class='input-name') Small Dog Area
                 div(class='input-value')= park.smallDogArea
-            li(class='input-name') Doggie Water Fountain
+            div(id='doggieWaterFountain' class='input-name') Doggie Water Fountain
                 div(class='input-value')= park.doggieWaterFountain
-            li(class='input-name') Fully Fenced
+            div(id= 'fullyFenced' class='input-name') Fully Fenced
                 div(class='input-value')= park.fullyFenced
-            li(class='input-name') Park Size
+            div(id='parkSize' class='input-name') Park Size
                 div(class='input-value')= park.parkSize
-            li(class='input-name') Parking Lot
+            div(id='parkingLot' class='input-name') Parking Lot
                 div(class='input-value')= park.parkingLot
-            li(class='input-name') Waste Disposal
+            div(id='wasteDisposal' class='input-name') Waste Disposal
                 div(class='input-value')= park.wasteDisposal
-            li(class='input-name') Agility Equipment
+            div(id='agilityEquipment' class='input-name') Agility Equipment
                 div(class='input-value')= park.agilityEquipment
-            li(class='input-name') Shaded
+            div(id='shaded' class='input-name') Shaded
                 div(class='input-value')= park.shaded
-            //- form(action='/parks/:id' method="post")
-            //-     button(type='submit' class='buttons') Add to List
-            if locals.authenticated
-                a(class='add-to-list-btn' href=`/parks/${park.id}/parksList` role='button') Add to List
+                //- form(action='/parks/:id' method="post")
+                //-     button(type='submit' class='buttons') Add to List
+    if locals.authenticated
+        a(class='add-to-list-btn' href=`/parks/${park.id}/parksList` role='button') Add to List
+        form(action=`/parks/${park.id}/edit` method='get' id='get-edit-form')
+            button(type='submit' id='edit-park-button' class='buttons') Edit Park Info
     div(class='review-container')
         div(class='review-heading')
             h2 Reviews

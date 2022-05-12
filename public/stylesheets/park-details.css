@@ -51,44 +51,118 @@ h1 a {
     margin: 5px;
 }
 
-ul {
-    list-style: none;
+.grid-container {
+    display: flex;
+    justify-content: center;
 }
 
 .park-info {
     color: rgb(184, 100, 100);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: baseline;
-    align-content: center;
+    display: grid;
+    row-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(7, 75px);
+    grid-template-areas:
+        "parkName parkName"
+        "Description Description"
+        "location parkSize"
+        "smallDogArea doggieWaterFountain"
+        "fullyFenced parkingLot"
+        "wasteDisposal agilityEquipment"
+        "shaded ."
+        ;
+    background-color: white;
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 8px;
+    height: 37em;
+    width: 50em;
 }
 
 #park-name {
     font-weight: 600;
     font-size: 30px;
-    padding: 10px;
-    padding-top: 30px;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-area: parkName;
 }
+
+/* #get-edit-form {
+    grid-area: editButton;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+} */
 
 #edit-park-button {
     margin-top: 12px;
     margin-left: 40px;
 }
 
+#location {
+    grid-area: location;
+}
+
+#parkSize {
+    grid-area: parkSize;
+
+}
+
+#description {
+    grid-area: Description;
+
+
+}
+
+#smallDogArea {
+    grid-area: smallDogArea;
+
+}
+
+#doggieWaterFountain {
+    grid-area: doggieWaterFountain;
+
+}
+
+#fullyFenced {
+    grid-area: fullyFenced;
+
+}
+
+#parkingLot {
+    grid-area: parkingLot;
+
+}
+
+#wasteDisposal {
+    grid-area: wasteDisposal;
+
+}
+
+#agilityEquipment {
+    grid-area: agilityEquipment;
+
+}
+
+#shaded {
+    grid-area: shaded;
+
+}
+
 .input-name {
     color: rgb(184, 100, 100);
     font-size: 20px;
-    border: 1px solid rgb(184, 100, 100);
-    border-radius: 2px;
     margin: 3px;
+    text-align: center;
 }
 
 .input-value {
     font-size: 15px;
+    /* display: flex;
+    justify-content: center; */
+
 }
 
 .review-container {
