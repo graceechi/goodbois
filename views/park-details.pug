@@ -60,11 +60,11 @@ block content
             each review in park.Reviews
                 div(id=`${review.id}-review-container` class='reviews-container')
                     div Rating
-                        div= review.rating
+                        div(id='rating')= review.rating
                     div Title
-                        div= review.title
+                        div(id='title')= review.title
                     div Description
-                        div= review.body
+                        div(id='description')= review.body
                     if loggedInUser === review.userId
                         button(type='button' id=`delete-review-${review.id}-${park.id}` class='buttons' class='delete-review-button') Delete Review
                         button(type='submit' id=`edit-review-${review.id}-${park.id}` class='edit-buttons') Edit Review
