@@ -3,7 +3,11 @@
     box-sizing: border-box;
 }
 
-#img {
+html {
+    background: rgba(255,255,255,0);
+}
+
+body {
     background-image: url('https://cdn.pixabay.com/photo/2017/09/25/13/12/cocker-spaniel-2785074_960_720.jpg'), url('https://dogsnstuff.net/wp-content/uploads/2021/07/Why-are-dogs-so-cute-758x505.jpg');
     background-size: cover;
     height: 100%;
@@ -14,9 +18,10 @@ body, html {
     height:100%;
 }
 
+
 .splash {
     border-bottom: 1px solid rgb(201, 155, 94);
-    padding-bottom: 10px;
+    background: rgba(255,255,255,0);
     background: rgba(255,255,255,0);
 
 }

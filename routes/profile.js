@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router();
 
+
 const { csrfProtection, asyncHandler } = require('./utils');
 const { restoreUser, requireAuth, logoutUser } = require('../auth');
 const {User, Park, ParksList} = require('../db/models');
@@ -35,6 +36,4 @@ router.post('/logout', (req, res) => {
 })
 
 
-
-
-  module.exports = router;
+module.exports = router;
