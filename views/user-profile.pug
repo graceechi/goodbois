@@ -9,35 +9,45 @@ append head
   script(src="/javascripts/profile.js" type="module" )
 
 block content
-    div(class="splash")
-        h1
-            a(href="/") goodbois
+    header
+        div(class="splash")
+            h1
+                a(href="/") good
+                span: a(href="/") bois
+        
+            div(class="navbar")
+                form(action='/users/logout' method='post')
+                    button(type='submit' class='logout') LogOut
+    br
+    br
+    main
+        div(class='welcome')
+            p Welcome #{user.fullName}! You have logged in successfully. 
+        br
+        br
+        h2(class='user_name' style )= user.fullName
+        h3(class='email')= user.email
+        br
+        br
+        div(class='parkslist') Your Parks list
+            each park in parks
+                ul
+                    li(id='park')
+                        a(href=`/parks/${park.id}`)= park.name
+        br
+        br
+        div(class='moreParks')
+            p Want to find more parks for your buddy?? 
+            span Visit 
+                a(href="/parks") Parks!
+    footer
+        div(class="github_links")
+            h2: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk
+            h2: a(href="https://github.com/oliviabir" target="_blank") Olivia Bir
+            h2: a(href="https://github.com/sonajasani" target="_blank") Sona Jasani
+            h2: a(href="https://github.com/graceechi" target="_blank") Grace Chi
+
     
-        div(class="navbar")
-            form(action='/users/logout' method='post')
-                button(type='submit' class='logout') LogOut
-    br
-    br
-    div(class='welcome')
-        p Welcome #{user.fullName}! You have logged in successfully. 
-    br
-    br
-    h2(class='user_name' style )= user.fullName
-    h3(class='email')= user.email
-    br
-    br
-    div(class='parkslist') Your Parks list
-        each park in parks
-            ul
-                li(id='park')
-                    a(href=`/parks/${park.id}`)= park.name
-    br
-    br
-    footer 
-    div(class='footer')
-        p Want to find more parks for your buddy?? 
-        span Visit 
-        a(href="/parks") Parks
 
 
 

@@ -19,20 +19,22 @@ router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => 
    });
 
 
-    res.render('user-profile', {
-      title: 'profile',
-      fullName: 'user.fullName',
-      email: 'user.email',
-      user,
-      parks,
-      csrfToken: req.csrfToken(),
-    });
-  }));
+  res.render('user-profile', {
+    title: 'profile',
+    fullName: 'user.fullName',
+    email: 'user.email',
+    user,
+    parks,
+    csrfToken: req.csrfToken(),
+  });
+}));
 
-  router.post('/logout', (req, res) => {
-    logoutUser(req, res);
-    res.redirect('/')
-  })
+router.post('/logout', (req, res) => {
+  logoutUser(req, res);
+  res.redirect('/')
+})
+
+
 
 
   module.exports = router;
