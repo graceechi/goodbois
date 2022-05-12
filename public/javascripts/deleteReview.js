@@ -6,7 +6,6 @@ for (let i = 0; i < deleteBtns.length; i++) {
     btn.addEventListener('click', async(e) => {
         e.preventDefault()
         const popup = document.getElementById('popup')
-        console.log(popup)
         popup.classList.add('active')
     })
 }

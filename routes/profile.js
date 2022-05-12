@@ -53,10 +53,12 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 
 router.delete('/:parkId', requireAuth, asyncHandler(async (req, res) => {
   console.log('in the delete park from profile route');
-  const parkId = req.params.id;
-  console.log(req.params.id)
-  const deletedPark = await db.Park.findByPk(parkId, {
-    // include: ParksList
+  const { parkId } = req.params;
+  console.log(parkId)
+  const deletedPark = await db.ParksList.findOne({
+    where: {
+      parksId: parkId
+    }
   })
   if (deletedPark) {
     await deletedPark.destroy();

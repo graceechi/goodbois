@@ -5,8 +5,9 @@ for (let i = 0; i < deleteBtns.length; i++) {
 
     btn.addEventListener('click', async(e) => {
         e.preventDefault()
-        const popup = document.getElementById('popup')
-        console.log(popup)
+        const popupId = e.target.id.split('-')[2];
+        const popup = document.getElementById(`popup-${popupId}`);
+        // console.log(popup)
         popup.classList.add('active')
     })
 }
@@ -35,7 +36,7 @@ for (let i = 0; i < yesBtns.length; i++) {
 
         const data = await res.json();
         if (data.message === 'Success') {
-            const container = document.getElementById(`${park.id}-parklist-container`);
+            const container = document.getElementById(`${parkId}-parklist-container`);
             container.remove();
         }
     })
