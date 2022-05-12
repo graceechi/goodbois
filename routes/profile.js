@@ -29,23 +29,23 @@ router.get('/:id(\\d+)', csrfProtection, restoreUser, asyncHandler(async(req, re
     });
 }));
 
-router.get('/:id(\\d+)', csrfProtection, restoreUser, requireAuth, asyncHandler(async(req, res) => {
+router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
   const userId = req.params.id;
-  const user = await User.findByPk(userId);
+  // const user = await User.findByPk(userId);
 
-  const parksId = req.params.id;
-  const park = await db.Park.findByPk(parksId, {
-      include: ParksList, User
+  // const parksId = req.params.id;
+
+  const user = await db.User.findByPk(userId, {
+      include: ParksList
   });
 
   res.render('user-profile', {
     // title: 'profile',
     // fullName: 'user.fullName',
     // email: 'user.email',
-    title: `${park.name}`,
+    // `${park.name}`,
     user,
-    park,
-    csrfToken: req.csrfToken(),
+    // park,
   });
 }));
 

@@ -10,11 +10,14 @@ block content
     div(class="splash_nav")
         h1(class='logo')
             a(href="/") goodbois
-        div(class="navbar")
-            nav(id="sign-up-nav")
-                a(href="/users/signup") Sign Up
-            form(action='/users/login' method='get')
-                button(type='submit' class='buttons') Log In
+        if !locals.authenticated
+            div(class="navbar")
+                nav(id="sign-up-nav")
+                    a(href="/users/signup") Sign Up
+                form(action='/users/login' method='get')
+                    button(type='submit' class='buttons') Log In
+                form(action='/users/logout' method='post')
+                    button(type='submit' class='buttons') Log Out
     div(class='park-info')
         ul
             li(id='park-name')= park.name
@@ -44,7 +47,8 @@ block content
                 div(class='input-value')= park.shaded
             //- form(action='/parks/:id' method="post")
             //-     button(type='submit' class='buttons') Add to List
-            a(class='add-to-list-btn' href=`/parks/${park.id}` role='button') Add to List
+            if locals.authenticated
+                a(class='add-to-list-btn' href=`/parks/${park.id}/parksList` role='button') Add to List
     div(class='review-container')
         div(class='review-heading')
             h2 Reviews
@@ -53,6 +57,11 @@ block content
         div(id=`review-display-${park.Reviews.id}`)
             each review in park.Reviews
                 div(id=`${review.id}-review-container` class='reviews-container')
+                    div(class='popup') Are you sure you want to delete this review?
+                        form(action=`/parks/${park.id}` method='get')
+                            button(type='submit' class='buttons') Cancel
+                        button(type='submit' class='buttons') Yes
+                        form
                     div Rating
                         div= review.rating
                     div Title
@@ -61,5 +70,10 @@ block content
                         div= review.body
                     button(type='submit' id=`edit-review-${review.id}` class='buttons') Edit Review
                     button(type='button' id=`delete-review-${review.id}-${park.id}` class='buttons' class='delete-review-button') Delete Review
+                    div(class='popup' id='popup')
+                        div(class='popup-header') Are you sure you want to delete this review?
+                        div(class='popup-body')
+                            a(href=`/parks/${park.id}` class='popup-btns' id='cancel') Cancel
+                            a(href=`/parks/${park.id}` class='popup-btns delete-yes' id=`yes-delete-${review.id}-${park.id}`) Yes
                 br
                 br
