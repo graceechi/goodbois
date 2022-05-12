@@ -61,16 +61,23 @@ h2 {
 }
 
 #create-container{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+#create-form{
     background-color: antiquewhite;
     color: rgb(184, 100, 100);
     border: 3px solid rgb(184, 100, 100);
     border-radius: 10px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 40px 200px 80px 200px;
     padding: 15px;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
     box-shadow: 0px 0px 5px rgb(126, 78, 78);
+    width: 50%;
 
 }
 
@@ -117,9 +124,10 @@ h2 {
 
 .form-btns{
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
-    margin: 10px;
-    width: 625px;
+    /* margin: 10px; */
+    width: 100%;
 }
 
 .create-btn {
@@ -161,4 +169,24 @@ footer {
 
 .github_links a:hover {
     color: rgb(201, 155, 94);
+}
+
+.error-msgs{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.alert {
+    background-color: rgba(184, 100, 100);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+p {
+    background-color: rgba(184, 100, 100);
 }

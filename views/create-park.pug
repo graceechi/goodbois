@@ -11,14 +11,15 @@ block content
     h1
       a(href="/") good
       span: a(href="/") bois
-    div(class="navbar")
-      form(action='/users/logout' method='post')
-        button(type='submit' class='logout') LogOut
+    if locals.authenticated
+      div(class="navbar")
+        form(action='/users/logout' method='post')
+          button(type='submit' class='logout') LogOut
   img(src="/images/dog-1.jpg", alt="An image of dogs and people in a park")
   h2 Create Park
   +validationErrorSummary(errors)
   div(id='create-container')
-    form(action='/parks/new' method='post')
+    form(action='/parks/new' method='post' id='create-form')
       input(type='hidden' name='_csrf' value=csrfToken)
       +field('Name', 'name', park.name)
       +field('City', 'city', park.city)
