@@ -44,17 +44,15 @@ router.delete('/:parkid/review/:reviewid', requireAuth, asyncHandler(async (req,
 }));
 
 router.get('/:parkid/review/:reviewid', csrfProtection, asyncHandler(async(req, res) => {
-    console.log('THESE ARE THE REQ PARAMS::::::')
-    console.log(req.params)
     const { parkid, reviewid } = req.params;
 
     const park = await db.Park.findByPk(parkid)
-    const editedReview = await db.Review.findByPk(reviewid, {
+    const review = await db.Review.findByPk(reviewid, {
         include: User
     })
     res.render('edit-review', {
         title: 'Edit Review',
-        editedReview,
+        review,
         park,
         csrfToken: req.csrfToken()
     })
