@@ -21,19 +21,24 @@ cancel.addEventListener('click', async(e) => {
 })
 
 
-const banana = document.querySelector('.delete-yes') //<<<---- could not find a relevant variable name it would let me use, banana === delete
+const bananas = document.querySelectorAll('.delete-yes') //<<<---- could not find a relevant variable name it would let me use, banana === delete
 
-banana.addEventListener('click', async(e) => { //<<<---- have to reload page to delete more than one review
-    e.preventDefault()
-    const reviewId = e.target.id.split('-')[2]
-    const parkId = e.target.id.split('-')[3]
-    const res = await fetch(`/parks/${parkId}/review/${reviewId}`, {
-        method: 'DELETE'
+for (let i = 0; i < bananas.length; i++) {
+    const banana = bananas[i];
+
+    banana.addEventListener('click', async(e) => { //<<<---- have to reload page to delete more than one review
+        e.preventDefault()
+        console.log(e.target);
+        const reviewId = e.target.id.split('-')[2]
+        const parkId = e.target.id.split('-')[3]
+        const res = await fetch(`/parks/${parkId}/review/${reviewId}`, {
+            method: 'DELETE'
+        })
+
+        const data = await res.json()
+        if (data.message === 'Success') {
+            const container = document.getElementById(`${reviewId}-review-container`)
+            container.remove()
+        }
     })
-
-    const data = await res.json()
-    if (data.message === 'Success') {
-        const container = document.getElementById(`${reviewId}-review-container`)
-        container.remove()
-    }
-})
+}

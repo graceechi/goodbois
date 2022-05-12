@@ -20,19 +20,23 @@ cancel.addEventListener('click', async(e) => {
     popup.classList.remove('active')
 })
 
-const yesBtn = document.querySelector('.delete-yes');
+const yesBtns = document.querySelectorAll('.delete-yes');
 
-yesBtn.addEventListener('click', async(e) => {
-    e.preventDefault();
-    console.log(e.target.id);
-    const parkId = e.target.id.split('-')[2]
-    const res = await fetch(`/profile/parksList/${parkId}`, {
-        method: 'DELETE'
-    });
+for (let i = 0; i < yesBtns.length; i++) {
+    const yes = yesBtns[i];
 
-    const data = await res.json();
-    if (data.message === 'Success') {
-        const container = document.getElementById(`${park.id}-parklist-container`);
-        container.remove();
-    }
-})
+    yes.addEventListener('click', async(e) => {
+        e.preventDefault();
+        console.log(e.target);
+        const parkId = e.target.id.split('-')[2]
+        const res = await fetch(`/profile/${parkId}`, {
+            method: 'DELETE'
+        });
+
+        const data = await res.json();
+        if (data.message === 'Success') {
+            const container = document.getElementById(`${park.id}-parklist-container`);
+            container.remove();
+        }
+    })
+}

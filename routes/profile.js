@@ -51,11 +51,12 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
   });
 }));
 
-router.delete('/parksList/:parkId', requireAuth, asyncHandler(async (req, res) => {
+router.delete('/:parkId', requireAuth, asyncHandler(async (req, res) => {
   console.log('in the delete park from profile route');
-  const { parkId } = req.params;
+  const parkId = req.params.id;
+  console.log(req.params.id)
   const deletedPark = await db.Park.findByPk(parkId, {
-    // include: User
+    // include: ParksList
   })
   if (deletedPark) {
     await deletedPark.destroy();
