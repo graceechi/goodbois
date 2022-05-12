@@ -1,5 +1,6 @@
 * {
     background-color: antiquewhite;
+    box-sizing: border-box;
 }
 
 .splash {
@@ -146,3 +147,4 @@ h2 {
 .github_links a:hover {
     color: rgb(201, 155, 94);
 }
+

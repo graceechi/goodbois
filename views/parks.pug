@@ -1,11 +1,26 @@
 extends layout.pug
 
-block content
+append head
 
+  link(rel="stylesheet" href="/stylesheets/all-parks.css")
+
+  script(src="/javascripts/parks.js" type="module" )
+
+block content
+    div(class="splash_nav")
+        h1(class='logo')
+            a(href="/") goodbois
+        div(class="navbar")
+            nav(id="new-park-nav")
+                a(href='/parks/new') Add a New Dog Park
+            nav(id="sign-up-nav")
+                a(href="/users/signup") Sign Up
+            form(action='/users/login' method='get')
+                button(type='submit' class='buttons') Log In
     div
-        a(href='/parks/new') Add New Dog Park
-    div
-        ul
-            each park in parks
-                li
-                    a(href=`/parks/${park.id}`)= park.name
+        each park in parks
+            div(class='park-info')
+                a(href=`/parks/${park.id}`)= park.name
+                p(class='location')= park.city
+                p(class='location')= park.state
+            br
