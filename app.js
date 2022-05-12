@@ -11,7 +11,8 @@ const usersRouter = require('./routes/users');
 const profileRouter = require('./routes/profile');
 const parksRouter = require('./routes/parks')
 const searchRouter = require('./routes/search');
-const reviewsRouter = require('./routes/reviews')
+const reviewsRouter = require('./routes/reviews');
+const addToListRouter = require('./routes/api-add-park-to-list');
 const { sessionSecret } = require('./config');
 const { restoreUser } = require('./auth');
 
@@ -49,6 +50,7 @@ app.use ('/profile',profileRouter);
 app.use('/parks', parksRouter);
 app.use(searchRouter)
 app.use('/parks', reviewsRouter);
+app.use('/parks', addToListRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

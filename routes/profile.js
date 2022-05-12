@@ -8,7 +8,7 @@ const {User, Park, ParksList} = require('../db/models');
 
 
 
-router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => {
+router.get('/:id(\\d+)', csrfProtection, restoreUser, asyncHandler(async(req, res) => {
     const userId = req.params.id;
     const user = await User.findByPk(userId);
     const parks = await Park.findAll({
@@ -31,7 +31,7 @@ router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => 
 
   router.post('/logout', (req, res) => {
     logoutUser(req, res);
-    res.redirect('/')
+    res.redirect('/users/login')
   })
 
 
