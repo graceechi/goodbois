@@ -2,6 +2,12 @@
     background-color: antiquewhite;
 }
 
+h1>span>a{
+    color: indigo;
+    font-size: 40px;
+    text-decoration: none;
+}
+
 h1 {
     margin-top: 15px;
     margin-left: 15px;
@@ -31,6 +37,19 @@ h1 a {
 
 .navbar a:hover {
     color: rgb(201, 155, 94);
+}
+
+#logout{
+    color: rgb(135, 75, 2);
+    border-radius: 5px;
+    border-color: rgb(184, 100, 100);
+    margin-right: 10px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+#logout:hover{
+    box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
 
 #new-park-nav {
@@ -70,13 +89,14 @@ h1 a {
         "smallDogArea doggieWaterFountain"
         "fullyFenced parkingLot"
         "wasteDisposal agilityEquipment"
-        "shaded ."
+        "shaded editAndAdd"
         ;
     background-color: white;
     border: 2px solid rgb(184, 100, 100);
     border-radius: 8px;
     height: 37em;
     width: 50em;
+    margin-top: 20px;
 }
 
 #park-name {
@@ -87,14 +107,6 @@ h1 a {
     align-items: center;
     grid-area: parkName;
 }
-
-/* #get-edit-form {
-    grid-area: editButton;
-    background-color: white;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-} */
 
 #edit-park-button {
     margin-top: 12px;
@@ -151,6 +163,25 @@ h1 a {
 
 }
 
+#editAndAdd {
+    grid-area: editAndAdd;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-to-list-btn {
+margin-top: 8px;
+font-weight: bold;
+}
+
+#get-edit-form {
+    position: relative;
+    background-color: white;
+
+}
+
 .input-name {
     color: rgb(184, 100, 100);
     font-size: 20px;
@@ -160,22 +191,36 @@ h1 a {
 
 .input-value {
     font-size: 15px;
-    /* display: flex;
-    justify-content: center; */
-
 }
 
 .review-container {
     color: rgb(184, 100, 100);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* display: grid;
-    grid-template-areas:
-    'h2 . '; */
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.review-heading{
+    margin: 20px;
+    width: 50%;
 }
 
 h2 {
     font-weight: 500;
     font-size: 25px;
+}
+
+#reviews-h2{
+    color: indigo;
+}
+
+#review-display {
+    width: 50%;
+}
+
+.review-input {
+font-weight: bold;
 }
 
 .popup {
