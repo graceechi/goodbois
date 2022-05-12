@@ -9,7 +9,6 @@ const {User, Park, ParksList} = require('../db/models');
 
 
 
-
 router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => {
     const userId = req.params.id;
     const user = await User.findByPk(userId);
@@ -21,15 +20,48 @@ router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => 
    });
 
 
+    res.render('user-profile', {
+      title: 'profile',
+      fullName: 'user.fullName',
+      email: 'user.email',
+      user,
+      parks,
+      csrfToken: req.csrfToken(),
+    });
+}));
+
+router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
+  const userId = req.params.id;
+  // const user = await User.findByPk(userId);
+
+  // const parksId = req.params.id;
+
+  const user = await db.User.findByPk(userId, {
+      include: ParksList
+  });
+
   res.render('user-profile', {
-    title: 'profile',
-    fullName: 'user.fullName',
-    email: 'user.email',
+    // title: 'profile',
+    // fullName: 'user.fullName',
+    // email: 'user.email',
+    // `${park.name}`,
     user,
-    parks,
-    csrfToken: req.csrfToken(),
+    // park,
   });
 }));
+
+// router.post('/logout', (req, res) => {
+//   logoutUser(req, res);
+//   res.redirect('/users/login')
+//   res.render('user-profile', {
+//     title: 'profile',
+//     fullName: 'user.fullName',
+//     email: 'user.email',
+//     user,
+//     parks,
+//     csrfToken: req.csrfToken(),
+//   });
+// });
 
 router.post('/logout', (req, res) => {
   logoutUser(req, res);

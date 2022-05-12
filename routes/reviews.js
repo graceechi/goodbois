@@ -29,6 +29,7 @@ router.post('/:id/review', requireAuth, asyncHandler(async(req, res) => {
 
     res.redirect(`/parks/${parksId}`)
 }))
+
 router.use((req, res, next) => {
     console.log('request hits here')
     next();
