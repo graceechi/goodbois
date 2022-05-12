@@ -10,7 +10,7 @@ for (let i = 0; i < addToListBtns.length; i++) {
         const user = localStorage.getItem()
         const body = { park, user }
 
-        console.log(e.target.id);
-        const parkId = e.target.id.split('-')
+        // console.log(e.target.id);
+        // const parkId = e.target.id.split('-')
     })
 }
