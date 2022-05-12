@@ -1,26 +1,38 @@
-extends layout.pug
-
-append head
-
-  link(rel="stylesheet" href="/stylesheets/all-parks.css")
-
-  script(src="/javascripts/parks.js" type="module" )
-
-block content
-    div(class="splash_nav")
-        h1(class='logo')
-            a(href="/") goodbois
-        div(class="navbar")
-            nav(id="new-park-nav")
-                a(href='/parks/new') Add a New Dog Park
-            nav(id="sign-up-nav")
-                a(href="/users/signup") Sign Up
-            form(action='/users/login' method='get')
-                button(type='submit' class='buttons') Log In
-    div
-        each park in parks
-            div(class='park-info')
-                a(href=`/parks/${park.id}`)= park.name
-                p(class='location')= park.city
-                p(class='location')= park.state
+doctype html
+html
+  head
+      block head
+        title #{title}
+        link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel="stylesheet" href="/stylesheets/all-parks.css")
+        script(src="/javascripts/parks.js" type="module" )
+  body(id='img')
+    header
+        div(class="splash")
+            a(href="/") good
+            span: a(href="/") bois
+            div(class="navbar")
+                nav(id="new-park-nav")
+                    a(href='/parks/new') Add a New Dog Park
+                nav(id="sign-up-nav")
+                    a(href="/users/signup") Sign Up
+                nav(id="sign-up-nav")
+                    a(href="/users/logout") Log Out
+    main
+        div(class='park')
+            each park in parks
+                div(class='park-info')
+                    a(href=`/parks/${park.id}`)= park.name
+                    p(class='location')= park.city
+                    p(class='location')= park.state
+                br
+    footer
+        div(class="github_links")
+            span: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk
             br
+            span: a(href="https://github.com/oliviabir" target="_blank") Olivia Bir
+            br
+            span: a(href="https://github.com/sonajasani" target="_blank") Sona Jasani
+            br
+            span: a(href="https://github.com/graceechi" target="_blank") Grace Chi 
+        
