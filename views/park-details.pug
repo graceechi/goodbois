@@ -1,5 +1,7 @@
 extends layout.pug
 
+include edit-review-utils.pug
+
 append head
 
   link(rel="stylesheet" href="/stylesheets/park-details.css")
@@ -22,26 +24,26 @@ block content
         div(class='park-info')
             h2(id='park-name')= park.name
                 div
-            div(id='location' class='input-name') Location
+            div(id='location' class='input-name') &#127758; Location
                 div(class='input-value')= park.city
                 div(class='input-value')= park.state
             div(id='description' class='input-name') Description
                 div(class='input-value')= park.description
-            div(id='smallDogArea' class='input-name') Small Dog Area
+            div(id='smallDogArea' class='input-name') 🐶 Small Dog Area
                 div(class='input-value')= park.smallDogArea
-            div(id='doggieWaterFountain' class='input-name') Doggie Water Fountain
+            div(id='doggieWaterFountain' class='input-name') 🚰 Doggie Water Fountain
                 div(class='input-value')= park.doggieWaterFountain
-            div(id= 'fullyFenced' class='input-name') Fully Fenced
+            div(id= 'fullyFenced' class='input-name') 🏗 Fully Fenced
                 div(class='input-value')= park.fullyFenced
-            div(id='parkSize' class='input-name') Park Size
+            div(id='parkSize' class='input-name') &#127966; Park Size
                 div(class='input-value')= park.parkSize
-            div(id='parkingLot' class='input-name') Parking Lot
+            div(id='parkingLot' class='input-name') 🅿️ Parking Lot
                 div(class='input-value')= park.parkingLot
-            div(id='wasteDisposal' class='input-name') Waste Disposal
+            div(id='wasteDisposal' class='input-name') 🚮 Waste Disposal
                 div(class='input-value')= park.wasteDisposal
-            div(id='agilityEquipment' class='input-name') Agility Equipment
+            div(id='agilityEquipment' class='input-name') 🎾 Agility Equipment
                 div(class='input-value')= park.agilityEquipment
-            div(id='shaded' class='input-name') Shaded
+            div(id='shaded' class='input-name') 🌲 Shaded
                 div(class='input-value')= park.shaded
                 //- form(action='/parks/:id' method="post")
                 //-     button(type='submit' class='buttons') Add to List
@@ -57,19 +59,30 @@ block content
         div(id=`review-display-${park.Reviews.id}`)
             each review in park.Reviews
                 div(id=`${review.id}-review-container` class='reviews-container')
-                    div(class='popup') Are you sure you want to delete this review?
-                        form(action=`/parks/${park.id}` method='get')
-                            button(type='submit' class='buttons') Cancel
-                        button(type='submit' class='buttons') Yes
-                        form
                     div Rating
                         div= review.rating
                     div Title
                         div= review.title
                     div Description
                         div= review.body
-                    button(type='submit' id=`edit-review-${review.id}` class='buttons') Edit Review
-                    button(type='button' id=`delete-review-${review.id}-${park.id}` class='buttons' class='delete-review-button') Delete Review
+                    if loggedInUser === review.userId
+                        button(type='button' id=`delete-review-${review.id}-${park.id}` class='buttons' class='delete-review-button') Delete Review
+                        button(type='submit' id=`edit-review-${review.id}-${park.id}` class='edit-buttons') Edit Review
+                        form(id=`edit-container-${review.id}` class='hidden')
+                            input(type='hidden' name='_csrf' value=csrfToken)
+                            input(type='hidden' name='parksId' value=park.id)
+                            input(type='hidden' name='userId' value=user.id)
+                            div(id='review-park-name-container')
+                                div(id=`park-name-${review.id}`)= park.name
+                            div(id='rating-container')
+                                +field('Rating', `rating-${review.id}`, review.rating, 'select')
+                            div(id='review-title-container')
+                                +field('Title', `title-${review.id}`, review.title)
+                            div(id='review-description-container')
+                                +field('Description', `description-${review.id}`, review.body, 'textarea')
+                            div
+                                a(href=`/parks/${park.id}` id=`cancel-btn-${review.id}` class='button') Cancel
+                                button(type='submit' id=`submit-edit-${review.id}` class='button') Update Review
                     div(class='popup' id='popup')
                         div(class='popup-header') Are you sure you want to delete this review?
                         div(class='popup-body')
