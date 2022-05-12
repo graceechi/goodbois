@@ -1,0 +1,194 @@
+* {
+    background-color: antiquewhite;
+}
+
+html {
+    background-image: url(../images/dog-1.jpg);
+    background-size: cover;
+
+}
+
+h1>span>a{
+    color: indigo;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+h1 {
+    margin-left: 15px;
+    padding-top: 15px;
+}
+
+h1 a {
+    color: rgb(201, 155, 94);
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.splash {
+    background-color: antiquewhite;
+}
+
+h2 {
+   color: rgb(135, 75, 2);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 25px;
+   background-color: rgb(250, 235, 215, 0.7);
+   height: 100px;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.logout{
+    color: rgb(135, 75, 2);
+    border-radius: 5px;
+    border-color: rgb(184, 100, 100);
+    margin-right: 10px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.logout:hover{
+    box-shadow: 3px 3px 3px rgb(126, 78, 78);
+}
+
+#create-container{
+    display: flex;
+    justify-content: center;
+    margin: 60px 40px 40px 40px;
+}
+
+#create-form{
+    background-color: antiquewhite;
+    color: rgb(184, 100, 100);
+    border: 3px solid rgb(184, 100, 100);
+    border-radius: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0px 0px 5px rgb(126, 78, 78);
+    width: 50%;
+
+}
+
+.form-control-text{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    margin: 5px;
+    width: 300px;
+
+}
+
+.form-control-textarea{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    margin: 5px;
+    width: 300px;
+}
+
+.form-control-select{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    margin: 5px;
+    width: 150px;
+}
+
+.form-control-number{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    margin: 5px;
+    width: 150px;
+}
+
+.form-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* margin: 10px; */
+    width: 100%;
+}
+
+.create-btn {
+    color: antiquewhite;
+    font-size: medium;
+    background-color: rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    width: 85px;
+    height: 35px;
+    margin-right: 40px;
+
+}
+
+.cancel-btn{
+    margin-top: 16px;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    margin-top: 30em;
+}
+
+.github_links {
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+    margin-bottom: 30px;
+    border-top: 1px solid rgb(201, 155, 94);
+    padding-top: 20px;
+}
+
+.github_links a {
+    text-decoration: none;
+}
+
+.github_links a:hover {
+    color: rgb(201, 155, 94);
+}
+
+.error-msgs{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.alert {
+    background-color: rgba(184, 100, 100);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+p {
+    background-color: rgba(184, 100, 100);
+}
