@@ -30,6 +30,7 @@ block content
         div(id='review-description-container')
             +field('Description', 'description', review.body, 'textarea')
         div
-            form(action='/' method='post')
-            button(type='submit' id='cancel-btn' class='button') Cancel
-            button(type='submit' id='submit-review-btn' class='button') Submit Review
+            a(href=`/parks/${park.id}` id='cancel-btn' class='button') Cancel
+            form(action=`parks/${park.id}/` method='post')
+                button(type='submit' id='submit-edit-btn' class='button') Update Review
+            //- button(type='submit' class='button') Update Review

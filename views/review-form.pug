@@ -37,6 +37,5 @@ block content
         label What Did You Think?
         textarea(name='reviewDescription' id='review-description-input' class='review-input' rows='8' required)
       div
-        form(action='/' method='post')
-          button(type='submit' id='cancel-btn' class='button') Cancel
+        a(href=`/parks/${park.id}` id='cancel-btn' class='button') Cancel
         button(type='submit' id='submit-review-btn' class='button') Submit Review
