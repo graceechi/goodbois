@@ -1,28 +1,25 @@
-extends layout 
-
-include utils.pug 
-
-append head
-
-  link(rel="stylesheet" href="/stylesheets/profile.css")
-  
-  script(src="/javascripts/profile.js" type="module" )
-
-block content
+doctype html
+html
+  head
+      block head
+        title #{title}
+        link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel="stylesheet" href="/stylesheets/profile.css")
+        script(src="/javascripts/profile.js" type="module" )
+        script(src="/javascripts/random-image.js" type="module" )
+  body(id='img')
     header
         div(class="splash")
-            h1
-                a(href="/") good
-                span: a(href="/") bois
-        
+            a(href="/") good
+            span: a(href="/") bois
+            
             div(class="navbar")
-                form(action='/users/logout' method='post')
-                    button(type='submit' class='logout') LogOut
+                a(href="/users/login") Log Out
     br
     br
     main
         div(class='welcome')
-            p Welcome #{user.fullName}! You have logged in successfully. 
+            span Welcome #{user.fullName}! You have logged in successfully. 
         br
         br
         h2(class='user_name' style )= user.fullName
@@ -37,15 +34,20 @@ block content
         br
         br
         div(class='moreParks')
-            p Want to find more parks for your buddy?? 
+            span Want to find more parks for your buddy?? 
+            br
             span Visit 
                 a(href="/parks") Parks!
     footer
         div(class="github_links")
-            h2: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk
-            h2: a(href="https://github.com/oliviabir" target="_blank") Olivia Bir
-            h2: a(href="https://github.com/sonajasani" target="_blank") Sona Jasani
-            h2: a(href="https://github.com/graceechi" target="_blank") Grace Chi 
+            span: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk
+            br
+            span: a(href="https://github.com/oliviabir" target="_blank") Olivia Bir
+            br
+            span: a(href="https://github.com/sonajasani" target="_blank") Sona Jasani
+            br
+            span: a(href="https://github.com/graceechi" target="_blank") Grace Chi 
+        
 
 
 

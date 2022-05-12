@@ -3,63 +3,77 @@
     box-sizing: border-box;
 }
 
+#img {
+    background-image: url('https://cdn.pixabay.com/photo/2017/09/25/13/12/cocker-spaniel-2785074_960_720.jpg'), url('https://dogsnstuff.net/wp-content/uploads/2021/07/Why-are-dogs-so-cute-758x505.jpg');
+    background-size: cover;
+    height: 100%;
+    color: white;
+}
+
+body, html {
+    height:100%;
+}
+
 .splash {
     border-bottom: 1px solid rgb(201, 155, 94);
     padding-bottom: 10px;
+    background: rgba(255,255,255,0);
+
 }
 
-h1 {
+.splash {
     margin-top: 15px;
     margin-left: 15px;
+    background: rgba(255,255,255,0);
 }
 
-h1>a {
+.splash>a {
     color: rgb(201, 155, 94);
     font-size: 40px;
     text-decoration: none;
+    background: rgba(255,255,255,0);
+
 }
 
-h1>span>a{
+.splash>span>a{
     color: indigo;
     font-size: 40px;
     text-decoration: none;
+    background: rgba(255,255,255,0);
 }
 
 
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
+.navbar a{
     position: absolute;
     top: 15px;
     right: 15px;
-}
-
-.logout{
+    background: rgba(255,255,255,0);
     color: rgb(135, 75, 2);
-    border-radius: 5px;
-    border-color: coral;
     margin-right: 10px;
-    font-size: 13px;
-    margin-top: 12px;
+    font-size: 18px;
+    font: bold;
+    margin-top: 18px;
+    text-decoration: none;
 }
 
-.logout:hover{
-    box-shadow: 3px 3px 3px rgb(126, 78, 78);
+.navbar a:hover{
+    color:indigo;
+    text-decoration-line: underline;
 }
 
 main{
     min-height: calc(100vh - 56px - 95px);
+    background: rgba(255,255,255,0);
 }
 
 
 .welcome{
-    margin-top: -40px;
+    margin-top: -30px;
     margin-left: 15px;
     color: rgb(184, 100, 100);
     font-size: 20px;
     font: bold;
+    background: rgba(255,255,255,0);
 }
 
 
@@ -70,6 +84,7 @@ h2 {
     margin-top: 0px;
     color: rgb(184, 100, 100);
     margin-left: 15px;
+    background: rgba(255,255,255,0);
 }
 
 
@@ -77,8 +92,9 @@ h2 {
     font-style: italic;
     color: rgb(184, 100, 100);
     margin-left: 15px;
-}
+    background: rgba(255,255,255,0);
 
+}
 
 .parkslist{
     margin-top: 15px;
@@ -92,6 +108,7 @@ h2 {
 
 #park{
     margin-left: 20px;
+    background: rgba(255,255,255,0);
 }
 
 
@@ -99,18 +116,21 @@ h2 {
     margin-top: 50px;
     margin-bottom: 20px;
     margin-left: 15px;
-    color: rgb(184, 100, 100);
+    color: rgb(133, 32, 32);
     padding-bottom: 20px;
     font-size: 14px;
+    background: rgba(255,255,255,0);
 }
 
 .moreParks span {
     font-size: 14px;
+    background: rgba(255,255,255,0);
 }
 
 .moreParks a {
     text-decoration: none;
     font-size: 14px;
+    background: rgba(255,255,255,0);
 }
 
 .moreParks a:hover {
@@ -119,6 +139,9 @@ h2 {
     text-decoration-style: 0.5 px solid indigo;
 }
 
+footer{
+    background: rgba(255,255,255,0);
+}
 
 .github_links {
     display: flex;
@@ -134,17 +157,18 @@ h2 {
     padding-top: 20px;
 }
 
+
+
 .github_links a {
     text-decoration: none;
     font-size: 16px;
     font-style: normal;
     font: bold;
     font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-    color: rgb(135, 75, 2);
-
+    color: rgb(143, 9, 170);
 }
 
 .github_links a:hover {
-    color: rgb(201, 155, 94);
+    color: rgb(49, 8, 146);
 }
 
