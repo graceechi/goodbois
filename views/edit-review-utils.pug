@@ -1,0 +1,11 @@
+mixin field(labelText, fieldName, fieldValue, fieldType = 'text', placeholder = null)
+    div(class='form-group')
+    label(for=fieldName)= labelText
+    if fieldType === 'textarea'
+        textarea(id=fieldName name=fieldName class='form-control-textarea' rows='5')= fieldValue
+    else if fieldType === 'select'
+      select(id=fieldName name=fieldName class='form-control-select')
+        option(value='false' selected=(false === fieldValue)) No
+        option(value='true' selected=(true === fieldValue)) Yes
+    else
+      input(type=fieldType id=fieldName name=fieldName value=fieldValue placeholder=placeholder class='form-control-text')
