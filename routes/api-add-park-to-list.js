@@ -19,9 +19,11 @@ router.get('/:id/parksList', requireAuth, asyncHandler(async (req, res) => {
     const user = await User.findByPk(userId);
 
     // adding park to parks list on profile page
-    const parkslist = await ParksList.create({
-        parksId: parksId,
-        userId: userId,
+    const parkslist = await ParksList.findOrCreate({
+        where: {
+            parksId: parksId,
+            userId: userId,
+        }
     })
 
     // res.redirect(`/parks/${parksId}`)
