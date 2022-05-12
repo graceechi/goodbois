@@ -4,8 +4,8 @@ html
       block head
         title #{title}
         link(rel='stylesheet' href='/stylesheets/reset.css')
-        link(rel="stylesheet" href="/stylesheets/profile.css") 
-        script(src="/javascripts/random-image.js" type="module")
+        link(rel="stylesheet" href="/stylesheets/profile.css")
+        script(src="/public/javascripts/random-image.js"  type="module")
   body(id='img')
     header
         div(class="splash")
@@ -19,7 +19,7 @@ html
     br
     main
         div(class='welcome')
-            span Welcome #{user.fullName}! You have logged in successfully. 
+            span Welcome #{user.fullName}! You have logged in successfully.
         br
         br
         h2(class='user_name' style )= user.fullName
@@ -34,9 +34,9 @@ html
         br
         br
         div(class='moreParks')
-            span Want to find more parks for your buddy?? 
+            span Want to find more parks for your buddy??
             br
-            span Visit 
+            span Visit
                 a(href="/parks") Parks!
     footer
         div(class="github_links")
@@ -46,12 +46,4 @@ html
             br
             span: a(href="https://github.com/sonajasani" target="_blank") Sona Jasani
             br
-            span: a(href="https://github.com/graceechi" target="_blank") Grace Chi 
-        
-
-
-
-
-
-
-        
+            span: a(href="https://github.com/graceechi" target="_blank") Grace Chi
