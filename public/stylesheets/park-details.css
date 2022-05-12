@@ -195,11 +195,34 @@ h2 {
     border: 1px solid rgb(184, 100, 100);
     border-radius: 5px;
     z-index: 10;
-    background-color: rgb(250, 246, 242);
+    background-color: antiquewhite;
     width: 400px;
     max-width: 50%;
 }
 
 .hidden.active {
     transform: translate(-50%, -50%) scale(1);
+}
+
+div select {
+    border: 1px solid rgb(184, 100, 100);
+    border-radius: 2px;
+    color: rgb(184, 100, 100);
+}
+
+.form-input {
+    border: 1px solid rgb(184, 100, 100);
+    border-radius: 2px;
+    color: rgb(184, 100, 100);
+}
+
+#cancel-btn {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 1px;
+}
+
+#update-btn {
+    align-self:flex-end;
 }
