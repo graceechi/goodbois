@@ -4,16 +4,17 @@ html
       block head
         title #{title}
         link(rel='stylesheet' href='/stylesheets/reset.css')
-        link(rel="stylesheet" href="/stylesheets/profile.css")
-        script(src="/javascripts/random-images.js" type="module")   
+        link(rel="stylesheet" href="/stylesheets/profile.css") 
+        script(src="/public/javascripts/random-image.js"  type="module")
   body(id='img')
     header
         div(class="splash")
             a(href="/") good
             span: a(href="/") bois
-            
+
             div(class="navbar")
-                a(href="/users/login") Log Out
+                if locals.authenticated
+                    a(href="/users/login") Log Out
     br
     br
     main

@@ -7,7 +7,5 @@ module.exports = function changeBg() {
 }
 
 
-window.onload = changeBg;
 
 
-console.log(changeBg())
