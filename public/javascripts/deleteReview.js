@@ -17,7 +17,7 @@ cancel.addEventListener('click', async(e) => {
     e.preventDefault()
     const popup = cancel.closest('#popup')
     console.log(popup)
-    popup.classList.remove('active')  // <<<---- not removing active class
+    popup.classList.remove('active')
 })
 
 
