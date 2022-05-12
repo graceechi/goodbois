@@ -66,7 +66,7 @@ h2 {
 #create-container{
     display: flex;
     justify-content: center;
-    margin: 40px;
+    margin: 60px 40px 40px 40px;
 }
 
 #create-form{
@@ -152,7 +152,7 @@ h2 {
 footer {
     display: flex;
     width: 100%;
-    margin-top: 30rem;
+    margin-top: 30em;
 }
 
 .github_links {
