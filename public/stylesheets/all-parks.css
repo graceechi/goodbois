@@ -2,6 +2,43 @@
     background-color: antiquewhite;
 }
 
+html {
+    background: rgba(255,255,255,0);
+    box-sizing: border-box;
+    height:100%;
+    background-image: url('https://www.rd.com/wp-content/uploads/2021/01/GettyImages-588935825.jpg?resize=768,512');
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+body {
+    height: 100%;
+    color: white;
+}
+
+
+.splash {
+    border-bottom: 1px solid rgb(201, 155, 94);
+    background: rgba(255,255,255,0);
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 50px;
+}
+
+.splash>a {
+    color: rgb(201, 155, 94);
+    font-size: 40px;
+    text-decoration: none;
+    background: rgba(255,255,255,0);
+}
+
+.splash>span>a{
+    color: indigo;
+    font-size: 40px;
+    text-decoration: none;
+    background: rgba(255,255,255,0);
+}
+
 h1 {
     margin-top: 15px;
     margin-left: 15px;
@@ -19,9 +56,10 @@ h1 a {
     justify-content: space-around;
 
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 15px;
-    color: rgb(184, 100, 100);
+    color: rgb(150, 92, 21);
+    background: rgba(255,255,255,0);
 }
 
 .navbar a {
@@ -30,7 +68,8 @@ h1 a {
 }
 
 .navbar a:hover {
-    color: rgb(201, 155, 94);
+    color:indigo;
+    text-decoration-line: underline;
 }
 
 #new-park-nav {
@@ -44,20 +83,73 @@ h1 a {
     padding-right: 15px;
 }
 
-.buttons {
-    color: rgb(184, 100, 100);
-    border: 2px solid rgb(184, 100, 100);
-    border-radius: 3px;
-    margin: 5px;
+main {
+    min-height: calc(100vh - 56px - 130px);
+    background: rgba(255,255,255,0);
 }
+
+
+.park {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,255,255,0);
+    box-sizing: border-box;
+    height: 550px;
+    overflow-y:scroll;
+}
+
 
 .park-info{
-    color: rgb(184, 100, 100);
-    border: 2px solid rgb(184, 100, 100);
-    border-radius: 3px;
-    margin: 5px;
+    color: rgb(145, 57, 69);
+    border-bottom: 1px solid rgb(163, 52, 52, 0.5);
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 30%;
+    margin-top: 15px;
+    font: bold;
 }
 
+.park-info a {
+    padding: 10px;
+}
+
+
 .location {
-    font-size: 12px;
+    background: rgba(255,255,255,0);
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+
+footer{
+    background: rgba(255,255,255,0);
+}
+
+.github_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-end;
+
+    
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 60px;
+    border-top: 1px solid rgb(201, 155, 94);
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.github_links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-style: normal;
+    font: bold;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: rgb(143, 9, 170);
+}
+
+.github_links a:hover {
+    color: rgb(49, 8, 146);
 }

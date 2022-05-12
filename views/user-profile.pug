@@ -1,41 +1,49 @@
-extends layout
+doctype html
+html
+  head
+      block head
+        title #{title}
+        link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel="stylesheet" href="/stylesheets/profile.css")
+        script(src="/public/javascripts/random-image.js"  type="module")
+  body(id='img')
+    header
+        div(class="splash")
+            a(href="/") good
+            span: a(href="/") bois
 
-include utils.pug
-
-append head
-
-  link(rel="stylesheet" href="/stylesheets/profile.css")
-
-  script(src="/javascripts/profile.js" type="module" )
-
-block content
-    div(class="splash")
-        h1
-            a(href="/") goodbois
-
-        div(class="navbar")
-            form(action='/users/logout' method='post')
-                button(type='submit' class='logout') LogOut
+            div(class="navbar")
+                if locals.authenticated
+                    a(href="/users/login") Log Out
     br
     br
-    div(class='welcome')
-        p Welcome #{user.fullName}! You have logged in successfully.
-    br
-    br
-    h2(class='user_name' style )= user.fullName
-    h3(class='email')= user.email
-    br
-    br
-    div(class='parkslist') Your Parks list
-        //- each park in user.Parkslist
-        each park in parks
-            ul
-                li(id='park')
-                    a(href=`/parks/${park.id}`)= park.name
-    br
-    br
+    main
+        div(class='welcome')
+            span Welcome #{user.fullName}! You have logged in successfully.
+        br
+        br
+        h2(class='user_name' style )= user.fullName
+        h3(class='email')= user.email
+        br
+        br
+        div(class='parkslist') Your Parks list
+            each park in parks
+                ul
+                    li(id='park')
+                        a(href=`/parks/${park.id}`)= park.name
+        br
+        br
+        div(class='moreParks')
+            span Want to find more parks for your buddy??
+            br
+            span Visit
+                a(href="/parks") Parks!
     footer
-    div(class='footer')
-        p Want to find more parks for your buddy??
-        span Visit
-        a(href="/parks") Parks
+        div(class="github_links")
+            span: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk
+            br
+            span: a(href="https://github.com/oliviabir" target="_blank") Olivia Bir
+            br
+            span: a(href="https://github.com/sonajasani" target="_blank") Sona Jasani
+            br
+            span: a(href="https://github.com/graceechi" target="_blank") Grace Chi

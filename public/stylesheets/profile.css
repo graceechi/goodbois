@@ -1,49 +1,77 @@
 * {
     background-color: antiquewhite;
+    box-sizing: border-box;
+}
+
+html {
+    background: rgba(255,255,255,0);
+}
+
+body {
+    background-image: url('https://www.allthingsdogs.com/wp-content/uploads/2019/03/Best-White-Dog-Names.jpg');
+    background-size: cover;
+    height: 100%;
+    color: white;
+}
+
+body, html {
+    height:100%;
 }
 
 
-h1 {
+.splash {
+    border-bottom: 1px solid rgb(201, 155, 94);
+    background: rgba(255,255,255,0);
     margin-top: 15px;
     margin-left: 15px;
 }
 
-h1 a {
+.splash>a {
     color: rgb(201, 155, 94);
     font-size: 40px;
     text-decoration: none;
+    background: rgba(255,255,255,0);
+}
+
+.splash>span>a{
+    color: indigo;
+    font-size: 40px;
+    text-decoration: none;
+    background: rgba(255,255,255,0);
 }
 
 
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
+.navbar a{
     position: absolute;
     top: 15px;
     right: 15px;
-}
-
-.logout{
+    background: rgba(255,255,255,0);
     color: rgb(135, 75, 2);
-    border-radius: 5px;
-    border-color: coral;
     margin-right: 10px;
-    font-size: 13px;
-    margin-top: 12px;
+    font-size: 18px;
+    font: bold;
+    margin-top: 18px;
+    text-decoration: none;
 }
 
-.logout:hover{
-    box-shadow: 3px 3px 3px rgb(126, 78, 78);
+.navbar a:hover{
+    color:indigo;
+    text-decoration-line: underline;
 }
+
+main{
+    min-height: calc(100vh - 56px - 95px);
+    background: rgba(255,255,255,0);
+}
+
 
 .welcome{
-    margin-top: -40px;
+    margin-top: -30px;
     margin-left: 15px;
     color: rgb(184, 100, 100);
     font-size: 20px;
     font: bold;
+    background: rgba(255,255,255,0);
 }
 
 
@@ -54,6 +82,7 @@ h2 {
     margin-top: 0px;
     color: rgb(184, 100, 100);
     margin-left: 15px;
+    background: rgba(255,255,255,0);
 }
 
 
@@ -61,8 +90,9 @@ h2 {
     font-style: italic;
     color: rgb(184, 100, 100);
     margin-left: 15px;
-}
+    background: rgba(255,255,255,0);
 
+}
 
 .parkslist{
     margin-top: 15px;
@@ -76,23 +106,66 @@ h2 {
 
 #park{
     margin-left: 20px;
+    background: rgba(255,255,255,0);
 }
 
 
-.footer{
+.moreParks{
     margin-top: 50px;
     margin-bottom: 20px;
     margin-left: 15px;
-    color: rgb(184, 100, 100);
-
+    color: rgb(133, 32, 32);
+    padding-bottom: 20px;
+    font-size: 14px;
+    background: rgba(255,255,255,0);
 }
 
-.footer a {
-    font:bold;
-    font-size:15px;
+.moreParks span {
+    font-size: 14px;
+    background: rgba(255,255,255,0);
 }
 
-.footer a:hover {
-    font-size: 17px;
-    color:rgb(63, 8, 8);
+.moreParks a {
+    text-decoration: none;
+    font-size: 14px;
+    background: rgba(255,255,255,0);
 }
+
+.moreParks a:hover {
+    color: indigo;
+    text-decoration-line: underline;
+    text-decoration-style: 0.5 px solid indigo;
+}
+
+footer{
+    background: rgba(255,255,255,0);
+}
+
+.github_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-end;
+
+    
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid rgb(216, 171, 113);
+    padding-top: 20px;
+}
+
+
+
+.github_links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-style: normal;
+    font: bold;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: rgb(143, 9, 170);
+}
+
+.github_links a:hover {
+    color: rgb(49, 8, 146);
+}
+
