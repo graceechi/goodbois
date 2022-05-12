@@ -9,6 +9,7 @@ const {User, Park, ParksList} = require('../db/models');
 
 
 
+
 router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => {
     const userId = req.params.id;
     const user = await User.findByPk(userId);
