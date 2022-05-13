@@ -3,7 +3,3 @@ Goodbois, inspired by <a href="https://www.goodreads.com/" target="_blank">Goodr
 
 <b>Live link<b>: <a href="https://aa-goodbois.herokuapp.com/" target="_blank">goodbois</a>
 <hr>
-
-## Content
-  
-
