@@ -15,9 +15,9 @@ html
                 if locals.authenticated
                     nav(id="new-park-nav")
                         a(href='/parks/new') Create a New Park
-                        nav(id="sign-up-nav")
+                    nav(id="sign-up-nav")
                             a(href=`/profile/${user.id}`) Profile
-                        form(action='/users/logout' method='post')
+                    form(action='/users/logout' method='post')
                             button(type='submit' class='logout') Log Out
                 else
                     nav(id="sign-up-nav")
