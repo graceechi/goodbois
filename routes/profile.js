@@ -26,7 +26,6 @@ router.get('/:id', csrfProtection, requireAuth, asyncHandler(async(req, res) => 
       // include: [title, body, rating],
     });
 
-<<<<<<< HEAD
     res.render('user-profile', {
       title: 'profile',
       fullName: 'user.fullName',
@@ -48,8 +47,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
       include: ParksList
   });
 
-=======
->>>>>>> main
   res.render('user-profile', {
     title: 'profile',
     fullName: 'user.fullName',
