@@ -161,7 +161,11 @@ router.post('/:id(\\d+)/edit', csrfProtection, parkValidators, asyncHandler(asyn
         shaded
     });
 
-console.log(park.doggieWaterFountain)
+    router.post('/:id(\\d+)/logout', (req, res) => {
+        logoutUser(req, res);
+        res.redirect('/')
+      })
+
     const validatorErrors = validationResult(req);
     if (validatorErrors.isEmpty()) {
         await parkToBeUpdated.update(park);
