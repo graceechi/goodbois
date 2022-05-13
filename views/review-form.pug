@@ -14,7 +14,7 @@ block content
       a(href="/") goodbois
     div(class="navbar")
       form(action='/users/logout' method='post')
-        button(type='submit' class='logout') LogOut
+        button(type='submit' class='logout') Log Out
   div(id='review-container')
     form(action='/parks/:id/review' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)

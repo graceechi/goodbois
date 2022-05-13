@@ -14,10 +14,16 @@ html
             div(class="navbar")
                 nav(id="new-park-nav")
                     a(href='/parks/new') Add a New Park
-                nav(id="sign-up-nav")
-                    a(href="/users/signup") Sign Up
-                nav(id="sign-up-nav")
-                    a(href="/users/login") Log In
+                if locals.authenticated
+                    nav(id="sign-up-nav")
+                        a(href=`/profile/${user.id}`) Profile
+                    form(action='/users/logout' method='post')
+                        button(type='submit' class='logout') Log Out
+                else
+                    nav(id="sign-up-nav")
+                        a(href="/users/login") Log In
+                    nav(id="sign-up-nav")
+                        a(href="/users/signup") Sign Up
     main
         div(class='park')
             each park in parks
@@ -34,5 +40,4 @@ html
             br
             span: a(href="https://github.com/sonajasani" target="_blank") Sona Jasani
             br
-            span: a(href="https://github.com/graceechi" target="_blank") Grace Chi 
-        
+            span: a(href="https://github.com/graceechi" target="_blank") Grace Chi

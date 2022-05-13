@@ -22,7 +22,7 @@ router.get('/:id', csrfProtection, requireAuth, asyncHandler(async(req, res) => 
    });
 
 
-  res.render('user-profile', {
+   res.render('user-profile', {
     title: 'profile',
     fullName: 'user.fullName',
     email: 'user.email',
