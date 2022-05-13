@@ -42,6 +42,11 @@ router.get('/new', csrfProtection, (req, res) => {
     });
 });
 
+router.post('/:id(\\d+)/logout', (req, res) => {
+    logoutUser(req, res);
+    res.redirect('/')
+  })
+
 const parkValidators = [
     check('name')
         .exists({ checkFalsy: true })

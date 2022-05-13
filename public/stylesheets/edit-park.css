@@ -91,6 +91,7 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
+    width: 100%;
     width: 300px;
 
 }
@@ -102,6 +103,7 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
+    width: 100%;
     width: 300px;
 }
 
@@ -112,6 +114,7 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
+    width: 100%;
     width: 150px;
 }
 
@@ -122,6 +125,7 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
+    width: 100%;
     width: 150px;
 }
 

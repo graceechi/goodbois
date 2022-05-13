@@ -84,6 +84,10 @@ h2 {
 
 }
 
+.form-group {
+    width: 100%;
+}
+
 .form-control-text{
     display: flex;
     justify-content: space-between;
@@ -91,7 +95,8 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 
 }
 
@@ -102,7 +107,8 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .form-control-select{
@@ -112,7 +118,8 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
-    width: 150px;
+    width: 100%;
+    max-width: 150px;
 }
 
 .form-control-number{
@@ -122,14 +129,14 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
-    width: 150px;
+    width: 100%;
+    max-width: 150px;
 }
 
 .form-btns{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    /* margin: 10px; */
     width: 100%;
 }
 
