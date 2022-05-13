@@ -21,6 +21,8 @@ block content
                             form(action='/users/login' method='get')
                                 button(type='submit' class='buttons' id='login') Log In
                     else
+                        div(id="profile")
+                            a(href=`/profile/${user.id}` id="profile-btn") Profile
                         form(action='/users/logout' method='post')
                             button(type='submit' class='buttons' id='logout') Log Out
     div(class='grid-container')

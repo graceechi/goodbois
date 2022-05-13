@@ -29,6 +29,12 @@ h1 {
     margin-top: 15px;
     margin-left: 15px;
     background-color: antiquewhite;
+    border-bottom: 1px solid rgb(201, 155, 94);
+}
+
+main{
+    min-height: calc(100vh - 56px - 150px);
+    background: rgba(255,255,255,0);
 }
 
 h1 a {
@@ -62,7 +68,7 @@ main{
     
 
     width: 500px;
-    background-color: antiquewhite;
+    background-color: white;
     color: rgb(184, 100, 100);
     border: 3px solid rgb(184, 100, 100);
     border-radius: 10px;
@@ -71,6 +77,18 @@ main{
     padding: 15px;
     /* width: 300px; */
     /* margin-left: 50%; */
+}
+
+form {
+    background-color: white;
+}
+
+label {
+    background-color: white;
+}
+
+p {
+    background-color: white;
 }
 
 .login-btn{
@@ -82,6 +100,13 @@ main{
 }
 
 
+.login-btn:hover {
+    cursor: pointer;
+}
+
+.footer {
+    background: rgba(255,255,255,0);
+}
 
 .github_links {
     display: flex;
@@ -89,11 +114,13 @@ main{
     justify-content: space-around;
     align-items:flex-end;
 
-    
+
     width: 100%;
     border-top: 1px solid rgb(216, 171, 113);
     padding-top: 20px;
     padding-bottom: 20px; 
+    padding-bottom: 20px;
+
 }
 
 
@@ -105,7 +132,7 @@ main{
     font: bold;
     font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
     color: rgb(143, 9, 170);
- 
+
 }
 
 .github_links a:hover {
