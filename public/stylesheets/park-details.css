@@ -31,9 +31,10 @@ h1 a {
     justify-content: space-around;
 
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 15px;
     color: rgb(184, 100, 100);
+
 }
 
 .navbar a {
@@ -42,12 +43,16 @@ h1 a {
 }
 
 .navbar a:hover {
-    color: rgb(201, 155, 94);
-}
+    color:indigo;
+    text-decoration-line: underline;
+    }
 
 #sign-up-nav a {
-    font-size: 14px;
-    border-bottom: 1px solid rgb(184, 100, 100);
+    font-size: 16px;
+}
+
+#login {
+    font-size: 16px;
 }
 
 #logout{
