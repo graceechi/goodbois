@@ -16,7 +16,7 @@ const cancel = document.getElementById('cancel');
 
 cancel.addEventListener('click', async(e) => {
     e.preventDefault()
-    const popup = cancel.closest('#popup')
+    const popup = cancel.closest('.popup')
     console.log(popup)
     popup.classList.remove('active')
 })
