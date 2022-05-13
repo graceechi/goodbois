@@ -32,25 +32,6 @@ router.get('/:id', csrfProtection, requireAuth, asyncHandler(async(req, res) => 
   });
   }));
 
-  router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
-    const userId = req.params.id;
-    // const user = await User.findByPk(userId);
-
-    // const parksId = req.params.id;
-
-    const user = await db.User.findByPk(userId, {
-        include: ParksList
-    });
-  res.render('user-profile', {
-    title: 'profile',
-    fullName: 'user.fullName',
-    email: 'user.email',
-    user,
-    parks,
-    csrfToken: req.csrfToken(),
-  });
-}));
-
 router.delete('/:parkId', requireAuth, asyncHandler(async (req, res) => {
   console.log('in the delete park from profile route');
   const { parkId } = req.params;
