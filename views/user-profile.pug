@@ -1,11 +1,11 @@
 doctype html
 html
   head
-      block head
-        title #{title}
-        link(rel='stylesheet' href='/stylesheets/reset.css')
-        link(rel="stylesheet" href="/stylesheets/profile.css")
-        script(src="/public/javascripts/random-image.js"  type="module")
+    title #{title}
+    link(rel='stylesheet' href='/stylesheets/reset.css')
+    link(rel="stylesheet" href="/stylesheets/profile.css")
+    script(src="/javascripts/random-image.js"  type="module")
+    script(src="/javascripts/deleteParkFromList.js"  type="module")
   body(id='img')
     header
         div(class="splash")
@@ -28,9 +28,17 @@ html
         br
         div(class='parkslist') Your Parks list
             each park in parks
-                ul
-                    li(id='park')
-                        a(href=`/parks/${park.id}`)= park.name
+                div(id=`${park.id}-parklist-container` class='parklist-container')
+                    ul
+                        li(id='park')
+                            a(href=`/parks/${park.id}`)= park.name
+                    button(type='button' id=`delete-parklist-${park.id}` class='buttons' class='delete-parklist-button') Delete Park
+                    div(class='popup' id=`popup-${park.id}`)
+                        div(class='popup-header') Are you sure you want to delete this park?
+                        div(class='popup-body')
+                            a(href=`/profile/${park.id}` class='popup-btns' id='cancel') Cancel
+                            //- a(href=`/profile/${park.id}` class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
+                            button(class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
         br
         br
         div(class='moreParks')

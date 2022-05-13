@@ -5,6 +5,7 @@ const router = express.Router();
 const { csrfProtection, asyncHandler } = require('./utils');
 const { restoreUser, requireAuth, logoutUser } = require('../auth');
 const {User, Park, ParksList} = require('../db/models');
+const db = require('../db/models');
 // const {logoutUser} = require('../auth')
 
 
@@ -49,6 +50,23 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     // park,
   });
 }));
+
+router.delete('/:parkId', requireAuth, asyncHandler(async (req, res) => {
+  console.log('in the delete park from profile route');
+  const { parkId } = req.params;
+  console.log(parkId)
+  const deletedPark = await db.ParksList.findOne({
+    where: {
+      parksId: parkId
+    }
+  })
+  if (deletedPark) {
+    await deletedPark.destroy();
+    res.json({ message: 'Success' });
+  } else {
+    res.json({ message: 'Fail' });
+  }
+}))
 
 // router.post('/logout', (req, res) => {
 //   logoutUser(req, res);
