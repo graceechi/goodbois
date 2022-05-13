@@ -7,7 +7,7 @@ for (let i = 0; i < editButtons.length; i++) {
         e.preventDefault()
         const reviewId = e.target.id.split('-')[2]
         const parkId = e.target.id.split('-')[3]
-        const form = document.getElementById('edit-container')
+        const form = document.getElementById(`edit-container-${reviewId}`)
 
         form.classList.add('active')
 
@@ -48,7 +48,7 @@ const cancel = document.getElementById('cancel-btn')
 
 cancel.addEventListener('click', async(e) => {
     e.preventDefault()
-    const form = cancel.closest('#edit-container')
+    const form = cancel.closest('.edit-container')
     form.classList.remove('active')
 })
 

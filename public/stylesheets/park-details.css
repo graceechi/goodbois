@@ -245,7 +245,7 @@ div select {
     margin-left: 5px;
 }
 
-#edit-container {
+.edit-container {
     background-color: rgb(250, 246, 242);
     display: flex;
     flex-direction: column;
