@@ -4,7 +4,7 @@ const router = express.Router();
 
 const { csrfProtection, asyncHandler } = require('./utils');
 const { restoreUser, requireAuth, logoutUser } = require('../auth');
-const {User, Park, ParksList} = require('../db/models');
+const {User, Park, ParksList, Review } = require('../db/models');
 const db = require('../db/models');
 // const {logoutUser} = require('../auth')
 
@@ -18,8 +18,12 @@ router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => 
         model: ParksList,
         where: {userId}
       }]
-   });
+    });
 
+    const reviews = await Review.findAll({
+      where: { userId },
+      // include: [title, body, rating],
+    });
 
     res.render('user-profile', {
       title: 'profile',
@@ -27,6 +31,7 @@ router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => 
       email: 'user.email',
       user,
       parks,
+      reviews,
       csrfToken: req.csrfToken(),
     });
 }));

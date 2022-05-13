@@ -134,7 +134,7 @@ router.post('/login', csrfProtection, logInValidators, asyncHandler(async(req, r
 
 router.post('/logout', (req, res) => {
   logoutUser(req, res);
-  res.redirect('/')
+  res.redirect('/users/login')
 })
 
 // router.post('/profile/demo', restoreUser, csrfProtection, asyncHandler(async (req, res) => {

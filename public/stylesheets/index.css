@@ -31,7 +31,7 @@ h2 {
     color: rgb(135, 75, 2);
 }
 
-.navbar {
+.splash-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -49,6 +49,24 @@ h2 {
 
 .navbar a:hover {
     color: rgb(201, 155, 94);
+}
+
+form {
+    margin-top: -5px;
+    margin-left: 6px;
+}
+
+.logout{
+    color: rgb(135, 75, 2);
+    border-radius: 5px;
+    border-color: rgb(184, 100, 100);
+    margin-right: 10px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.logout:hover{
+    box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
 
 #sign-up-nav {
@@ -74,6 +92,7 @@ h2 {
     color: rgb(135, 75, 2);
     border: none;
     font-size: 17px;
+    margin-top: 5px;
     /* border: 2px solid rgb(135, 75, 2); */
 }
 
@@ -149,7 +168,7 @@ span {
     justify-content: center;
 
     margin-top: -15px;
-    padding: 30px;  
+    padding: 30px;
 }
 
 .search_bar input {
@@ -173,7 +192,7 @@ span {
     justify-content: space-around;
     align-items: flex-end;
 
-    
+
     width: 100%;
     margin-top: -20px;
     margin-bottom: 30px;
