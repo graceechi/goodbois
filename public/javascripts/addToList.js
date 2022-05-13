@@ -7,9 +7,5 @@ for (let i = 0; i < addToListBtns.length; i++) {
         e.preventDefault();
         
         const parkId = e.target.id.split('-')[2]
-        
-        
-
-
-    })
+        const form = getElementById('')
 }
