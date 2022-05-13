@@ -11,10 +11,9 @@ html
         div(class="splash")
             a(href="/") good
             span: a(href="/") bois
-            if locals.authenticated
-                div(class='navbar')
-                    form(action='/users/logout' method='post')
-                        button(type='submit' class='logout') Log Out
+            div(class='navbar')
+                form(action='/users/logout' method='post')
+                    button(type='submit' class='logout') Log Out
     br
     br
     main

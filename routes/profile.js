@@ -12,29 +12,24 @@ const db = require('../db/models');
 
 
 router.get('/:id', csrfProtection, requireAuth, asyncHandler(async(req, res) => {
-    const userId = req.params.id;
-    const user = await User.findByPk(userId);
-    const parks = await Park.findAll({
-      include: [{
-        model: ParksList,
-        where: {userId}
-      }]
-    });
+  const userId = req.params.id;
+  const user = await User.findByPk(userId);
+  const parks = await Park.findAll({
+    include: [{
+      model: ParksList,
+      where: {userId}
+    }]
+ });
 
-    const reviews = await Review.findAll({
-      where: { userId },
-      // include: [title, body, rating],
-    });
 
-    res.render('user-profile', {
-      title: 'profile',
-      fullName: 'user.fullName',
-      email: 'user.email',
-      user,
-      parks,
-      reviews,
-      csrfToken: req.csrfToken(),
-    });
+res.render('user-profile', {
+  title: 'profile',
+  fullName: 'user.fullName',
+  email: 'user.email',
+  user,
+  parks,
+  csrfToken: req.csrfToken(),
+});
 }));
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
