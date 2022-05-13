@@ -40,6 +40,20 @@ main{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 80px;
     padding: 15px;
+
+    background-color: white;
+}
+
+form {
+    background-color: white;
+}
+
+label {
+    background-color: white;
+}
+
+a {
+    background-color: white;
 }
 
 .signup-btn{
@@ -50,7 +64,9 @@ main{
     padding: 10px;
 }
 
-
+.signup-btn:hover {
+    cursor: pointer;
+}
 
 .github_links {
     display: flex;
@@ -58,7 +74,7 @@ main{
     justify-content: space-around;
     align-items:flex-end;
 
-    
+
     width: 100%;
     margin-top: 20px;
     border-top: 1px solid rgb(216, 171, 113);
@@ -79,4 +95,3 @@ main{
 .github_links a:hover {
     color: rgb(49, 8, 146);
 }
-
