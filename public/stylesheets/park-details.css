@@ -134,6 +134,9 @@ h2 {
     padding: 10px 15px;
     display: flex;
     flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
 .popup-btns {
@@ -148,10 +151,14 @@ h2 {
 #cancel {
     margin-left: 50px;
 }
-/* these aren't spacing correctly now that they live in the right place on the pug page  */
+
 .delete-yes {
-    margin-left: 50px;
-    margin-right: 10px;
+    margin-right: 50px;
+}
+
+.popup-btns:hover {
+    border: 2px solid rgb(184, 100, 100);
+    box-shadow: 2px 2px 2px rgb(126, 78, 78);
 }
 
 /* .review-heading {
@@ -256,18 +263,20 @@ div select {
 .edit-btns {
     background-color: rgb(250, 246, 242);
     color: rgb(184, 100, 100);
-    border: 2px solid rgb(184, 100, 100);
+    border: 1px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
 }
 
 .edit-btns:hover {
-    border: 3px solid rgb(184, 100, 100);
+    border: 2px solid rgb(184, 100, 100);
+    box-shadow: 2px 2px 2px rgb(126, 78, 78);
 }
 
 .form-input {
     background-color: rgb(250, 246, 242);
     margin: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .form-input:hover {

@@ -38,6 +38,10 @@ h1 a {
     box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
 
+.form {
+    background-color: rgb(250, 246, 242);
+}
+
 #review-container{
     color: rgb(184, 100, 100);
     border: 3px solid rgb(184, 100, 100);
@@ -45,19 +49,51 @@ h1 a {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 80px;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
 }
 
-#park-name{
+#park-name {
     font-weight: 600;
     font-size: 30px;
     text-align: center;
 }
 
-#rating-drop-down{
+#rating-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#rating-drop-down {
     color: rgb(184, 100, 100);
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
+}
+
+#review-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#review-description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#review-title-input {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+#review-description-input {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
 }
 
 .review-input{
@@ -71,4 +107,17 @@ h1 a {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
+    padding: 1px 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cancel-btn {
+    margin-right: 20px;
+}
+
+.button:hover {
+    border: 2px solid rgb(184, 100, 100);
+    box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
