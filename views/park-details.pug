@@ -61,10 +61,10 @@ block content
         div(id=`review-display`)
             each review in park.Reviews
                 div(id=`${review.id}-review-container` class='reviews-container')
-                    div(class='review-input') Rating
-                        div(id=`rating-${review.id}-display`)= review.rating
                     div(class='review-input') Title
                         div(id=`title-${review.id}-display`)= review.title
+                    div(class='review-input') Rating
+                        div(id=`rating-${review.id}-display`)= review.rating
                     div(class='review-input') Description
                         div(id=`description-${review.id}-display`)= review.body
                     if loggedInUser === review.userId
