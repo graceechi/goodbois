@@ -1,14 +1,14 @@
 mixin field(labelText, fieldName, fieldValue, fieldType = 'text', placeholder = null)
     div(class='form-group')
-    label(for=fieldName)= labelText
+    label(for=fieldName class='edit-label')= labelText
     if fieldType === 'textarea'
-        textarea(id=fieldName name=labelText class='form-control-textarea' rows='5')= fieldValue
+        textarea(id=fieldName name=labelText class='form-input' rows='5')= fieldValue
     else if fieldType === 'select'
-      select(id=fieldName name=labelText class='form-control-select')
+      select(id=fieldName name=labelText class='form-input')
         option(value='5' selected=(5 === fieldValue)) 5
         option(value='4' selected=(4 === fieldValue)) 4
         option(value='3' selected=(3 === fieldValue)) 3
         option(value='2' selected=(2 === fieldValue)) 2
         option(value='1' selected=(1 === fieldValue)) 1
     else
-      input(type=fieldType id=fieldName name=labelText value=fieldValue placeholder=placeholder class='form-control-text')
+      input(type=fieldType id=fieldName name=labelText value=fieldValue placeholder=placeholder class='form-input')

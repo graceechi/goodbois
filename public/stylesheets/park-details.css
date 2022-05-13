@@ -300,7 +300,7 @@ margin-top: 10px;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
-    border: 1px solid rgb(184, 100, 100);
+    border: 3px solid rgb(184, 100, 100);
     border-radius: 5px;
     z-index: 10;
     background-color: rgb(250, 246, 242);
@@ -317,11 +317,16 @@ margin-top: 10px;
     text-align: center;
     border-bottom: 1px solid rgb(184, 100, 100);
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .popup-body {
     padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
 .popup-btns {
@@ -329,15 +334,21 @@ margin-top: 10px;
     border-radius: 3px;
     padding: 3px 5px;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
 #cancel {
     margin-left: 50px;
 }
-/* these aren't spacing correctly now that they live in the right place on the pug page  */
+
 .delete-yes {
-    margin-left: 50px;
-    margin-right: 10px;
+    margin-right: 50px;
+}
+
+.popup-btns:hover {
+    border: 2px solid rgb(184, 100, 100);
+    box-shadow: 2px 2px 2px rgb(126, 78, 78);
 }
 
 footer {
@@ -373,14 +384,96 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
-    border: 1px solid rgb(184, 100, 100);
+    border: 3px solid rgb(184, 100, 100);
     border-radius: 5px;
     z-index: 10;
-    background-color: rgb(250, 246, 242);
+    background-color: antiquewhite;
     width: 400px;
     max-width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .hidden.active {
     transform: translate(-50%, -50%) scale(1);
+}
+
+div select {
+    border: 1px solid rgb(184, 100, 100);
+    border-radius: 2px;
+    color: rgb(184, 100, 100);
+}
+
+.input-container {
+    padding-left: 25%;
+}
+
+#button-container {
+    padding-left: 25%;
+}
+
+.form-input {
+    border: 1px solid rgb(184, 100, 100);
+    border-radius: 2px;
+    color: rgb(184, 100, 100);
+    display: flex;
+    justify-content: space-between;
+}
+
+#cancel-btn {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 1px 6px;
+    margin-right: 5px;
+}
+
+#update-btn {
+    align-self:flex-end;
+    margin-left: 5px;
+}
+
+.edit-container {
+    background-color: rgb(250, 246, 242);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.edit-btns {
+    background-color: rgb(250, 246, 242);
+    color: rgb(184, 100, 100);
+    border: 1px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    margin: 5px;
+}
+
+.edit-btns:hover {
+    border: 2px solid rgb(184, 100, 100);
+    box-shadow: 2px 2px 2px rgb(126, 78, 78);
+}
+
+.form-input {
+    background-color: rgb(250, 246, 242);
+    margin: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-input:hover {
+    border: 2px solid rgb(184, 100, 100);
+}
+
+.edit-label {
+    background-color: rgb(250, 246, 242);
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+div#rating-container.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 42%;
 }

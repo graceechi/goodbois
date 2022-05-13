@@ -5,39 +5,38 @@ for (let i = 0; i < deleteBtns.length; i++) {
 
     btn.addEventListener('click', async(e) => {
         e.preventDefault()
-        const popup = document.getElementById('popup')
+        const popupId = e.target.id.split('-')[2];
+        const popup = document.getElementById(`popup-${popupId}`)
         popup.classList.add('active')
+
+        const yesBtns = document.querySelectorAll('.delete-yes')
+
+        for (let i = 0; i < yesBtns.length; i++) {
+            const yesBtn = yesBtns[i];
+
+            yesBtn.addEventListener('click', async(e) => {
+                e.preventDefault()
+                console.log(e.target);
+                const reviewId = e.target.id.split('-')[2]
+                const parkId = e.target.id.split('-')[3]
+                const res = await fetch(`/parks/${parkId}/review/${reviewId}`, {
+                    method: 'DELETE'
+                })
+
+                const data = await res.json()
+                if (data.message === 'Success') {
+                    const container = document.getElementById(`${reviewId}-review-container`)
+                    container.remove()
+                }
+            })
+        }
     })
 }
 
 const cancel = document.getElementById('cancel')
-
 cancel.addEventListener('click', async(e) => {
     e.preventDefault()
-    const popup = cancel.closest('#popup')
+    const popup = cancel.closest('.popup')
     console.log(popup)
     popup.classList.remove('active')
 })
-
-
-const bananas = document.querySelectorAll('.delete-yes') //<<<---- could not find a relevant variable name it would let me use, banana === delete
-
-for (let i = 0; i < bananas.length; i++) {
-    const banana = bananas[i];
-
-    banana.addEventListener('click', async(e) => { //<<<---- have to reload page to delete more than one review
-        e.preventDefault()
-        console.log(e.target);
-        const reviewId = e.target.id.split('-')[2]
-        const parkId = e.target.id.split('-')[3]
-        const res = await fetch(`/parks/${parkId}/review/${reviewId}`, {
-            method: 'DELETE'
-        })
-
-        const data = await res.json()
-        if (data.message === 'Success') {
-            const container = document.getElementById(`${reviewId}-review-container`)
-            container.remove()
-        }
-    })
-}

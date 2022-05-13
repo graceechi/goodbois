@@ -6,8 +6,7 @@ for (let i = 0; i < addToListBtns.length; i++) {
     btn.addEventListener('click', async(e) => {
         e.preventDefault();
 
-        
-        
-        const parkId = e.target.id.split('-')[2]
+        btn.getElementsByClassName.display ='none'
+
     })
 }
