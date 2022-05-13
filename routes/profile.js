@@ -10,7 +10,8 @@ const db = require('../db/models');
 
 
 
-router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => {
+
+router.get('/:id', csrfProtection, requireAuth, asyncHandler(async(req, res) => {
     const userId = req.params.id;
     const user = await User.findByPk(userId);
     const parks = await Park.findAll({
@@ -21,33 +22,13 @@ router.get('/:id', csrfProtection, restoreUser, asyncHandler(async(req, res) => 
    });
 
 
-    res.render('user-profile', {
-      title: 'profile',
-      fullName: 'user.fullName',
-      email: 'user.email',
-      user,
-      parks,
-      csrfToken: req.csrfToken(),
-    });
-}));
-
-router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
-  const userId = req.params.id;
-  // const user = await User.findByPk(userId);
-
-  // const parksId = req.params.id;
-
-  const user = await db.User.findByPk(userId, {
-      include: ParksList
-  });
-
   res.render('user-profile', {
-    // title: 'profile',
-    // fullName: 'user.fullName',
-    // email: 'user.email',
-    // `${park.name}`,
+    title: 'profile',
+    fullName: 'user.fullName',
+    email: 'user.email',
     user,
-    // park,
+    parks,
+    csrfToken: req.csrfToken(),
   });
 }));
 
