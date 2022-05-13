@@ -50,20 +50,17 @@ block content
                 div(class='input-value')= park.shaded
             //- form(action='/parks/:id' method="post")
             //-     button(type='submit' class='buttons') Add to List
-            //- if locals.authenticated
-            //-     a(class='add-to-list-btn'  href=`/parks/${park.id}/parksList` role='button') Add to List
-            //-     button(type='button' id=`delete-parklist-${park.id}` class='buttons' class='delete-parklist-button') Delete Park From Your List
-            //-         div(class='popup' id=`popup-${park.id}`)
-            //-             div(class='popup-header') Are you sure you want to delete this park from your List?
-            //-             div(class='popup-body')
-            //-                 a(href=`/profile/${park.id}` class='popup-btns' id='cancel') Cancel
-            //-                 a(href=`/profile/${park.id}` class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
-            //-                 //- button(class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
             div(id='editAndAdd')
                 if locals.authenticated
                     a(class='add-to-list-btn' href=`/parks/${park.id}/parksList` role='button') Add to List
                     form(action=`/parks/${park.id}/edit` method='get' id='get-edit-form')
                         button(type='submit' id='edit-park-button' class='buttons') Edit Park Info
+                    button(type='button' id=`delete-parklist-${park.id}` class='buttons' class='delete-parklist-button') Delete From Your List
+                        div(class='popup' id=`popup-${park.id}`)
+                            div(class='popup-header') Are you sure you want to delete this park from your List?
+                            div(class='popup-body')
+                                a(href=`/profile/${park.id}` class='popup-btns' id='cancel') Cancel
+                                a(href=`/profile/${park.id}` class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
                     
     div(class='review-container')
         div(class='review-heading')
