@@ -202,8 +202,9 @@ span {
 
 .github_links a {
     text-decoration: none;
+    color: rgb(143, 9, 170);
 }
 
 .github_links a:hover {
-    color: rgb(201, 155, 94);
+    color: rgb(49, 8, 146);
 }

@@ -3,6 +3,7 @@
 }
 
 h1 {
+    border-bottom: 1px solid rgb(201, 155, 94);
     margin-top: 15px;
     margin-left: 15px;
 }
@@ -11,6 +12,21 @@ h1 a {
     color: rgb(201, 155, 94);
     font-size: 40px;
     text-decoration: none;
+    background: rgba(255,255,255,0);
+}
+
+
+
+.splash>h1>span>a{
+    color: indigo;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+
+
+main{
+    min-height: calc(100vh - 56px - 170px);
 }
 
 .container{
@@ -33,3 +49,34 @@ h1 a {
     margin: 5px;
     padding: 10px;
 }
+
+
+
+.github_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-end;
+
+    
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid rgb(216, 171, 113);
+    padding-top: 20px;
+}
+
+
+
+.github_links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-style: normal;
+    font: bold;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: rgb(143, 9, 170);
+}
+
+.github_links a:hover {
+    color: rgb(49, 8, 146);
+}
+
