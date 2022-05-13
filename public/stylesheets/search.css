@@ -1,71 +1,169 @@
 * {
     background-color: antiquewhite;
-  }
+    box-sizing: border-box;
+}
 
 
-.splash_nav h1 {
+html {
+    background: rgba(255,255,255,0);
+}
+
+body {
+    background-image: url("https://c.stocksy.com/a/MQw300/z9/939570.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    color: white;
+} 
+
+
+body, html {
+    height:100%;
+}
+
+
+.splash {
+    border-bottom: 1px solid rgb(201, 155, 94);
+    background: rgba(255,255,255,0);
     margin-top: 15px;
     margin-left: 15px;
 }
 
-
-.splash_nav a {
+.splash>a {
     color: rgb(201, 155, 94);
     font-size: 40px;
     text-decoration: none;
+    background: rgba(255,255,255,0);
 }
+
+.splash>span>a{
+    color: indigo;
+    font-size: 40px;
+    text-decoration: none;
+    background: rgba(255,255,255,0);
+}
+
+main{
+    min-height: calc(100vh - 56px - 100px);
+    background: rgba(255,255,255,0);
+}
+
 
 
 .container {
-    margin-top: 50px;
+    margin-top: 20px;
+    background: rgba(255,255,255,0);
 }
 
-.title {
+.title1 {
     display:flex;
-    justify-content: center;
+    justify-content: flex-start;
     color: rgb(135, 75, 2);
     font-size: 30px;
+    background: rgba(255,255,255,0);
 }
 
 
-h2 {
+.title1 p {
     color: rgb(135, 75, 2);
     font-size: 30px;
+    background: rgba(255,255,255,0);
+    margin-left: 25px;
 }
 
 
 .parks {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 35px;
     color: rgb(170, 130, 77);
-    margin-top: 25px;
+    margin-top: 15px;
+    background: rgba(255,255,255,0);
 }
 
 .more_parks {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 25px;
     margin-top: 20px;
     margin-bottom: 30px;
-    color: rgb(201, 155, 94);
+    color: rgb(190, 131, 53);
+    background: rgba(255,255,255,0);
 }
 
 .more_parks a:hover{
     font-size: 17px;
     color:rgb(63, 8, 8);
 }
+.title2 p{
+    display:flex;
+    justify-content: center;
+    color: rgb(135, 75, 2);
+    font-size: 50px;
+    margin-top: 50px;
+    background: rgba(255,255,255,0);
+}
+
+
+.title2 span{
+    display:flex;
+    justify-content: center;
+    color: rgb(135, 75, 2);
+    font-size: 30px;
+    background: rgba(255,255,255,0);
+}
+
 
 .noParks {
     display: flex;
     justify-content: center;
-    color: rgb(201, 155, 94);
+    color: rgb(122, 74, 11);
+    font-size: 15px;
+    background: rgba(255,255,255,0);
 }
 
 .noParks span,a {
     margin-top: 20px;
+    background: rgba(255,255,255,0);
 }
+
 
 .noParks a:hover{
     font-size: 17px;
     color:rgb(63, 8, 8);
+}
+
+
+footer{
+    background: rgba(255,255,255,0);
+}
+
+.github_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-end;
+
+    
+    width: 100%;
+    margin-top: -20px;
+    border-top: 1px solid rgb(216, 171, 113);
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+
+
+.github_links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-style: normal;
+    font: bold;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: rgb(143, 9, 170);
+}
+
+.github_links a:hover {
+    color: rgb(49, 8, 146);
 }
 

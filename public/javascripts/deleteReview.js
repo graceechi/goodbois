@@ -27,6 +27,7 @@ for (let i = 0; i < bananas.length; i++) {
 
     banana.addEventListener('click', async(e) => { //<<<---- have to reload page to delete more than one review
         e.preventDefault()
+        console.log(e.target);
         const reviewId = e.target.id.split('-')[2]
         const parkId = e.target.id.split('-')[3]
         const res = await fetch(`/parks/${parkId}/review/${reviewId}`, {

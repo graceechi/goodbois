@@ -147,7 +147,7 @@ footer{
     justify-content: space-around;
     align-items:flex-end;
 
-    
+
     width: 100%;
     margin-top: 20px;
     border-top: 1px solid rgb(216, 171, 113);
@@ -169,3 +169,48 @@ footer{
     color: rgb(49, 8, 146);
 }
 
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid rgb(184, 100, 100);
+    border-radius: 5px;
+    z-index: 10;
+    background-color: rgb(250, 246, 242);
+    width: 400px;
+    max-width: 50%;
+}
+
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-header {
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgb(184, 100, 100);
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.popup-body {
+    padding: 10px 15px;
+}
+
+.popup-btns {
+    border: 1px solid rgb(184, 100, 100);
+    border-radius: 3px;
+    padding: 3px 5px;
+    text-decoration: none;
+}
+
+#cancel {
+    margin-left: 50px;
+}
+/* these aren't spacing correctly now that they live in the right place on the pug page  */
+.delete-yes {
+    margin-left: 50px;
+    margin-right: 10px;
+}
