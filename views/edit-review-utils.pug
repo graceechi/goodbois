@@ -1,6 +1,6 @@
 mixin field(labelText, fieldName, fieldValue, fieldType = 'text', placeholder = null)
     div(class='form-group')
-    label(for=fieldName)= labelText
+    label(for=fieldName class='edit-label')= labelText
     if fieldType === 'textarea'
         textarea(id=fieldName name=labelText class='form-input' rows='5')= fieldValue
     else if fieldType === 'select'
