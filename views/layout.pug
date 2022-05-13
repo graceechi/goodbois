@@ -4,27 +4,19 @@ html
       block head
         title #{title}
         link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel='icon', href='/images/goodboi.png')
   body
+    //- div(class="splash_nav_container")
+    //-   h1
+    //-       a(href="/") good
+    //-       span: a(href="/") bois
+    //-   if locals.authenticated
+    //-     div(class= 'dropdown')
+    //-         a(id='profile' class='navbar-link' href=`/profile/${userId}`) Profile
+    //-         div(id='dropdown-content' class= 'dropdown-content')
+    //-           button(id='dropdown-parks' class= 'dropdown-item')
+    //-             a(href='/parks') Parks
+    //-           form(id='dropdown-logout' class= 'dropdown-item' action='/users/logout' method='post' )
+    //-             button(id='logout' type='submit')
+    //-               a() Logout
     block content
-    //- block footer
-    //-   div(class= 'contributors')
-    //-     div(id= 'contributor-1')
-    //-       div(id= 'contrib')
-    //-         a(href='https://github.com/ShanFalk' target="_blank")
-    //-           img(src="https://img.icons8.com/material-sharp/40/ffffff/github.png")
-    //-       p= 'Shannon Falk'
-    //-     div(id= 'contributor-2')
-    //-       div(id= 'contrib')
-    //-         a(href='https://github.com/oliviabir' target="_blank")
-    //-           img(src="https://img.icons8.com/material-sharp/40/ffffff/github.png")
-    //-       p= 'Olivia Bir'
-    //-     div(id= 'contributor-3')
-    //-       div(id= 'contrib')
-    //-         a(href='https://github.com/sonajasani' target="_blank")
-    //-           img(src="https://img.icons8.com/material-sharp/40/ffffff/github.png")
-    //-       p= 'Sona Jasani'
-    //-     div(id= 'contributor-4')
-    //-       div(id= 'contrib')
-    //-         a(href='https://github.com/graceechi' target="_blank")
-    //-           img(src="https://img.icons8.com/material-sharp/40/ffffff/github.png")
-    //-       p= 'Grace Chi'

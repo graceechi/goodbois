@@ -2,8 +2,22 @@
     background-color: antiquewhite;
 }
 
+body {
+    background-image: url(../images/dog-8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1>span>a{
+    color: indigo;
+    font-size: 40px;
+    text-decoration: none;
+}
+
 h1 {
-    margin-top: 15px;
+    padding-top: 15px;
+    background-color: rgb(250, 235, 215);
     margin-left: 15px;
 }
 
@@ -13,15 +27,20 @@ h1 a {
     text-decoration: none;
 }
 
+.splash {
+    background-color: antiquewhite;
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 15px;
     color: rgb(184, 100, 100);
+
 }
 
 .navbar a {
@@ -30,7 +49,29 @@ h1 a {
 }
 
 .navbar a:hover {
-    color: rgb(201, 155, 94);
+    color:indigo;
+    text-decoration-line: underline;
+    }
+
+#sign-up-nav a {
+    font-size: 16px;
+}
+
+#login {
+    font-size: 16px;
+}
+
+#logout{
+    color: rgb(135, 75, 2);
+    border-radius: 5px;
+    border-color: rgb(184, 100, 100);
+    margin-right: 10px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+#logout:hover{
+    box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
 
 #new-park-nav {
@@ -44,6 +85,10 @@ h1 a {
     padding-right: 15px;
 }
 
+form {
+    margin-top: -8px;
+}
+
 .buttons {
     color: rgb(184, 100, 100);
     border: 2px solid rgb(184, 100, 100);
@@ -51,40 +96,125 @@ h1 a {
     margin: 5px;
 }
 
-ul {
-    list-style: none;
+.grid-container {
+    display: flex;
+    justify-content: center;
 }
 
 .park-info {
     color: rgb(184, 100, 100);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: baseline;
-    align-content: center;
+    display: grid;
+    row-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(7, 75px);
+    grid-template-areas:
+        "parkName parkName"
+        "Description Description"
+        "location parkSize"
+        "smallDogArea doggieWaterFountain"
+        "fullyFenced parkingLot"
+        "wasteDisposal agilityEquipment"
+        "shaded editAndAdd"
+        ;
+    background-color: white;
+    border: 2px solid rgb(184, 100, 100);
+    border-radius: 8px;
+    height: 37em;
+    width: 50em;
+    margin-top: 4em;
 }
 
 #park-name {
     font-weight: 600;
     font-size: 30px;
-    padding: 10px;
-    padding-top: 30px;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-area: parkName;
 }
 
 #edit-park-button {
     margin-top: 12px;
-    margin-left: 40px;
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+#location {
+    grid-area: location;
+}
+
+#parkSize {
+    grid-area: parkSize;
+
+}
+
+#description {
+    grid-area: Description;
+
+
+}
+
+#smallDogArea {
+    grid-area: smallDogArea;
+
+}
+
+#doggieWaterFountain {
+    grid-area: doggieWaterFountain;
+
+}
+
+#fullyFenced {
+    grid-area: fullyFenced;
+
+}
+
+#parkingLot {
+    grid-area: parkingLot;
+
+}
+
+#wasteDisposal {
+    grid-area: wasteDisposal;
+
+}
+
+#agilityEquipment {
+    grid-area: agilityEquipment;
+
+}
+
+#shaded {
+    grid-area: shaded;
+
+}
+
+#editAndAdd {
+    grid-area: editAndAdd;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.add-to-list-btn {
+font-weight: bold;
+text-decoration: none;
+margin-bottom: 3px;
+}
+
+#get-edit-form {
+    position: relative;
+    background-color: white;
+
 }
 
 .input-name {
     color: rgb(184, 100, 100);
     font-size: 20px;
-    border: 1px solid rgb(184, 100, 100);
-    border-radius: 2px;
     margin: 3px;
+    text-align: center;
 }
 
 .input-value {
@@ -94,14 +224,74 @@ ul {
 .review-container {
     color: rgb(184, 100, 100);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* display: grid;
-    grid-template-areas:
-    'h2 . '; */
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.review-heading{
+    margin-top: 3em;
+    padding-bottom: 10px;
+    width: 45%;
+    padding-left: 10px;
+    background-color: rgb(255, 255, 255, 0.8);
+}
+
+.logout{
+    color: rgb(135, 75, 2);
+    border-radius: 5px;
+    border-color: rgb(184, 100, 100);
+    margin-right: 10px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.logout:hover{
+    box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
 
 h2 {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 25px;
+}
+
+#reviews-h2 {
+    color: rgb(184, 100, 100);
+    margin-bottom: 5px;
+}
+
+#review-btn {
+    color: rgb(184, 100, 100);
+}
+
+#review-display {
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 45%;
+    background-color: rgb(255, 255, 255, 0.8);
+}
+
+.review-input {
+font-weight: bold;
+color: rgb(184, 100, 100);
+margin-bottom: 10px;
+}
+
+.edit-buttons {
+margin-top: 10px;
+color: antiquewhite;
+background-color: rgb(184, 100, 100);
+border-color: rgb(184, 100, 100);
+}
+
+.delete-review-button {
+    color: antiquewhite;
+    background-color: rgb(184, 100, 100);
+    border-color: rgb(184, 100, 100);
+}
+
+.review-button {
+margin-top: 10px;
 }
 
 .popup {
@@ -161,41 +351,32 @@ h2 {
     box-shadow: 2px 2px 2px rgb(126, 78, 78);
 }
 
-/* .review-heading {
+footer {
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    margin-top: 10em;
+    background-color: antiquewhite;
 }
 
-#review-page {
-    text-align: right;
-} */
+.github_links {
+    display: flex;
+    justify-content: space-around;
+    background-color: antiquewhite;
 
+    width: 100%;
+    border-top: 1px solid rgb(201, 155, 94);
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
 
+.github_links a {
+    text-decoration: none;
+    color: #8F09AA;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.github_links a:hover {
+    color: rgb(49, 8, 146);
+}
 
 .hidden {
     position: fixed;

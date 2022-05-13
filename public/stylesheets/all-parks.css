@@ -1,6 +1,4 @@
-* {
-    background-color: antiquewhite;
-}
+
 
 html {
     background: rgba(255,255,255,0);
@@ -37,6 +35,25 @@ body {
     font-size: 40px;
     text-decoration: none;
     background: rgba(255,255,255,0);
+}
+
+form {
+    margin-top: -8px;
+}
+
+.logout{
+    color: rgb(135, 75, 2);
+    background-color: rgb(215, 224, 211);
+    border-radius: 5px;
+    border-color: rgb(184, 100, 100);
+    margin-right: 10px;
+    font-size: 13px;
+    margin-top: 12px;
+    /* top: 10px; */
+}
+
+.logout:hover{
+    box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
 
 h1 {
@@ -132,7 +149,7 @@ footer{
     justify-content: space-around;
     align-items:flex-end;
 
-    
+
     width: 100%;
     margin-top: 0px;
     margin-bottom: 60px;

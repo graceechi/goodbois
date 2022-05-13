@@ -14,8 +14,8 @@ block content
     if locals.authenticated
       div(class="navbar")
         form(action='/users/logout' method='post')
-          button(type='submit' class='logout') LogOut
-  h2 Edit Park
+          button(type='submit' class='logout') Log Out
+  h2(class='page-title') Edit Park
   +validationErrorSummary(errors)
   div(id='edit-container')
     form(action=`/parks/${id}/edit` method='post' id='edit-form')
@@ -33,7 +33,7 @@ block content
       +field('Agility Equipment', 'agilityEquipment', park.agilityEquipment, 'select')
       +field('Shaded', 'shaded', park.shaded, 'select')
       div(class='form-btns')
-        button(type='submit' class='update-btn') Update Park
+        button(type='submit' class='update-btn') Update
         a(href=`/parks/${id}` class='cancel-btn') Cancel
   footer
     div(class="github_links")
