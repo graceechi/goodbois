@@ -222,6 +222,11 @@ footer{
 
 .popup-body {
     padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
 .popup-btns {
@@ -229,13 +234,19 @@ footer{
     border-radius: 3px;
     padding: 3px 5px;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
 #cancel {
     margin-left: 50px;
 }
-/* these aren't spacing correctly now that they live in the right place on the pug page  */
+
 .delete-yes {
-    margin-left: 50px;
-    margin-right: 10px;
+    margin-right: 50px;
+}
+
+.popup-btns:hover {
+    border: 2px solid rgb(184, 100, 100);
+    box-shadow: 2px 2px 2px rgb(126, 78, 78);
 }
