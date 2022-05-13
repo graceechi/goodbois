@@ -15,7 +15,7 @@ block content
       div(class="navbar")
         form(action='/users/logout' method='post')
           button(type='submit' class='logout') Log Out
-  h2 Create Park
+  h2(class='page-title') Create Park
   +validationErrorSummary(errors)
   div(id='create-container')
     form(action='/parks/new' method='post' id='create-form')
