@@ -15,26 +15,27 @@ block content
         a(href="/") good
         span: a(href="/") bois
   main
-    div(class="container")
-      h1 Sign Up
-      br
-      +validationErrorSummary(errors)
-      br
-      form(action='/users/signup' method='post')
-        input(type='hidden' name='_csrf' value=csrfToken)
-        +field('Full Name ', 'fullName', user.fullName)
+    div(class='main-container')
+      div(class="container")
+        h1 Sign Up
         br
-        +field('Email ', 'email', user.email)
+        +validationErrorSummary(errors)
         br
-        +field('Password ', 'password', user.password, 'password')
-        br
-        +field('Confirm Password ', 'confirmPassword', '', 'password')
-        br
-        div(class='py-4')
-          button(type='submit' class='signup-btn') Sign Up
-          a(href='/' class='cancel-btn') Cancel
-      div
-        p: a(href='/users/login') Already have an account? Log In!
+        form(action='/users/signup' method='post')
+          input(type='hidden' name='_csrf' value=csrfToken)
+          +field('Full Name ', 'fullName', user.fullName)
+          br
+          +field('Email ', 'email', user.email)
+          br
+          +field('Password ', 'password', user.password, 'password')
+          br
+          +field('Confirm Password ', 'confirmPassword', '', 'password')
+          br
+          div(class='py-4')
+            button(type='submit' class='signup-btn') Sign Up
+            a(href='/' class='cancel-btn') Cancel
+        div
+          p: a(href='/users/login') Already have an account? Log In!
   footer
       div(class="github_links")
           span: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk

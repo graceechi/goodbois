@@ -15,22 +15,23 @@ block content
         a(href="/") good
         span: a(href="/") bois
   main
-    div(class="container")
-      h1 Log In
-      br
-      +validationErrorSummary(errors)
-      br
-      form(id='login-form' action='/users/login' method='post')
-        input(type='hidden' name='_csrf' value=csrfToken)
-        +field('Email ', 'email', email)
+    div(class="main-container")
+      div(class="container")
+        h1 Log In
         br
-        +field('Password ', 'password', password, 'password')
+        +validationErrorSummary(errors)
         br
-        div
-          button(type='submit' class="login-btn") Log In
-          a(href='/' class='cancel-btn') Cancel
-        div
-          p: a(href='/users/signup') New to Goodbois? Sign Up!
+        form(id='login-form' action='/users/login' method='post')
+          input(type='hidden' name='_csrf' value=csrfToken)
+          +field('Email ', 'email', email)
+          br
+          +field('Password ', 'password', password, 'password')
+          br
+          div
+            button(type='submit' class="login-btn") Log In
+            a(href='/' class='cancel-btn') Cancel
+          div
+            p: a(href='/users/signup') New to Goodbois? Sign Up!
   footer
     div(class="github_links")
         span: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk

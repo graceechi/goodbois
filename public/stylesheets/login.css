@@ -3,23 +3,32 @@
 }
 
 
+body {
+    background-image: url('https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+}
+
+
+header{
+    background-color: antiquewhite;
+}
 
 .splash {
     border-bottom: 1px solid rgb(201, 155, 94);
     margin-top: 15px;
     margin-left: 15px;
+    background-color: antiquewhite;
 }
 
 h1 {
     margin-top: 15px;
     margin-left: 15px;
+    background-color: antiquewhite;
     border-bottom: 1px solid rgb(201, 155, 94);
 }
 
-main{
-    min-height: calc(100vh - 56px - 150px);
-    background: rgba(255,255,255,0);
-}
 
 h1 a {
     color: rgb(201, 155, 94);
@@ -33,11 +42,25 @@ h1 a {
     text-decoration: none;
 }
 
+main{
+    min-height: calc(100vh - 56px - 50px);
+    background: rgba(255,255,255,0);
+}
+
+.main-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 
+    width: 500px;
     background-color: white;
     color: rgb(184, 100, 100);
     border: 3px solid rgb(184, 100, 100);
@@ -49,7 +72,18 @@ h1 a {
     /* margin-left: 50%; */
 }
 
+.container>h1{
+    background-color: white;
+}
+
 form {
+    background-color: white;
+}
+
+.form-control{
+    border-color: indigo;
+    border-radius: 5px;
+    border-width: 0.5px;
     background-color: white;
 }
 
@@ -69,13 +103,12 @@ p {
     padding: 10px;
 }
 
+
 .login-btn:hover {
     cursor: pointer;
 }
 
-.footer {
-    background: rgba(255,255,255,0);
-}
+
 
 .github_links {
     display: flex;
@@ -87,8 +120,7 @@ p {
     width: 100%;
     border-top: 1px solid rgb(216, 171, 113);
     padding-top: 20px;
-    padding-bottom: 20px;
-
+    padding-bottom: 20px; 
 }
 
 
@@ -105,4 +137,18 @@ p {
 
 .github_links a:hover {
     color: rgb(49, 8, 146);
+}
+
+
+.alert>p {
+    margin-top: -10px;
+    color:rgb(49, 8, 146);
+    font: bold;
+    font-size: 20px;
+    margin-left: -30px;
+}
+
+.alert>ul {
+    color: rgb(233, 42, 42);
+    margin-top: -20px;
 }

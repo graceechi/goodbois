@@ -2,6 +2,19 @@
     background-color: antiquewhite;
 }
 
+body {
+    background-image: url('https://petdogowner.com/wp-content/uploads/2021/04/AdobeStock_56224324-scaled.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+}
+
+
+
+header{
+    background-color: antiquewhite;
+}
+
 h1 {
     border-bottom: 1px solid rgb(201, 155, 94);
     margin-top: 15px;
@@ -26,25 +39,44 @@ h1 a {
 
 
 main{
-    min-height: calc(100vh - 56px - 170px);
+    min-height: calc(100vh - 56px - 50px);
+    background: rgba(255,255,255,0);
 }
+
+.main-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    width: 500px;
+    background-color: white;
     color: rgb(184, 100, 100);
     border: 3px solid rgb(184, 100, 100);
     border-radius: 10px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 80px;
+    margin-bottom: 80px;
+    margin-top: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
     padding: 15px;
-
-    background-color: white;
 }
 
 form {
+    margin-top: 10px;
+    background-color: white;
+}
+
+.form-control{
+    border-color: indigo;
+    border-radius: 5px;
+    border-width: 0.5px;
     background-color: white;
 }
 
@@ -68,6 +100,10 @@ a {
     cursor: pointer;
 }
 
+footer{
+    margin-top: -50px;
+}
+
 .github_links {
     display: flex;
     flex-direction: row;
@@ -76,9 +112,10 @@ a {
 
 
     width: 100%;
-    margin-top: 20px;
     border-top: 1px solid rgb(216, 171, 113);
-    padding-top: 20px;
+    margin-top: 20px;
+    padding-top: 20px;  
+    padding-bottom: 20px;
 }
 
 
@@ -90,8 +127,28 @@ a {
     font: bold;
     font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
     color: rgb(143, 9, 170);
+    background-color: antiquewhite;
 }
 
 .github_links a:hover {
     color: rgb(49, 8, 146);
+}
+
+.alert{
+    width:300px;
+}
+
+.alert>p {
+    margin-top: -10px;
+    color:rgb(49, 8, 146);
+    font: bold;
+    font-size: 20px;
+    margin-left: -30px;
+    background-color: white;
+
+}
+
+.alert>ul {
+    color: rgb(233, 42, 42);
+    margin-top: -20px;
 }

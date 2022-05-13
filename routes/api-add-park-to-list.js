@@ -30,8 +30,8 @@ router.get('/:id/parksList', requireAuth, asyncHandler(async (req, res) => {
         }
     })
 
-    // res.redirect(`/parks/${parksId}`)
-    res.redirect(`/profile/${user.id}`)
+    res.redirect(`/parks/${parksId}`)
+    //res.redirect(`/profile/${user.id}`)
 }))
 
 // delete park from profile
