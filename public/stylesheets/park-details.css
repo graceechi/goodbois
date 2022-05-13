@@ -2,6 +2,13 @@
     background-color: antiquewhite;
 }
 
+body {
+    background-image: url(../images/dog-8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 h1>span>a{
     color: indigo;
     font-size: 40px;
@@ -10,6 +17,8 @@ h1>span>a{
 
 h1 {
     padding-top: 15px;
+    background-color: rgb(250, 235, 215);
+    margin-left: 15px;
 }
 
 h1 a {
@@ -20,9 +29,6 @@ h1 a {
 
 .splash {
     background-color: antiquewhite;
-    border-bottom: 1px solid rgb(201, 155, 94);
-    margin-left: 15px;
-
 }
 
 .navbar {
@@ -224,6 +230,7 @@ margin-bottom: 3px;
     padding-bottom: 10px;
     width: 45%;
     padding-left: 10px;
+    background-color: rgb(255, 255, 255, 0.8);
 }
 
 h2 {
@@ -232,7 +239,7 @@ h2 {
 }
 
 #reviews-h2 {
-    color: rgb(184, 100, 100);
+    color: rgb(184, 100, 100)
     margin-bottom: 5px;
 }
 
@@ -244,6 +251,7 @@ h2 {
     padding-top: 10px;
     padding-left: 10px;
     width: 45%;
+    background-color: rgb(255, 255, 255, 0.8);
 }
 
 .review-input {
@@ -318,7 +326,7 @@ margin-top: 10px;
 footer {
     display: flex;
     width: 100%;
-    margin-top: 30em;
+    margin-top: 10em;
     background-color: antiquewhite;
 }
 
