@@ -9,7 +9,7 @@ h1>span>a{
 }
 
 h1 {
-    margin-top: 15px;
+    padding-top: 15px;
     margin-left: 15px;
 }
 
@@ -17,6 +17,10 @@ h1 a {
     color: rgb(201, 155, 94);
     font-size: 40px;
     text-decoration: none;
+}
+
+.splash {
+    background-color: antiquewhite;
 }
 
 .navbar {
@@ -96,7 +100,7 @@ h1 a {
     border-radius: 8px;
     height: 37em;
     width: 50em;
-    margin-top: 20px;
+    margin-top: 4em;
 }
 
 #park-name {
@@ -202,8 +206,14 @@ font-weight: bold;
 }
 
 .review-heading{
-    margin: 20px;
-    width: 50%;
+    margin-top: 3em;
+    padding-bottom: 10px;
+    width: 45%;
+    background-color: rgb(255, 255, 255);
+    padding-left: 10px;
+    border-left: 2px solid indigo;
+    border-right: 2px solid indigo;
+    border-top: 2px solid indigo;
 }
 
 h2 {
@@ -211,16 +221,46 @@ h2 {
     font-size: 25px;
 }
 
-#reviews-h2{
+.reviews-container {
+    background-color: rgb(255, 255, 255);
+}
+
+#reviews-h2 {
+    color: indigo;
+}
+
+#review-btn {
     color: indigo;
 }
 
 #review-display {
-    width: 50%;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 45%;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid indigo;
+    border-left: 2px solid indigo;
+    border-right: 2px solid indigo;
 }
 
 .review-input {
 font-weight: bold;
+color: indigo;
+}
+
+.edit-buttons {
+margin-top: 10px;
+color: indigo;
+border-color: indigo;
+}
+
+.delete-review-button {
+    color: indigo;
+    border-color: indigo;
+}
+
+.review-button {
+margin-top: 10px;
 }
 
 .popup {
@@ -269,14 +309,31 @@ font-weight: bold;
     margin-right: 10px;
 }
 
-/* .review-heading {
+footer {
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    margin-top: 30em;
+    background-color: antiquewhite;
 }
 
-#review-page {
-    text-align: right;
-} */
+.github_links {
+    display: flex;
+    justify-content: space-around;
+    background-color: antiquewhite;
+
+    width: 100%;
+    border-top: 1px solid rgb(201, 155, 94);
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.github_links a {
+    text-decoration: none;
+}
+
+.github_links a:hover {
+    color: rgb(201, 155, 94);
+}
 
 
 

@@ -57,16 +57,16 @@ block content
         div(class='review-heading')
             h2(id='reviews-h2') Reviews
             if locals.authenticated
-                p(id='review-page'): a(href=`/parks/${park.id}/review`) Leave a Review
+                a(href=`/parks/${park.id}/review` id='review-btn') Leave a Review
         div(id=`review-display`)
             each review in park.Reviews
                 div(id=`${review.id}-review-container` class='reviews-container')
-                    div Rating
-                        div(id=`rating-${review.id}-display` class='review-input')= review.rating
-                    div Title
-                        div(id=`title-${review.id}-display` class='review-input')= review.title
-                    div Description
-                        div(id=`description-${review.id}-display` class='review-input')= review.body
+                    div(class='review-input') Rating
+                        div(id=`rating-${review.id}-display`)= review.rating
+                    div(class='review-input') Title
+                        div(id=`title-${review.id}-display`)= review.title
+                    div(class='review-input') Description
+                        div(id=`description-${review.id}-display`)= review.body
                     if loggedInUser === review.userId
                         button(type='button' id=`delete-review-${review.id}-${park.id}` class='buttons' class='delete-review-button') Delete Review
                         button(type='button' id=`edit-review-${review.id}-${park.id}` class='buttons' class='edit-buttons') Edit Review
@@ -88,5 +88,9 @@ block content
                         div(class='popup-body')
                             a(href=`/parks/${park.id}` class='popup-btns' id='cancel') Cancel
                             a(href=`/parks/${park.id}` class='popup-btns delete-yes' id=`yes-delete-${review.id}-${park.id}`) Yes
-                br
-                br
+    footer
+    div(class="github_links")
+      h2: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk
+      h2: a(href="https://github.com/oliviabir" target="_blank") Olivia Bir
+      h2: a(href="https://github.com/sonajasani" target="_blank") Sona Jasani
+      h2: a(href="https://github.com/graceechi" target="_blank") Grace Chi
