@@ -30,7 +30,7 @@ router.get('/:id', csrfProtection, requireAuth, asyncHandler(async(req, res) => 
     parks,
     csrfToken: req.csrfToken(),
   });
-  }));
+}));
 
 router.delete('/:parkId', requireAuth, asyncHandler(async (req, res) => {
   console.log('in the delete park from profile route');
