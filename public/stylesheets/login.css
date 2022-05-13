@@ -60,7 +60,7 @@ main{
     flex-direction: column;
     align-items: center;
     
-    height: 350px;
+
     width: 500px;
     background-color: antiquewhite;
     color: rgb(184, 100, 100);
@@ -81,9 +81,7 @@ main{
     padding: 10px;
 }
 
-footer {
 
-}
 
 .github_links {
     display: flex;
@@ -112,4 +110,18 @@ footer {
 
 .github_links a:hover {
     color: rgb(49, 8, 146);
+}
+
+
+.alert>p {
+    margin-top: -10px;
+    color:rgb(49, 8, 146);
+    font: bold;
+    font-size: 20px;
+    margin-left: -30px;
+}
+
+.alert>ul {
+    color: rgb(233, 42, 42);
+    margin-top: -20px;
 }
