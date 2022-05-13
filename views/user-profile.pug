@@ -11,10 +11,9 @@ html
         div(class="splash")
             a(href="/") good
             span: a(href="/") bois
-
-            div(class="navbar")
-                if locals.authenticated
-                    a(href="/users/login") Log Out 
+            div(class='navbar')
+                form(action='/users/logout' method='post')
+                    button(type='submit' class='logout') Log Out
     br
     br
     main
@@ -37,15 +36,21 @@ html
                         div(class='popup-header') Are you sure you want to delete this park?
                         div(class='popup-body')
                             a(href=`/profile/${park.id}` class='popup-btns' id='cancel') Cancel
-                            //- a(href=`/profile/${park.id}` class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
-                            button(class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
+                            a(href=`/profile/${park.id}` class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
+                            //- button(class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
         br
         br
+        //- div(class='reviews') Your Reviews
+        //-     each review in reviews
+        //-         div(id=`${review.id}-reviews-container` class='reviews-container')
+        //-             ul
+        //-                 li(id='review')
+        //-                      a(href=`/parks/${park.id}`)= review.title
         div(class='moreParks')
             span Want to find more parks for your buddy??
             br
-            span Visit 
-                a(href="/parks") Parks!
+            span Visit
+                a(href="/parks")  Parks!
     footer
         div(class="github_links")
             span: a(href="https://github.com/ShanFalk" target="_blank") Shannon Falk

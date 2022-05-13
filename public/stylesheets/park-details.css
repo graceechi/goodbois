@@ -44,6 +44,10 @@ h1 a {
     padding-right: 15px;
 }
 
+form {
+    margin-top: -8px;
+}
+
 .buttons {
     color: rgb(184, 100, 100);
     border: 2px solid rgb(184, 100, 100);
@@ -97,6 +101,19 @@ ul {
     /* display: grid;
     grid-template-areas:
     'h2 . '; */
+}
+
+.logout{
+    color: rgb(135, 75, 2);
+    border-radius: 5px;
+    border-color: rgb(184, 100, 100);
+    margin-right: 10px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.logout:hover{
+    box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
 
 h2 {

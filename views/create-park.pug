@@ -14,7 +14,7 @@ block content
     if locals.authenticated
       div(class="navbar")
         form(action='/users/logout' method='post')
-          button(type='submit' class='logout') LogOut
+          button(type='submit' class='logout') Log Out
   h2 Create Park
   +validationErrorSummary(errors)
   div(id='create-container')
