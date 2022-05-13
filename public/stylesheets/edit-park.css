@@ -2,10 +2,10 @@
     background-color: antiquewhite;
 }
 
-html {
+body {
     background-image: url(../images/dog-6.jpg);
     background-size: cover;
-
+    background-repeat: no-repeat;
 }
 
 h1>span>a{
@@ -70,7 +70,7 @@ h2 {
 }
 
 #edit-form{
-    background-color: hwb(34 84% 2%);
+    background-color: white;
     color: rgb(184, 100, 100);
     border: 3px solid rgb(184, 100, 100);
     border-radius: 10px;
@@ -82,6 +82,10 @@ h2 {
     box-shadow: 0px 0px 5px rgb(126, 78, 78);
     width: 50%;
 
+}
+
+label {
+    background-color: white;
 }
 
 .form-control-text{
@@ -138,18 +142,17 @@ h2 {
 
 .update-btn {
     color: antiquewhite;
-    font-size: small;
+    font-size: 15px;
     background-color: rgb(184, 100, 100);
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
-    width: 85px;
-    height: 35px;
     margin-right: 40px;
+    height: fit-content;
 
 }
 
 .cancel-btn{
-    margin-top: 16px;
+    margin-top: 5px;
 }
 
 footer {
@@ -163,17 +166,17 @@ footer {
     justify-content: space-around;
 
     width: 100%;
-    margin-bottom: 30px;
     border-top: 1px solid rgb(201, 155, 94);
-    padding-top: 20px;
 }
 
 .github_links a {
     text-decoration: none;
+    color: #8F09AA;
 }
 
 .github_links a:hover {
     color: rgb(201, 155, 94);
+    color: rgb(49, 8, 146);
 }
 
 .error-msgs{
