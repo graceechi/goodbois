@@ -43,6 +43,11 @@ router.get('/new', csrfProtection, (req, res) => {
     });
 });
 
+router.post('/:id(\\d+)/logout', (req, res) => {
+    logoutUser(req, res);
+    res.redirect('/')
+  })
+
 const parkValidators = [
     check('name')
         .exists({ checkFalsy: true })
@@ -162,7 +167,6 @@ router.post('/:id(\\d+)/edit', csrfProtection, parkValidators, asyncHandler(asyn
         shaded
     });
 
-console.log(park.doggieWaterFountain)
     const validatorErrors = validationResult(req);
     if (validatorErrors.isEmpty()) {
         await parkToBeUpdated.update(park);

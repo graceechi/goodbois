@@ -15,8 +15,8 @@ h1>span>a{
 }
 
 h1 {
-    margin-left: 15px;
     padding-top: 15px;
+    margin-left: 15px;
 }
 
 h1 a {
@@ -29,7 +29,7 @@ h1 a {
     background-color: antiquewhite;
 }
 
-h2 {
+.page-title {
    color: rgb(135, 75, 2);
    display: flex;
    justify-content: center;
@@ -70,7 +70,7 @@ h2 {
 }
 
 #create-form{
-    background-color: antiquewhite;
+    background-color: white;
     color: rgb(184, 100, 100);
     border: 3px solid rgb(184, 100, 100);
     border-radius: 10px;
@@ -84,6 +84,14 @@ h2 {
 
 }
 
+label {
+    background-color: white;
+}
+
+.form-group {
+    width: 100%;
+}
+
 .form-control-text{
     display: flex;
     justify-content: space-between;
@@ -91,7 +99,8 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 
 }
 
@@ -102,7 +111,8 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .form-control-select{
@@ -112,7 +122,8 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
-    width: 150px;
+    width: 100%;
+    max-width: 150px;
 }
 
 .form-control-number{
@@ -122,37 +133,41 @@ h2 {
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
     margin: 5px;
-    width: 150px;
+    width: 100%;
+    max-width: 150px;
 }
 
 .form-btns{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    /* margin: 10px; */
     width: 100%;
 }
 
 .create-btn {
     color: antiquewhite;
-    font-size: medium;
+    font-size: 15px;
     background-color: rgb(184, 100, 100);
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
-    width: 85px;
-    height: 35px;
     margin-right: 40px;
+    height: fit-content;
 
 }
 
 .cancel-btn{
-    margin-top: 16px;
+    margin-top: 5px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 25px;
 }
 
 footer {
     display: flex;
     width: 100%;
-    margin-top: 30em;
+    margin-top: 22em;
 }
 
 .github_links {
@@ -160,17 +175,19 @@ footer {
     justify-content: space-around;
 
     width: 100%;
-    margin-bottom: 30px;
     border-top: 1px solid rgb(201, 155, 94);
     padding-top: 20px;
+    padding-bottom: 30px;
 }
 
 .github_links a {
     text-decoration: none;
+    color: #8F09AA;
+
 }
 
 .github_links a:hover {
-    color: rgb(201, 155, 94);
+    color: rgb(49, 8, 146);
 }
 
 .error-msgs{

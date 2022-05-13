@@ -14,8 +14,8 @@ mixin field(labelText, fieldName, fieldValue, fieldType = 'text', placeholder = 
       textarea(id=fieldName name=fieldName class='form-control-textarea' rows='5')= fieldValue
     else if fieldType === 'select'
       select(id=fieldName name=fieldName class='form-control-select')
-        option(value='false' selected=(false === fieldValue)) No
-        option(value='true' selected=(true === fieldValue)) Yes
+        option(value='false' selected=(false === fieldValue)) false
+        option(value='true' selected=(true === fieldValue)) true
     else if fieldType === 'number'
       input(type=fieldType id=fieldName name=fieldName value=fieldValue placeholder=placeholder step='0.01' max='999999.99' class='form-control-number')
     else
