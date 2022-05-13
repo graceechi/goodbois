@@ -62,41 +62,4 @@ router.put('/:parkId/review/:reviewId', asyncHandler(async (req, res) => {
 }))
 
 
-// router.get('/:parkid/review/:reviewid/edit', csrfProtection, asyncHandler(async(req, res) => {
-//     const { parkid, reviewid } = req.params;
-
-//     const park = await db.Park.findByPk(parkid)
-//     const review = await db.Review.findByPk(reviewid, {
-//         include: User
-//     })
-//     res.render('edit-review', {
-//         title: 'Edit Review',
-//         review,
-//         park,
-//         csrfToken: req.csrfToken()
-//     })
-// }))
-
-// router.post('/:parkid/edit', csrfProtection, asyncHandler(async (req, res) => {
-//     const reviewId = req.params.id;
-//     console.log('REQUEST HITS HERE')
-//     console.log(req.params)
-//     const reviewToEdit = await db.Review.findByPk(reviewId);
-
-//     const { parksId, userId, rating, reviewTitle, reviewDescription } = req.body
-
-//     const review = await db.Review.create({
-//         parksId: parksId,
-//         userId: userId,
-//         rating: rating,
-//         title: reviewTitle,
-//         body: reviewDescription
-//     })
-
-//     res.redirect(`/parks/${parksId}`)
-// }))
-
-
-
-
 module.exports = router;
