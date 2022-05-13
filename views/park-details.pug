@@ -68,8 +68,9 @@ block content
                     div(class='review-input') Description
                         div(id=`description-${review.id}-display`)= review.body
                     if loggedInUser === review.userId
-                        button(type='button' id=`delete-review-${review.id}-${park.id}` class='buttons' class='delete-review-button') Delete Review
-                        button(type='button' id=`edit-review-${review.id}-${park.id}` class='buttons' class='edit-buttons') Edit Review
+                        div(class='review-btns')
+                            button(type='button' id=`delete-review-${review.id}-${park.id}` class='buttons' class='delete-review-button') Delete Review
+                            button(type='button' id=`edit-review-${review.id}-${park.id}` class='buttons' class='edit-buttons') Edit Review
                         form(id='edit-container' class='hidden')
                             input(type='hidden' name='_csrf' value=csrfToken)
                             input(type='hidden' name='parksId' value=park.id)

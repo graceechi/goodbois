@@ -254,12 +254,14 @@ margin-bottom: 10px;
 
 .edit-buttons {
 margin-top: 10px;
-color: rgb(184, 100, 100);
+color: antiquewhite;
+background-color: rgb(184, 100, 100);
 border-color: rgb(184, 100, 100);
 }
 
 .delete-review-button {
-    color: rgb(184, 100, 100);
+    color: antiquewhite;
+    background-color: rgb(184, 100, 100);
     border-color: rgb(184, 100, 100);
 }
 
