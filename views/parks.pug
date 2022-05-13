@@ -12,13 +12,13 @@ html
             a(href="/") good
             span: a(href="/") bois
             div(class="navbar")
-                nav(id="new-park-nav")
-                    a(href='/parks/new') Create a New Park
                 if locals.authenticated
-                    nav(id="sign-up-nav")
-                        a(href=`/profile/${user.id}`) Profile
-                    form(action='/users/logout' method='post')
-                        button(type='submit' class='logout') Log Out
+                    nav(id="new-park-nav")
+                        a(href='/parks/new') Create a New Park
+                        nav(id="sign-up-nav")
+                            a(href=`/profile/${user.id}`) Profile
+                        form(action='/users/logout' method='post')
+                            button(type='submit' class='logout') Log Out
                 else
                     nav(id="sign-up-nav")
                         a(href="/users/login") Log In
