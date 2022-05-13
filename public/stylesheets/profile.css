@@ -1,5 +1,5 @@
 * {
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     box-sizing: border-box;
 }
 
@@ -24,6 +24,8 @@ body, html {
     background: rgba(255,255,255,0);
     margin-top: 15px;
     margin-left: 15px;
+    display: flex;
+    flex-direction: row;
 }
 
 .splash>a {
@@ -40,6 +42,15 @@ body, html {
     background: rgba(255,255,255,0);
 }
 
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
 
 .navbar a{
     position: absolute;
@@ -57,6 +68,20 @@ body, html {
 .navbar a:hover{
     color:indigo;
     text-decoration-line: underline;
+}
+
+
+.logout{
+    color: rgb(135, 75, 2);
+    border-radius: 5px;
+    border-color: rgb(184, 100, 100);
+    margin-right: 10px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.logout:hover{
+    box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
 
 main{

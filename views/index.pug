@@ -13,16 +13,25 @@ block content
             span: a(href="/") bois
 
         div(class="navbar")
-            nav(id="sign-up-nav")
-                a(href="/users/signup") Sign Up
-            nav(id="sign-in-nav")
-                a(href="/users/login") Log In
-            nav(id="demo-nav")
-                form(class="buttons" action='/users/login' method='post')
-                    input(type='hidden' name='_csrf' value=csrfToken)
-                    input(type='hidden' name='email' value='demo@gmail.com')
-                    input(type='hidden' name='password' value='Demo@1')
-                    button(type='submit' class='demo-btn') Demo
+            if !locals.authenticated
+                div(class="splash-nav")
+                    nav(id="sign-up-nav")
+                        a(href="/users/signup") Sign Up
+                    nav(id="sign-up-nav")
+                        a(href="/users/login") Log In
+                    nav(id="demo-nav")
+                        form(class="buttons" action='/users/login' method='post')
+                            input(type='hidden' name='_csrf' value=csrfToken)
+                            input(type='hidden' name='email' value='demo@gmail.com')
+                            input(type='hidden' name='password' value='Demo@1')
+                            button(type='submit' class='demo-btn') Demo
+            else
+                div(class='splash-nav')
+                    nav(id="sign-up-nav")
+                        a(href=`/profile/${user.id}`) Profile
+                    div(class="navbar")
+                        form(action='/users/logout' method='post')
+                            button(type='submit' class='logout') Log Out
                         //- a(href="/profile/demo")
                 //- a(href="/profile/demo") Demo Login
             //- only if user is logged in or in demo mode
@@ -42,9 +51,9 @@ block content
         div(class='text1')
             p Deciding where to go next?
             span You're in the right place. Tell us about which U.S. state you live in and we'll give you surprising recommendations.
-        div(class='text2') 
+        div(class='text2')
             p Where are your friends playing?
-            span Chances are you might make new best buddies with goodbois.  
+            span Chances are you might make new best buddies with goodbois.
     br
     div(class="parks_links")
         h3: a(href="/parks") Parks
