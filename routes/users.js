@@ -92,7 +92,15 @@ const logInValidators = [
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for Email')
     .isEmail()
-    .withMessage('Email Address is not a valid email'),
+    .withMessage('Email Address is not a valid email')
+    .custom((value) => {
+      return db.User.findOne({ where: { email: value } })
+        .then((user) => {
+          if (!user) {
+            return Promise.reject('Login failed for the provided email address and password');
+          }
+        });
+    }),
   check('password')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for Password'),
@@ -122,6 +130,7 @@ router.post('/login', csrfProtection, logInValidators, asyncHandler(async(req, r
     }
     errors.push('Login failed for the provided email address and password')
     } else {
+      console.log(errors)
       errors = validatorErrors.array().map((error) => error.msg)
 
       res.render('log-in', {
