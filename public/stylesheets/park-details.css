@@ -28,7 +28,7 @@ h1 a {
 }
 
 .splash {
-    background-color: antiquewhite;
+    background-color: rgb(250, 235, 215);
 }
 
 .splash-nav {
@@ -383,7 +383,7 @@ footer {
 .github_links {
     display: flex;
     justify-content: space-around;
-    background-color: antiquewhite;
+    background-color: rgb(250, 235, 215, 0.5);
 
     width: 100%;
     border-top: 1px solid rgb(201, 155, 94);
