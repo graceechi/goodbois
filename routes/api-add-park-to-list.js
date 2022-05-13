@@ -18,7 +18,10 @@ router.get('/:id/parksList', requireAuth, asyncHandler(async (req, res) => {
     const parksId = req.params.id; // park id in url path
 
     const user = await User.findByPk(userId);
-
+    let loggedInUser
+    if (req.session.auth) {
+        loggedInUser = req.session.auth.userId
+    }
     // adding park to parks list on profile page
     const parkslist = await ParksList.findOrCreate({
         where: {
