@@ -251,12 +251,22 @@ margin-bottom: 3px;
     align-items:center;
 }
 
+#review-display{
+    height:300px;
+    overflow-y: scroll;
+    border: 0.5px solid rgb(167, 69, 69);
+}
+
 .review-heading{
     margin-top: 3em;
     padding-bottom: 10px;
     width: 45%;
     padding-left: 10px;
     background-color: rgb(255, 255, 255, 0.8);
+}
+
+#review-btn{
+    color: rgb(117, 41, 168);
 }
 
 .logout{
