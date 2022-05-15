@@ -36,10 +36,8 @@ html
                     div(class='popup' id=`popup-${park.id}`)
                         div(class='popup-header') Are you sure you want to delete this park?
                         div(class='popup-body')
-                            //- a(href=`/profile/${park.id}` class='popup-btns' id='cancel') Cancel
-                            button(class='popup-btns' id='cancel') Cancel
+                            a(href=`/profile/${user.id}` class='popup-btns' class='cancel' id=`cancel-${park.id}`) Cancel
                             a(href=`/profile/${park.id}` class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
-                            //- button(class='popup-btns delete-yes' id=`yes-delete-${park.id}`) Yes
         br
         br
         //- div(class='reviews') Your Reviews

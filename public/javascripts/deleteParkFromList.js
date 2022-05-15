@@ -7,20 +7,26 @@ for (let i = 0; i < deleteBtns.length; i++) {
         e.preventDefault()
         const popupId = e.target.id.split('-')[2];
         const popup = document.getElementById(`popup-${popupId}`);
-        // console.log(popup)
         popup.classList.add('active')
+
     })
 }
 
+const cancelBtns = document.querySelectorAll('.cancel');
 
-const cancel = document.getElementById('cancel');
+for (let i = 0; i < cancelBtns; i++) {
+    const cancel = cancelBtns[i];
+    console.log('------THIS IS THE CANCEL-------')
+    console.log(cancel)
 
-cancel.addEventListener('click', async(e) => {
-    e.preventDefault()
-    const popup = cancel.closest('.popup')
-    console.log(popup)
-    popup.classList.remove('active')
-})
+    cancel.addEventListener('click', async(e) => {
+        e.preventDefault()
+        const parksId = e.target.id.split('-')[1];
+        const popup = document.getElementById(`cancel-${parksId}`)
+        popup.classList.remove('active')
+    })
+}
+
 
 const yesBtns = document.querySelectorAll('.delete-yes');
 

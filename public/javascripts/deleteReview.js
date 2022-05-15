@@ -33,10 +33,16 @@ for (let i = 0; i < deleteBtns.length; i++) {
     })
 }
 
-const cancel = document.getElementById('cancel')
-cancel.addEventListener('click', async(e) => {
-    e.preventDefault()
-    const popup = cancel.closest('.popup')
-    console.log(popup)
-    popup.classList.remove('active')
-})
+const cancelBtns = document.querySelectorAll('.cancel');
+
+for (let i = 0; i < cancelBtns; i++) {
+    const cancel = cancelBtns[i];
+
+    cancel.addEventListener('click', async(e) => {
+        e.preventDefault()
+        console.log('--------CANCEL FUNCTION HIT----------')
+        const popup = cancel.closest('.popup')
+        console.log(popup)
+        popup.classList.remove('active')
+    })
+}
