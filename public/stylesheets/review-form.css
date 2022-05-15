@@ -2,6 +2,24 @@
     background-color: antiquewhite;
 }
 
+html {
+    background: rgba(255,255,255,0);
+}
+
+body {
+    background-image: url('https://ik.imgkit.net/3vlqs5axxjf/PCWW/uploadedimages/uploads/2014/07/dog-laptop.jpg?tr=w-800%2Ch-400%2Cfo-auto');
+    background-size: 100% 100%;
+    color: white;
+}
+
+body, html {
+    height:100%;
+}
+
+header{
+    background: rgba(255,255,255,0.3);
+}
+
 
 h1 {
     margin-top: 15px;
@@ -30,28 +48,46 @@ h1>a {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background: rgba(255,255,255,0);
 
     position: absolute;
-    top: 18px;
-    right: 15px;
+    top: 27px;
+    right: 25px;
 }
 
 .logout{
     color: rgb(135, 75, 2);
     border-radius: 5px;
     border-color: rgb(184, 100, 100);
-    margin-right: 10px;
     font-size: 13px;
-    margin-top: 12px;
 }
+
 
 .logout:hover{
     box-shadow: 3px 3px 3px rgb(126, 78, 78);
 }
 
+main {
+    min-height: calc(100vh - 56px - 80px);
+    background: rgba(255,255,255,0);
+}
+
+.main-container{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+
 .form {
     background-color: white;
+    opacity: 0.9;
 }
+
+#review-container{
+    width: 400px;
+}
+
 
 #review-container{
     color: rgb(184, 100, 100);
@@ -66,6 +102,7 @@ h1>a {
     justify-content: center;
 }
 
+
 #park-name {
     font-weight: 600;
     font-size: 30px;
@@ -79,10 +116,10 @@ h1>a {
 }
 
 #rating-drop-down {
-    color: rgb(184, 100, 100);
-    background-color: antiquewhite;
-    border: 2px solid rgb(184, 100, 100);
-    border-radius: 3px;
+    border-color: indigo;
+    border-radius: 5px;
+    border-width: 0.5px;
+    background-color: white;
     margin: 5px;
 }
 
@@ -101,11 +138,19 @@ h1>a {
 #review-title-input {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
+    border-color: indigo;
+    border-radius: 5px;
+    border-width: 0.5px;
+    background-color: white;
 }
 
 #review-description-input {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
+    border-color: indigo;
+    border-radius: 5px;
+    border-width: 0.5px;
+    background-color: white;
 }
 
 .review-input{
@@ -116,7 +161,7 @@ h1>a {
 }
 
 .button{
-    color: rgb(184, 100, 100);
+    color:rgb(135, 75, 2);
     background-color: antiquewhite;
     border: 2px solid rgb(184, 100, 100);
     border-radius: 3px;
@@ -129,9 +174,44 @@ h1>a {
 
 #cancel-btn {
     margin-right: 20px;
+    
 }
 
 .button:hover {
     border: 2px solid rgb(184, 100, 100);
     box-shadow: 3px 3px 3px rgb(126, 78, 78);
+}
+
+footer {
+    background: rgba(255,255,255,0.3);
+}
+
+
+.github_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-end;
+
+
+    width: 100%;
+    border-top: 1px solid rgb(216, 171, 113);
+    padding-top: 20px;
+    padding-bottom: 20px; 
+}
+
+
+
+.github_links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-style: normal;
+    font: bold;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: rgb(143, 9, 170);
+
+}
+
+.github_links a:hover {
+    color: rgb(49, 8, 146);
 }

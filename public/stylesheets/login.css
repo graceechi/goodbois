@@ -2,6 +2,9 @@
     background-color: antiquewhite;
 }
 
+html {
+    background: rgba(255,255,255,0);
+}
 
 body {
     background-image: url('https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg');
@@ -11,22 +14,12 @@ body {
 }
 
 
-header{
-    background-color: antiquewhite;
-}
-
 .splash {
-    border-bottom: 1px solid rgb(201, 155, 94);
-    margin-top: 15px;
-    margin-left: 15px;
-    background-color: antiquewhite;
-}
-
-h1 {
-    margin-top: 15px;
-    margin-left: 15px;
-    background-color: antiquewhite;
-    border-bottom: 1px solid rgb(201, 155, 94);
+    border-bottom: 1px solid rgb(201, 155, 94);    
+    padding-bottom: 10px;
+    padding-top: 15px;
+    padding: 15px;
+    background: rgba(255,255,255,0.3);
 }
 
 
@@ -43,7 +36,7 @@ h1 a {
 }
 
 main{
-    min-height: calc(100vh - 56px - 50px);
+    min-height: calc(100vh - 56px - 80px);
     background: rgba(255,255,255,0);
 }
 
@@ -55,6 +48,7 @@ main{
 
 
 .container{
+    opacity: 0.7;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,7 +102,10 @@ p {
     cursor: pointer;
 }
 
-
+footer{
+    
+    background: rgba(255,255,255,0.3);
+}
 
 .github_links {
     display: flex;

@@ -3,8 +3,7 @@
 }
 
 body {
-    background-image: url('https://petdogowner.com/wp-content/uploads/2021/04/AdobeStock_56224324-scaled.jpeg');
-    background-repeat: no-repeat;
+    background-image: url('https://media.istockphoto.com/photos/puppy-picture-id823616762?k=20&m=823616762&s=612x612&w=0&h=gbQcwAGpVKk8BN0crvQa-PULqiw4fCAUV-HgLfG_Csg=');
     background-size: 100% 100%;
     color: white;
 }
@@ -12,13 +11,14 @@ body {
 
 
 header{
-    background-color: antiquewhite;
+    background: rgba(255,255,255,0.3);
 }
 
 h1 {
     border-bottom: 1px solid rgb(201, 155, 94);
-    margin-top: 15px;
+    padding-top: 15px;
     margin-left: 15px;
+    padding-bottom: 10px;
 }
 
 h1 a {
@@ -39,7 +39,7 @@ h1 a {
 
 
 main{
-    min-height: calc(100vh - 56px - 50px);
+    min-height: calc(100vh - 56px - 80px);
     background: rgba(255,255,255,0);
 }
 
@@ -66,6 +66,7 @@ main{
     margin-left: 80px;
     margin-right: 80px;
     padding: 15px;
+    opacity: 0.8;
 }
 
 form {
@@ -101,7 +102,7 @@ a {
 }
 
 footer{
-    margin-top: -50px;
+    background: rgba(255,255,255,0.3);
 }
 
 .github_links {
@@ -112,9 +113,8 @@ footer{
 
 
     width: 100%;
-    border-top: 1px solid rgb(216, 171, 113);
-    margin-top: 20px;
-    padding-top: 20px;  
+    border-top: 1px solid rgb(216, 171, 113); 
+    padding-top: 26px;  
     padding-bottom: 20px;
 }
 
@@ -127,7 +127,7 @@ footer{
     font: bold;
     font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
     color: rgb(143, 9, 170);
-    background-color: antiquewhite;
+    background: rgba(255,255,255,0.3);
 }
 
 .github_links a:hover {
