@@ -8,7 +8,7 @@ Live link: <a href="https://aa-goodbois.herokuapp.com/" target="_blank">goodbois
 ## Technologies
 Front End
 - Javascript
-- Pug templating as HTML
+- HTML rendered through Pug templating
 - CSS styling
 - Hosted on Heroku
 
