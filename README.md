@@ -24,8 +24,8 @@ Back End
 - Uses bcryptjs library to secure user creation and authentication 
 - Prevents csrf attacks and uses validation forms to authenticate users
 - Grants logged in users to create/edit new dog parks, add/remove dog parks to user's parks list, and add/edit/delete reviews on dog parks
-- All users can search the website for parks and view reviews
-- Uses AJAX to asynchronously render elements like editing and deleting reviews and dog parks from user's parks list
+- All users can search the website for dog parks and view their reviews
+- Uses AJAX to asynchronously render elements like editing and deleting reviews from dog parks and deleting dog parks from user's parks list
 
 ## Wiki Pages
 - In wiki tab, to be linked here soon...
