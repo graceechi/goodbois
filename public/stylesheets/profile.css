@@ -26,6 +26,7 @@ body, html {
     margin-left: 15px;
     display: flex;
     flex-direction: row;
+    padding-bottom: 10px;
 }
 
 .splash>a {
@@ -125,7 +126,7 @@ h2 {
     font-family: Cambria;
     font: bold;
     color: rgb(184, 100, 100);
-    font-size: 25px;
+    font-size: 27px;
     text-decoration: underline;
 }
 
@@ -250,3 +251,18 @@ footer{
     border: 2px solid rgb(184, 100, 100);
     box-shadow: 2px 2px 2px rgb(126, 78, 78);
 }
+
+
+.buttons {
+   border-color: indigo;
+   border-radius: 5px;
+   color: rgb(133, 43, 43);
+   border: 0.5px solid;
+   font-size: 11px;
+}
+
+.parklist-container{
+    padding-top: 6px;
+    font-size: 18px;
+}
+
