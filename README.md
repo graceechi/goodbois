@@ -22,7 +22,7 @@ Back End
 
 ## Key Features
 - Uses bcryptjs library to secure user creation and authentication 
-- Prevents csrf attacks and uses validation forms to authenticae users
+- Prevents csrf attacks and uses validation forms to authenticate users
 - Grants logged in users to create/edit new dog parks, add/remove dog parks to user's parks list, and add/edit/delete reviews on dog parks
 - All users can search the website for parks and view reviews
 - Uses AJAX to asynchronously render elements like editing and deleting reviews and dog parks from user's parks list
