@@ -152,8 +152,12 @@ label {
 
 }
 
+.update-btn:hover {
+    box-shadow: 0px 0px 5px rgb(184, 100, 100);
+}
+
 .cancel-btn{
-    margin-top: 5px;
+    text-decoration: none;
 }
 
 h2 {
